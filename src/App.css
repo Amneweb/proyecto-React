@@ -2,10 +2,10 @@ body {
     font-family:'Nunito',sans-serif;
 }
 .navbar {
-    background-color:#000000;
+    background-color:#101010;
 }
-.bg-body-tertiary {
-    background-color:none;
+.nav-link {
+    color:#7fffd4;
 }
 .bienvenidos {
     text-align:center;
