@@ -1,23 +1,25 @@
-import {useState,useEffect} from "react";
-import {fetchDatosLibros} from '../../helpers/fetchDatosLibros';
-const ItemListContainer =()=>{
+import { useState, useEffect } from "react";
+import { fetchDatosLibros } from '../../helpers/fetchDatosLibros';
+import ItemList from '../ItemList/ItemList';
+const ItemListContainer = () => {
 
     const [libros, setLibros] = useState([]);
-    console.log(libros);
-useEffect(() => {
-  fetchDatosLibros()
-  .then((respuesta) => {
-setLibros(respuesta);
-  }
-
-  )
-}, [])
-
+    useEffect(() => {
+        fetchDatosLibros()
+            .then((respuesta) => {
+                setLibros(respuesta);
+            })
+    }, [])
 
     return (
-        <div>
-            <h1 className="bienvenidos"></h1>
+
+
+<div className="container">
+      
+            <ItemList libros={libros} />
+      
         </div>
+
     )
 
 }

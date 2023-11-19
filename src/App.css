@@ -53,10 +53,9 @@ body {
     display:flex;
     justify-content: space-evenly;
     flex-wrap: no-wrap;
-    column-gap:4%;
 }
 .card__boton {
-    width:48%;
+    width:40%;
 }
 .card__boton-ver {
     border:solid 1px var(--rosa);
