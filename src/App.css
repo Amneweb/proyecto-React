@@ -1,11 +1,20 @@
+:root {
+    --rosa:#ec008c;
+    --negro:#262b2f;
+    --fondo-claro:#f0ffff;
+    --verde-brillante:#c5fe02;
+    --verde-agua:#7fffd4;
+    --celeste:#00aeef;
+}
 body {
     font-family:'Nunito',sans-serif;
+    background-color:var(--fondo-claro);
 }
 .navbar {
-    background-color:#101010;
+    background-color:var(--rosa);
 }
 .nav-link {
-    color:#7fffd4;
+    color:var(--fondo-claro);
 }
 .bienvenidos {
     text-align:center;
@@ -19,7 +28,7 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: red;
+    background-color:var(--verde-brillante);
     border-radius: 50%;
     font-size:0.8em;
     width:20px;
@@ -28,4 +37,47 @@ body {
 }
 .nav-img {
     max-height:60px;
+}
+.card {
+    border:none;
+}
+.stock-badge {
+    background-color:var(--negro);
+    margin:5px auto auto 5px;
+}
+.btn {
+    background-color:var(--rosa);
+    border:none;
+}
+.card__botones {
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: no-wrap;
+    column-gap:4%;
+}
+.card__boton {
+    width:48%;
+}
+.card__boton-ver {
+    border:solid 1px var(--rosa);
+    background-color:white;
+    color:var(--rosa);
+}
+.btn-blanco {
+    background-color:white;
+    font-weight:bold;
+}
+.input-contador {
+    border:none;
+    width:4rem;
+    text-align: center;
+}
+.border-contador {
+    border-color:var(--negro) !important;
+}
+.menu {
+    justify-content: center!important;
+}
+.navbar-nav {
+    gap:10px;
 }

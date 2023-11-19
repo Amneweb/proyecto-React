@@ -1,0 +1,10 @@
+[
+    {
+        "id":1,
+        "nombre": "Millenium",
+        "autor": "Stig Larson",
+        "cantidad":3,
+        "descripcion": "La saga Millennium es una serie de novelas criminales suecas creada por Stieg Larsson y escritas las tres primeras obras por él mismo y las siguientes por David Lagercrantz, que ha conseguido un éxito de ventas a nivel internacional. Los dos personajes principales de la serie son Lisbeth Salander, una hacker veinteañera antisocial con memoria fotográfica, y Mikael Blomkvist, un periodista de investigación que edita una revista llamada Millennium (de ahí el título de la serie).",
+        "librosID":[2,3,4]
+    }
+]
