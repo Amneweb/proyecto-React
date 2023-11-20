@@ -6,7 +6,6 @@ const ItemListContainer = () => {
 
     const [libros, setLibros] = useState([]);
     const categoria = useParams().categoria;
-    console.log(categoria);
     useEffect(() => {
         fetchDatosLibros()
             .then((respuesta) => { 
@@ -23,7 +22,7 @@ const ItemListContainer = () => {
 
 
 <div className="container">
-      <h2>{categoria ? categoria: "Productos"}</h2>
+      <h2>{categoria ? categoria : "Todos los libros"}</h2>
             <ItemList libros={libros} />
       
         </div>

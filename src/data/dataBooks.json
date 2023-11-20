@@ -16,7 +16,7 @@
         "autor": "Stieg Larsson",
         "isbn": "9789878220567",
         "descripcion": "Harriet Vanger desapareció hace treinta y seis años en una isla sueca propiedad de su poderosa familia. A pesar del despliegue policial, no se encontró ni rastro de la muchacha. ¿Se escapó? ¿Fue secuestrada? ¿Asesinada? El caso está cerrado y los detalles olvidados. Pero su tío Henrik Vanger, un empresario retirado, vive obsesionado con resolver el misterio antes de morir. En las paredes de su estudio cuelgan cuarenta y tres flores secas y enmarcadas. Las primeras siete fueron regalos de su sobrina; las otras llegaron puntualmente para su cumpleaños, de forma anónima, desde que Harriet desapareció.",
-        "genero":["sa","po","cf","de"],
+        "genero":["po","cf","de"],
         "idioma":"Español",
         "precio":11900,
         "stock": 10
@@ -27,7 +27,7 @@
         "autor": "Stieg Larsson",
         "isbn": "9788423342884",
         "descripcion": "Lisbeth Salander se ha tomado un tiempo: necesita apartarse del foco de atención y salir de Estocolmo. Trata de seguir una férrea disciplina y no contestar a las llamadas ni a los mensajes de Mikael, que no entiende por qué ha desaparecido de su vida sin dar ningún tipo de explicación. ¿Y Mikael Blomkvist? El gran héroe vive buenos momentos en Millennium, con las finanzas de la revista saneadas y el reconocimiento profesional por parte de los colegas. Ahora trabaja en un reportaje apasionante sobre el tráfico y la prostitución de mujeres procedentes del Este. Las vidas de los dos protagonistas parecen haberse separado por completo, pero entretanto... una muchacha, atada a una cama, soporta cada día las horribles visitas de un ser despreciable y sueña con una cerilla y un bidón de gasolina, con la forma de provocar el fuego que acabe con todo.",
-        "genero":["sa","po","cf","de"],
+        "genero":["po","cf","de"],
         "idioma":"Español",
         "precio":11900,
         "stock": 5
@@ -38,7 +38,7 @@
         "autor": "Stieg Larsson",
         "isbn": "9788423349838",
         "descripcion": "Lisbeth no esta muerta, aunque, con una bala en el cerebro, necesita un milagro, o el mejor cirujano, para salvar la vida. Le esperan semanas de confinamiento en el mismo centrodonde un paciente muy peligroso sigue acechandola. Desde el hospital, ella hace esfuerzos para mantenerse alerta, porquesabe que sus habilidades informaticas seran, una vez mas, sumejor defensa. Mientras, Mikael Blomkvist se siente muy solo. Quizas Lisbeth le haya apartado de su vida, pero a medida que sus sus investigaciones avanzan y las oscuras razones que estan tras el complot contra Salander toman forma, Mikael sabe queno puede dejar en manos de la Justicia la vida y la libertadde Lisbeth. Pesan sobre ella duras acusaciones que hacen quela policia la mantenga aislada, asi que tendra que ingeniarselas para llegar hasta Lisbeth, ayudarla y hacerte saber que continua a su lado.",
-        "genero":["sa","po","cf","de"],
+        "genero":["po","cf","de"],
         "idioma":"Español",
         "precio":11900,
         "stock": 0
