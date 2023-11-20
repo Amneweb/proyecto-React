@@ -14,7 +14,13 @@ body {
     background-color:var(--rosa);
 }
 .nav-link {
+    color:var(--fondo-claro) !important;
+}
+.nav-link:visited {
     color:var(--fondo-claro);
+}
+.nav-link:hover {
+    color:var(--verde-brillante)!important;
 }
 .bienvenidos {
     text-align:center;
@@ -49,6 +55,9 @@ body {
     background-color:var(--rosa);
     border:none;
 }
+.btn:hover {
+    background-color:var(--celeste);
+}
 .card__botones {
     display:flex;
     justify-content: space-evenly;
@@ -61,6 +70,11 @@ body {
     border:solid 1px var(--rosa);
     background-color:white;
     color:var(--rosa);
+}
+.card__boton-ver:hover {
+border-color:var(--celeste);
+background-color:white;
+color:var(--celeste);
 }
 .btn-blanco {
     background-color:white;
@@ -75,8 +89,33 @@ body {
     border-color:var(--negro) !important;
 }
 .menu {
-    justify-content: center!important;
+    justify-content: center;
 }
 .navbar-nav {
     gap:10px;
+}
+.haystockbadge {
+    top:5px;
+    left:5px;
+    background-color:white;
+    color:var(--negro);
+    border:solid 1px grey;
+}
+.comprar-disabled {
+    background-color:pink;
+}
+.texto-logo {
+    margin-left:20px;
+  vertical-align: bottom;
+  font-family:'Oswald',sans-serif;
+  font-size:2em;
+}
+.navbar-brand {
+    color:var(--fondo-claro);
+}
+.navbar-brand:hover {
+    color:var(--verde-brillante)!important;
+}
+.navbar-brand:visited {
+    color:var(--fondo-claro);
 }

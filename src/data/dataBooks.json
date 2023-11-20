@@ -7,7 +7,8 @@
         "descripcion": "Nueva traducción en tapa dura con sobrecubierta que se convierte en póster. El profesor Pierre Aronnax se hace a la mar en busca de una criatura desconocida que aterroriza a todos los marineros. Un día, el terrible monstruo marino golpea su embarcación y lo arroja a la profundidad de las aguas. Pero allí le espera una gran sorpresa: la bestia feroz es en realidad un submarino; el mayor y más maravilloso que se haya visto nunca. Se llama Nautilus y lo comanda el Capitán Nemo. Él salva al profesor y sus compañeros y les da la bienvenida a bordo. Juntos emprenderán un largo viaje plagado de aventuras en el que descubrirán las profundidades del océano... y también la escurridiza figura de Nemo y el destino que aguarda a los invitados.",
         "idioma":"Español",
         "precio": 10990,
-        "stock": 5
+        "stock": 5,
+        "genero": ["av","cl"]
     },
     {
         "id":2,
@@ -15,7 +16,7 @@
         "autor": "Stieg Larsson",
         "isbn": "9789878220567",
         "descripcion": "Harriet Vanger desapareció hace treinta y seis años en una isla sueca propiedad de su poderosa familia. A pesar del despliegue policial, no se encontró ni rastro de la muchacha. ¿Se escapó? ¿Fue secuestrada? ¿Asesinada? El caso está cerrado y los detalles olvidados. Pero su tío Henrik Vanger, un empresario retirado, vive obsesionado con resolver el misterio antes de morir. En las paredes de su estudio cuelgan cuarenta y tres flores secas y enmarcadas. Las primeras siete fueron regalos de su sobrina; las otras llegaron puntualmente para su cumpleaños, de forma anónima, desde que Harriet desapareció.",
-        "genero":["sagas","policial","ficcion","denuncia"],
+        "genero":["sa","po","cf","de"],
         "idioma":"Español",
         "precio":11900,
         "stock": 10
@@ -26,7 +27,7 @@
         "autor": "Stieg Larsson",
         "isbn": "9788423342884",
         "descripcion": "Lisbeth Salander se ha tomado un tiempo: necesita apartarse del foco de atención y salir de Estocolmo. Trata de seguir una férrea disciplina y no contestar a las llamadas ni a los mensajes de Mikael, que no entiende por qué ha desaparecido de su vida sin dar ningún tipo de explicación. ¿Y Mikael Blomkvist? El gran héroe vive buenos momentos en Millennium, con las finanzas de la revista saneadas y el reconocimiento profesional por parte de los colegas. Ahora trabaja en un reportaje apasionante sobre el tráfico y la prostitución de mujeres procedentes del Este. Las vidas de los dos protagonistas parecen haberse separado por completo, pero entretanto... una muchacha, atada a una cama, soporta cada día las horribles visitas de un ser despreciable y sueña con una cerilla y un bidón de gasolina, con la forma de provocar el fuego que acabe con todo.",
-        "genero":["sagas","policial","ficcion","denuncia"],
+        "genero":["sa","po","cf","de"],
         "idioma":"Español",
         "precio":11900,
         "stock": 5
@@ -37,7 +38,7 @@
         "autor": "Stieg Larsson",
         "isbn": "9788423349838",
         "descripcion": "Lisbeth no esta muerta, aunque, con una bala en el cerebro, necesita un milagro, o el mejor cirujano, para salvar la vida. Le esperan semanas de confinamiento en el mismo centrodonde un paciente muy peligroso sigue acechandola. Desde el hospital, ella hace esfuerzos para mantenerse alerta, porquesabe que sus habilidades informaticas seran, una vez mas, sumejor defensa. Mientras, Mikael Blomkvist se siente muy solo. Quizas Lisbeth le haya apartado de su vida, pero a medida que sus sus investigaciones avanzan y las oscuras razones que estan tras el complot contra Salander toman forma, Mikael sabe queno puede dejar en manos de la Justicia la vida y la libertadde Lisbeth. Pesan sobre ella duras acusaciones que hacen quela policia la mantenga aislada, asi que tendra que ingeniarselas para llegar hasta Lisbeth, ayudarla y hacerte saber que continua a su lado.",
-        "genero":["sagas","policial","ficcion","denuncia"],
+        "genero":["sa","po","cf","de"],
         "idioma":"Español",
         "precio":11900,
         "stock": 0
@@ -48,7 +49,7 @@
         "autor": "Isabel Allende",
         "isbn": "9789500769013",
         "descripcion": "Viena; 1938. Samuel Adler es un niño judío de seis años cuyo padre desaparece durante la Noche de los Cristales Rotos; en la que su familia lo pierde todo. Su madre; desesperada; le consigue una plaza en un tren que lo llevará desde la Austria nazi hasta Inglaterra. Samuel emprenderá una nueva etapa con su fiel violín y con el peso de la soledad y la incertidumbre; que lo acompañarán siempre en su dilatada vida. Arizona; 2019. Ocho décadas más tarde; Anita Díaz; de siete años; sube con su madre a bordo de otro tren para escapar de un inminente peligro en El Salvador y exiliarse en Estados Unidos. Su llegada coincide con una nueva e implacable política gubernamental que la separa de su madre en la frontera. Pasado y presente se entrelazan para relatar una historia sobre los sacrificios que a veces los padres deben hacer por sus hijos; sobre la sorprendente capacidad de algunos niños para sobrevivir a la violencia sin dejar de soñar; y sobre la tenacidad de la esperanza; que puede brillar incluso en los momentos más oscuros",
-        "genero":["ficcion","biografica"],
+        "genero":["fi","bi"],
         "idioma":"Español",
         "precio":14000,
         "stock": 20
@@ -59,7 +60,7 @@
         "autor": "Julio Verne",
         "isbn": "9788490566244",
         "descripcion": "¿Explorar África en globo? Con el Victoria y dos intrépidos compañeros, el doctor Fergusson se propone triunfar donde han fracasado otras grandes expediciones. Juntos vivirán una extraordinaria aventura llena de dificultades y peligros.",
-        "genero":["ciencia ficcion","clasicos"],
+        "genero":["cf","cl"],
         "idioma":"Español",
         "precio":5900,
         "stock": 2
@@ -70,7 +71,7 @@
         "autor": "Julio Verne",
         "isbn": "9788491870074",
         "descripcion": "¿Quién podrá avisar a tiempo al hermano del zar del grave peligro que corre? Solo un hombre intrépido como Miguel Strogoff es capaz de atravesar media Rusia para cumplir con éxito esa arriesgada misión. Pero debe ir de incógnito. Si lo descubren, puede ser fatal para todos.",
-        "genero":["ficcion","clasicos"],
+        "genero":["fi","cl"],
         "idioma":"Español",
         "precio":5900,
         "stock": 5
@@ -81,7 +82,7 @@
         "autor": "Gabriel García Márquez",
         "isbn": "9789500758796",
         "descripcion": "«Muchos años después; frente al pelotón de fusilamiento; el coronel Aureliano Buendía había de recordar aquella tarde remota en que su padre lo llevó a conocer el hielo.» Con estas palabras empieza una novela ya legendaria en los anales de la literatura universal; una de las aventuras literarias más fascinantes de nuestro siglo. Millones de ejemplares de Cien años de soledad leídos en todas las lenguas y el premio Nobel de Literatura coronando una obra que se había abierto paso «boca a boca» -como gusta decir el escritor- son la más palpable demostración de que la aventura fabulosa de la familia Buendía-Iguarán; con sus milagros; fantasías; obsesiones; tragedias; incestos; adulterios; rebeldías; descubrimientos y condenas; representaba al mismo tiempo el mito y la historia; la tragedia y el amor del mundo entero.",
-        "genero":["ficcion","clasicos"],
+        "genero":["fi","cl"],
         "idioma":"Español",
         "precio":13900,
         "stock": 13
@@ -92,7 +93,7 @@
         "autor": "George Orwell",
         "isbn": "9789878354996",
         "descripcion": "A farm is taken over by its overworked; mistreated animals. With flaming idealism and stirring slogans; they set out to create a paradise of progress; justice; and equality. Thus the stage is set for one of the most telling satiric fables ever penned: a tale for grown-ups that records the evolution from revolution against tyranny to a totalitarianism just as terrible. The cutting clarity and savage comedy of George Orwell's masterpiece have a meaning and message still ferociously fresh.",
-        "genero":["ficcion","denuncia"],
+        "genero":["fi","de"],
         "idioma":"Inglés",
         "precio":7600,
         "stock": 4
@@ -103,7 +104,7 @@
         "autor": "José Hernández",
         "isbn": "9789502333304",
         "descripcion": "¿Por qué una nueva edición del clásico de José Hernández? Porque los abordajes y relecturas que pueden operar sobre este texto son inagotables; como la belleza del texto mismo. En esta ocasión; la Serie de los dos siglos acompaña esta incorporación a su catálogo con un prólogo que aporta un estudio indispensable: una mirada sobre la materialidad de la obra; sobre las tradiciones textuales; sobre los borrones; las tachaduras y enmiendas que el propio autor aplicó a su poema; de manera de acercar al lector la historia de un libro fundamental de nuestra literatura.",
-        "genero":["ficcion","clásicos","poesia"],
+        "genero":["fi","cl","pt"],
         "idioma":"Inglés",
         "precio":7600,
         "stock": 8
@@ -114,7 +115,7 @@
         "autor": "George Orwell",
         "isbn": "9789877187182",
         "descripcion": "Estimado lector: el Gran Hermano abre su ojo. Y lo acompaña a que ingrese en la trama de su omnipresente y cruel mecanismo mientras Winston Smith, el desdichado protagonista, se desliza rápidamente hacia su perdición. Durante los años de la Segunda Guerra Mundial Orwell comienza a pensar e imaginar en clave de ficción los mecanismos que estructuran el universo totalitario: las técnicas de vigilancia y control que imperan en las sociedades modernas. Empieza a darle forma y contenido a lo que luego se denominaría como 'orwelliano': un mundo pesadillesco donde el Gran Hermano todo lo vigila; domina y destruye.",
-        "genero":["ficcion","distopia","denuncia"],
+        "genero":["fi","di","de"],
         "idioma":"Español",
         "precio":11600,
         "stock": 0
@@ -125,7 +126,7 @@
         "autor": "Irene Vallejo",
         "isbn": "9789877254273",
         "descripcion": "En esta obra exquisita sobre los orígenes del libro, Irene Vallejo recorre la historia del asombroso artefacto que nació hace cinco milenios, cuando los egipcios descubrieron el potencial de un junco al que llamaron «papiro». Con gran sensibilidad y soltura narrativa, la autora se remonta a los campos de batalla de Alejandro, los palacios de Cleopatra, las primeras librerías y los talleres de copia manuscrita, pero también visita las hogueras donde ardieron códices prohibidos, la biblioteca de Sarajevo y el laberinto subterráneo de Oxford en el año 2000. Los tiempos se funden en la aventura colectiva de quienes solo han concebido la vida en compañía de la palabra escrita. Y este ensayo acaba prolongando el diálogo infinito del que tan magistralmente nos habla.",
-        "genero":["historia"],
+        "genero":["hi"],
         "idioma":"Español",
         "precio":15600,
         "stock": 30
@@ -136,7 +137,7 @@
         "autor": "Dante Alighieri",
         "isbn": "9788437632186",
         "descripcion": "Este vasto poema en tres partes presenta alegóricamente el itinerario del alma: desde las torturas del Infierno al Purgatorio y a las cumbres del Paraiso. Virgilio, símbolo de la cultura antigua, en la que se habia nutrido Dante Alighieri; y Beatriz, símbolo de la Revelacion cristiana, guían sucesivamente al poeta en su misterioso viaje. Es una sublime suma poética del saber medieval y un maravilloso crisol de elementos teológicos, científicos y líricos; obra cumbre de toda la Edad Media y una de las creaciones más venerables de la poesia universal.",
-        "genero":["poesia","ficcion"],
+        "genero":["pt","fi"],
         "idioma":"Español",
         "precio":9600,
         "stock": 10

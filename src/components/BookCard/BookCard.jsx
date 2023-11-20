@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
 import imagenes from '../../helpers/imagenes';
 import nodisponible from '../BookCard/assets/nodisponible.jpg';
+import HayStockBadge from '../HayStockBadge/HayStockBadge';
 import StockBadge from '../StockBadge/StockBadge';
 const LibroCard = ({ libro }) => {
   const rutaImagen = imagenes.find(({ id }) => id === libro.isbn
   ) ? imagenes.find(({ id }) => id === libro.isbn
   ).ruta : nodisponible;
+  const cate = !libro.genero ? "":libro.genero.join(", ");
   return (
     <div className="col">
       <div className="card h-100 shadow-sm">
@@ -13,20 +16,15 @@ const LibroCard = ({ libro }) => {
           <div className="card-body">
             <h5 className="card-title">{libro.titulo}</h5>
             <p className="card-text">Autor: {libro.autor}</p>
-            <div className="row">
-              <div className="col-4">
-            <p className="small">Stock:{libro.stock} </p>
-            </div>
-            <div className="col-8">
+            <p className="small">Categorías: {cate} </p>
             <p>Precio: ${libro.precio}</p>
-            </div>
-            </div>
             <div className="row card__botones">
-              <a href="#" className="btn btn-primary card__boton card__boton-ver">Ver</a>
-              <a href="#" className="btn btn-primary card__boton card__boton-comprar">Comprar</a>
+              <Link to={`/libro/${libro.id}`} className="btn btn-primary card__boton card__boton-ver">Ver</Link>
+              {libro.stock === 0 ? <a href="#" className="btn btn-primary card__boton card__boton-comprar comprar-disabled">Comprar</a>: <a href="#" className="btn btn-primary card__boton card__boton-comprar">Comprar</a>}
             </div>
           </div>
-          {libro.stock===0 && <StockBadge />}
+          {libro.stock===0 ? <StockBadge />:<HayStockBadge stock={libro.stock} />}
+          
           
           
         </div>

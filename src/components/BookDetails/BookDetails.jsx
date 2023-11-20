@@ -1,8 +1,12 @@
 import { useState } from "react";
-function ProductDetails(propsDetails) {
-  const { nombreProducto, imagenProducto, detalleProducto, children } = propsDetails;
-  const altProducto = "imagen de " + nombreProducto;
+import imagenes from '../../helpers/imagenes';
+import nodisponible from '../BookCard/assets/nodisponible.jpg';
+
+const  BookDetails = ({ item }) => {
+  const rutaImagen = imagenes.find(({ id }) => id === item.isbn) ? imagenes.find(({ id }) => id === item.isbn).ruta : nodisponible;
+
   const [contador, setContador] = useState(0);
+
   function handleClickSuma() {
     setContador(contador + 1);
   }
@@ -13,14 +17,14 @@ function ProductDetails(propsDetails) {
     <div className="card mb-3">
       <div className="row g-0">
         <div className="col-md-4">
-          <img src={imagenProducto} className="img-fluid rounded-start" alt={altProducto} />
+          <img src={rutaImagen} className="img-fluid rounded-start" alt={item.titulo} />
         </div>
-        {children}
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{nombreProducto}</h5>
-            <p className="card-text">{detalleProducto}</p>
-            <p className="card-text"><small className="text-body-secondary">Cantidad en stock: 5</small></p>
+            <h2 className="card-title">{item.titulo}</h2>
+            <p className="card-text">Categorías: {item.genero ? item.genero.join(", "): ""} </p>
+            <p className="card-text">{item.descripcion}</p>
+            <p className="card-text"><small className="text-body-secondary">Cantidad en stock: {item.stock}</small></p>
             <div className="container">
               <div className="row">
                 <div className="col-auto">
@@ -29,7 +33,7 @@ function ProductDetails(propsDetails) {
                       <button className="btn btn-blanco" onClick={handleClickResta}>-</button>
                     </div>
                     <div className="col text-center">
-                      <input className="input-contador" value={contador}></input>
+                      <input className="input-contador" value={contador} readOnly></input>
                     </div>
                     <div className="col text-center">
                       <button className="btn btn-blanco" onClick={handleClickSuma}>+</button>
@@ -47,4 +51,4 @@ function ProductDetails(propsDetails) {
     </div>
   )
 }
-export default ProductDetails;
+export default BookDetails

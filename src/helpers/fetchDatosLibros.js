@@ -8,3 +8,17 @@ export const fetchDatosLibros = () => {
         )
     })
 }
+
+export const fetchDetallePorID = (id) => {
+    
+    return new Promise((resuelta, rechazada) => {
+       const libro = dataBooks.find((el)=>el.id === id);
+       if (libro) {
+resuelta(libro)
+       } else {
+        rechazada({error: "no se encontró el libro buscado"})
+
+       }
+    })
+
+}

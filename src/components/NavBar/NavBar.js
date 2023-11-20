@@ -1,27 +1,34 @@
 import CartWidget from "../CartWidget/CartWidget";
 import Logo from "../Logo/Logo";
+import { Link } from 'react-router-dom';
 const NavBar = () => {
   return (
     <nav className="navbar sticky-top navbar-expand-lg">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#"><Logo /></a>
+        <Link className="navbar-brand" to="/"><Logo /><span className="texto-logo">LIBROS</span></Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse menu"  id="navbarNavDropdown">
           <ul className="navbar-nav mb-2 mb-lg-0 g-col-6">
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">Inicio</a>
+              <Link className="nav-link" aria-current="page" to="/">Inicio</Link>
             </li>
             <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Por género
           </a>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Ciencia ficción</a></li>
-            <li><a className="dropdown-item" href="#">Novela histórica</a></li>
-            <li><a className="dropdown-item" href="#">Distopía</a></li>
-            <li><a className="dropdown-item" href="#">Aventuras</a></li>
+            <li><Link className="dropdown-item" to="/libros/cf">Ciencia ficción</Link></li>
+            <li><Link className="dropdown-item" to="/libros/nh">Novela histórica</Link></li>
+            <li><Link className="dropdown-item" to="/libros/di">Distopía</Link></li>
+            <li><Link className="dropdown-item" to="/libros/av">Aventuras</Link></li>
+            <li><Link className="dropdown-item" to="/libros/bi">Biográfico</Link></li>
+            <li><Link className="dropdown-item" to="/libros/po">Policial</Link></li>
+            <li><Link className="dropdown-item" to="/libros/de">Denuncia</Link></li>
+            <li><Link className="dropdown-item" to="/libros/hi">Historia</Link></li>
+            <li><Link className="dropdown-item" to="/libros/cl">Clásicos</Link></li>
+            <li><Link className="dropdown-item" to="/libros/pt">Poesía</Link></li>
           </ul>
         </li>
             <li className="nav-item dropdown">
@@ -29,10 +36,10 @@ const NavBar = () => {
             Por autor
           </a>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Isabel Allende</a></li>
-            <li><a className="dropdown-item" href="#">George Orwell</a></li>
-            <li><a className="dropdown-item" href="#">Julio Verne</a></li>
-            <li><a className="dropdown-item" href="#">Gabriel García Márquez</a></li>
+            <li><Link className="dropdown-item" to="#">Isabel Allende</Link></li>
+            <li><Link className="dropdown-item" to="#">George Orwell</Link></li>
+            <li><Link className="dropdown-item" to="#">Julio Verne</Link></li>
+            <li><Link className="dropdown-item" to="#">Gabriel García Márquez</Link></li>
           </ul>
         </li>
             <li className="nav-item dropdown">
@@ -40,15 +47,15 @@ const NavBar = () => {
             Por idioma
           </a>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Inglés</a></li>
-            <li><a className="dropdown-item" href="#">Español</a></li>
+            <li><Link className="dropdown-item" to="#">Inglés</Link></li>
+            <li><Link className="dropdown-item" to="#">Español</Link></li>
           </ul>
         </li>
         <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">Sagas</a>
+              <Link className="nav-link" aria-current="page" to="#">Sagas</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">Novedades</a>
+              <Link className="nav-link" aria-current="page" to="#">Novedades</Link>
             </li>
             
           </ul>
