@@ -7,7 +7,6 @@ const LibroCard = ({ libro }) => {
   const rutaImagen = imagenes.find(({ id }) => id === libro.isbn
   ) ? imagenes.find(({ id }) => id === libro.isbn
   ).ruta : nodisponible;
-  //const cate = !libro.genero ? "":libro.genero.join(", ");
   return (
     <div className="col">
       <div className="card h-100 shadow-sm">
