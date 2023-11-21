@@ -1,8 +1,11 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
-const BadgeCategorias = () => {
+const BadgeCategorias = ({categorias}) => {
+const htmlCategorias = categorias.map ((categoria)=>
+  <Link to={`/libros/${categoria}`}  key={`${categoria}`} className={`${categoria} listaCate badge rounded-pill`}>{categoria}</Link>
+);
   return (
-    <div>BadgeCategorias</div>
+    <>{htmlCategorias}</>
   )
 }
 

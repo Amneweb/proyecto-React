@@ -3,6 +3,7 @@ import imagenes from '../../helpers/imagenes';
 import nodisponible from '../BookCard/assets/nodisponible.jpg';
 import HayStockBadge from '../HayStockBadge/HayStockBadge';
 import StockBadge from '../StockBadge/StockBadge';
+import BadgeCategorias from '../BadgeCategorias/BadgeCategorias';
 const LibroCard = ({ libro }) => {
   const rutaImagen = imagenes.find(({ id }) => id === libro.isbn
   ) ? imagenes.find(({ id }) => id === libro.isbn
@@ -15,7 +16,7 @@ const LibroCard = ({ libro }) => {
           <div className="card-body">
             <h5 className="card-title">{libro.titulo}</h5>
             <p className="card-text">Autor: {libro.autor}</p>
-            <div className="small">Categorías: {libro.genero && libro.genero.join(", ")} </div>
+            <div className="small categorias">Categorías: {libro.genero && <BadgeCategorias categorias={libro.genero} />} </div>
             <p>Precio: ${libro.precio}</p>
             <div className="row card__botones">
               <Link to={`/libro/${libro.id}`} className="btn btn-primary card__boton card__boton-ver">Ver</Link>

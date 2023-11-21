@@ -13,7 +13,7 @@ const id = useParams().id;
             })
     }, [id])
     return (
-        <div>
+        <div className="container">
             <h2>Detalle del libro buscado</h2>
             { libro && <BookDetails item={libro} />}
             

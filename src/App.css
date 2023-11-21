@@ -119,3 +119,58 @@ color:var(--celeste);
 .navbar-brand:visited {
     color:var(--fondo-claro);
 }
+.categorias {
+    margin-bottom:0.5rem;
+}
+.listaCate {
+    margin-left:2px;
+    margin-right:2px;
+    background-color:white;
+    color:var(--negro);
+    border:1px solid var(--verde-brillante);
+    text-decoration:none;
+}
+.listaCate:hover {
+    background-color:var(--verde-brillante);
+}
+p.card-text {
+    margin-bottom:0.5rem;
+}
+.container {
+    margin-top:30px;
+}
+.loader-div {
+    position:fixed;
+background-color: white;
+z-index:1;
+height:150px;
+width:150px;
+left:50%;
+top:50%;
+padding:15px;
+transform:translateX(-50%) translateY(-50%);
+box-shadow: 0 0 0 500vmax rgba(0,0,0,0.8);
+}
+.loader {
+    position:fixed;
+    z-index:1;
+    left:50%;
+    top:50%;
+    transform:translateX(-50%) translateY(-50%);
+    box-shadow: 0 0 0 500vmax rgba(0,0,0,0.8);
+    background-color:var(--negro);
+    border:10px solid var(--negro);
+    border-bottom-color:var(--verde-brillante);
+    border-radius:50%;
+    animation: spin 2s linear infinite;
+    width:120px;
+    height:120px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+

@@ -40,6 +40,7 @@ const NavBar = () => {
             <li><Link className="dropdown-item" to="#">George Orwell</Link></li>
             <li><Link className="dropdown-item" to="#">Julio Verne</Link></li>
             <li><Link className="dropdown-item" to="#">Gabriel García Márquez</Link></li>
+            <li><Link className="dropdown-item" to="#">OTROS</Link></li>
           </ul>
         </li>
             <li className="nav-item dropdown">

@@ -38,5 +38,9 @@
     {
         "id":"bi",
         "titulo": "Biográfico"
+    },
+    {
+        "id":"in",
+        "titulo": "Infantil"
     }
 ]
