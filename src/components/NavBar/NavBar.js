@@ -36,11 +36,11 @@ const NavBar = () => {
             Por autor
           </a>
           <ul className="dropdown-menu">
-            <li><Link className="dropdown-item" to="#">Isabel Allende</Link></li>
-            <li><Link className="dropdown-item" to="#">George Orwell</Link></li>
-            <li><Link className="dropdown-item" to="#">Julio Verne</Link></li>
-            <li><Link className="dropdown-item" to="#">Gabriel García Márquez</Link></li>
-            <li><Link className="dropdown-item" to="#">OTROS</Link></li>
+            <li><Link className="dropdown-item" to="/autor/1">J K Rowling</Link></li>
+            <li><Link className="dropdown-item" to="/autor/2">George Orwell</Link></li>
+            <li><Link className="dropdown-item" to="/autor/4">Julio Verne</Link></li>
+            <li><Link className="dropdown-item" to="/autor/3">Stieg Larsson</Link></li>
+            <li><Link className="dropdown-item" to="/autor">OTROS</Link></li>
           </ul>
         </li>
             <li className="nav-item dropdown">
