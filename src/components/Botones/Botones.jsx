@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Botones = ({ stock, id }) => {
-   
-    const [contador, setContador] = useState(0);
-    const classAbility = stock === 0 ? "btn comprar-disabled" : "btn";
+const Botones = ({ stock, inicial, id,onAgregar }) => {
+
+    const [contador, setContador] = useState(inicial);
+    const classAbility = stock === 0 ? "btn btn-primary comprar-disabled" : "btn btn-primary";
+
     function handleClickSuma() {
         (contador < stock) && setContador(contador + 1);
     }
@@ -11,14 +12,6 @@ const Botones = ({ stock, id }) => {
         (contador > 0) && setContador(contador - 1);
     }
 
-    const [carrito, setCarrito] = useState([]);
-    console.log("carrito ", carrito)
-    function handleClickCarrito() {
-        
-        if (stock > 0) {
-            setCarrito([...carrito, { "bookID": id, "bookQTY": contador }]);
-        }
-    }
         return (
             <div className="container">
                 <div className="row">
@@ -36,7 +29,7 @@ const Botones = ({ stock, id }) => {
                         </div>
                     </div>
                     <div className="col-auto">
-                        <button className={classAbility} onClick={handleClickCarrito} >Agregar al carrito</button>
+                        <button className={classAbility} onClick={()=>onAgregar(contador)} disabled={!stock} >Agregar al carrito</button>
                     </div>
                 </div>
             </div>

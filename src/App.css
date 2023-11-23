@@ -80,6 +80,9 @@ color:var(--celeste);
     background-color:white;
     font-weight:bold;
 }
+.btn-blanco:hover {
+    background-color:white;
+}
 .input-contador {
     border:none;
     width:4rem;
@@ -138,18 +141,6 @@ p.card-text {
 }
 .container {
     margin-top:30px;
-}
-.loader-div {
-    position:fixed;
-background-color: white;
-z-index:1;
-height:150px;
-width:150px;
-left:50%;
-top:50%;
-padding:15px;
-transform:translateX(-50%) translateY(-50%);
-box-shadow: 0 0 0 500vmax rgba(0,0,0,0.8);
 }
 .loader {
     position:fixed;
