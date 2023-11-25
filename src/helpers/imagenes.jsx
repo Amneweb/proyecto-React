@@ -11,6 +11,13 @@ import img9789502333304 from '../components/BookCard/assets/9789502333304.jpg';
 import img9789877187182 from '../components/BookCard/assets/9789877187182.jpg';
 import img9789877254273 from '../components/BookCard/assets/9789877254273.jpg';
 import img9788437632186 from '../components/BookCard/assets/9788437632186.jpg';
+import img9789878000107 from '../components/BookCard/assets/9789878000107.jpg';
+import img9789878000114 from '../components/BookCard/assets/9789878000114.jpg';
+import img9789878000121 from '../components/BookCard/assets/9789878000121.jpg';
+import img9789878000138 from '../components/BookCard/assets/9789878000138.jpg';
+import img9789878000145 from '../components/BookCard/assets/9789878000145.jpg';
+import img9789878000152 from '../components/BookCard/assets/9789878000152.jpg';
+import img9789878000169 from '../components/BookCard/assets/9789878000169.jpg'
 const imagenes =[
     {
         id:"9788417127503", ruta:img9788417127503 
@@ -50,6 +57,27 @@ const imagenes =[
     },
     {
         id: '9788437632186', ruta: img9788437632186
+    },
+    {
+        id: '9789878000107', ruta: img9789878000107
+    },
+    {
+        id: '9789878000114', ruta: img9789878000114
+    },
+    {
+        id: '9789878000121', ruta: img9789878000121
+    },
+    {
+        id: '9789878000138', ruta: img9789878000138
+    },
+    {
+        id: '9789878000145', ruta: img9789878000145
+    },
+    {
+        id: '9789878000152', ruta: img9789878000152
+    },
+    {
+        id: '9789878000169', ruta: img9789878000169
     }
 
 ]

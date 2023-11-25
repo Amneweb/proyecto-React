@@ -162,6 +162,17 @@ p.card-text {
     100% { transform: rotate(360deg); }
   }
 
+.aside img {
+    max-width: 50%;
+    margin-bottom:50px;
+
+    margin-top:30px;
+    
+}
+.aside {
+    padding:40px;
+}
+
 
 
 

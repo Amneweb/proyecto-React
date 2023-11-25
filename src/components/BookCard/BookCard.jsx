@@ -15,7 +15,7 @@ const LibroCard = ({ libro }) => {
           <img src={rutaImagen} className="card-img-top" alt={libro.titulo} />
           <div className="card-body">
             <h5 className="card-title">{libro.titulo}</h5>
-            <p className="card-text">Autor: {libro.autor}</p>
+            <p className="card-text">Autor: {libro.autor.nombre}</p>
             <div className="small categorias">Categorías: {libro.genero && <BadgeCategorias categorias={libro.genero} />} </div>
             <p>Precio: ${libro.precio}</p>
             <div className="row card__botones">

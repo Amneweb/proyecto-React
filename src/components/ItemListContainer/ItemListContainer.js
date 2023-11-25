@@ -30,7 +30,9 @@ const ItemListContainer = () => {
         <div className="container">
             {loader && <Loader />}
             <h2>{tituloCate && tituloCate}</h2>
+            <div className="row row-cols-1 row-cols-md-4 g-4">
             <ItemList libros={libros} />
+            </div>
         </div>
     )
 }

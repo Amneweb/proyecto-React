@@ -1,5 +1,6 @@
 import dataBooks from '../data/dataBooks';
 import dataCategorias from '../data/dataCategorias';
+
 export const fetchDatosLibros = () => {
     return new Promise((resuelta, rechazada) => {
         setTimeout(
@@ -44,4 +45,16 @@ export const fetchTituloCatePorID = (id) => {
     })
 
 }
+export const fetchLibrosPorAutor =(autorID) => {
+    return new Promise((resuelta, rechazada) => {
+        const libros = dataBooks.filter((el) => el.autor.id === autorID);
+        if (libros) {
+            resuelta(libros)
+        } else {
+            rechazada({ error: "no se encontró el libro buscado" })
+
+        }
+    })
+}
+
 
