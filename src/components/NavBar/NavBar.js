@@ -40,7 +40,7 @@ const NavBar = () => {
             <li><Link className="dropdown-item" to="/autor/2">George Orwell</Link></li>
             <li><Link className="dropdown-item" to="/autor/4">Julio Verne</Link></li>
             <li><Link className="dropdown-item" to="/autor/3">Stieg Larsson</Link></li>
-            <li><Link className="dropdown-item" to="/autor">OTROS</Link></li>
+            <li><Link className="dropdown-item" to="/autor/todos">TODOS</Link></li>
           </ul>
         </li>
             <li className="nav-item dropdown">
@@ -48,8 +48,8 @@ const NavBar = () => {
             Por idioma
           </a>
           <ul className="dropdown-menu">
-            <li><Link className="dropdown-item" to="#">Inglés</Link></li>
-            <li><Link className="dropdown-item" to="#">Español</Link></li>
+            <li><Link className="dropdown-item" to="/idioma/EN">Inglés</Link></li>
+            <li><Link className="dropdown-item" to="/idioma/ES">Español</Link></li>
           </ul>
         </li>
         <li className="nav-item">

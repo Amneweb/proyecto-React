@@ -172,6 +172,32 @@ p.card-text {
 .aside {
     padding:40px;
 }
+.enlacesAutores {
+    list-style-type: none;
+    margin:auto;
+padding:0;
+}
+.enlacesAutores button {
+    appearance: none;
+    display:block;
+    /*background-color:transparent ;*/
+    border-color:var(--rosa) ;
+    border-width:0 0 1px 0;
+    border-style: solid;
+    width:100%;
+    text-align: left;
+    margin-bottom:0;
+
+    background: linear-gradient(to right, var(--rosa) 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: bottom right;
+  transition: background-position .3s ease-out;
+}
+.enlacesAutores button:hover {
+    /*background-color:var(--rosa);*/
+    color:white;
+    background-position:bottom left;
+}
 
 
 

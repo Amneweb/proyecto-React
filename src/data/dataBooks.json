@@ -5,7 +5,7 @@
                 "autor": {"id": 4, "nombre":"Julio Verne"},
                 "isbn": "9788417127503",
                 "descripcion": "Nueva traducción en tapa dura con sobrecubierta que se convierte en póster. El profesor Pierre Aronnax se hace a la mar en busca de una criatura desconocida que aterroriza a todos los marineros. Un día, el terrible monstruo marino golpea su embarcación y lo arroja a la profundidad de las aguas. Pero allí le espera una gran sorpresa: la bestia feroz es en realidad un submarino; el mayor y más maravilloso que se haya visto nunca. Se llama Nautilus y lo comanda el Capitán Nemo. Él salva al profesor y sus compañeros y les da la bienvenida a bordo. Juntos emprenderán un largo viaje plagado de aventuras en el que descubrirán las profundidades del océano... y también la escurridiza figura de Nemo y el destino que aguarda a los invitados.",
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 10990,
                 "stock": 5,
                 "genero": [
@@ -24,7 +24,7 @@
                     "po",
                     "de"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 11900,
                 "stock": 10
             },
@@ -38,7 +38,7 @@
                     "po",
                     "de"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 11900,
                 "stock": 5
             },
@@ -52,7 +52,7 @@
                     "po",
                     "de"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 11900,
                 "stock": 0
             },
@@ -65,7 +65,7 @@
                 "genero": [
                     "bi"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 14000,
                 "stock": 20
             },
@@ -80,7 +80,7 @@
                     "cl",
                     "av"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 5900,
                 "stock": 2
             },
@@ -94,7 +94,7 @@
                     "cl",
                     "av"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 5900,
                 "stock": 5
             },
@@ -107,7 +107,7 @@
                 "genero": [
                     "cl"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 13900,
                 "stock": 13
             },
@@ -121,7 +121,7 @@
                     "de",
                     "cl"
                 ],
-                "idioma": "Inglés",
+                "idioma": {"codigo":"EN", "nombre":"Inglés"},
                 "precio": 7600,
                 "stock": 4
             },
@@ -136,7 +136,7 @@
                     "cl",
                     "pt"
                 ],
-                "idioma": "Inglés",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 7600,
                 "stock": 8
             },
@@ -150,7 +150,7 @@
                     "di",
                     "de"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 11600,
                 "stock": 0
             },
@@ -163,7 +163,7 @@
                 "genero": [
                     "hi"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 15600,
                 "stock": 30
             },
@@ -177,7 +177,7 @@
                     "pt",
                     "cl"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 9600,
                 "stock": 10
             },
@@ -191,7 +191,7 @@
                     "av",
                     "in"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 9900,
                 "stock": 10,
                 "saga": 2
@@ -206,7 +206,7 @@
                     "av",
                     "in"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 9900,
                 "stock": 3,
                 "saga": 2
@@ -221,7 +221,7 @@
                     "av",
                     "in"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 9900,
                 "stock": 3,
                 "saga": 2
@@ -236,7 +236,7 @@
                     "av",
                     "in"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 9900,
                 "stock": 3,
                 "saga": 2
@@ -251,7 +251,7 @@
                     "av",
                     "in"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 9900,
                 "stock": 3,
                 "saga": 2
@@ -266,7 +266,7 @@
                     "av",
                     "in"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 9900,
                 "stock": 3,
                 "saga": 2
@@ -281,7 +281,7 @@
                     "av",
                     "in"
                 ],
-                "idioma": "Español",
+                "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 9900,
                 "stock": 3,
                 "saga": 2

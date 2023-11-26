@@ -1,6 +1,6 @@
 import dataAutores from "../../data/dataAutores.json";
 
-const AsideLinks = () => {
+const AsideLinks = ({onAsideLinks}) => {
     function ordenarPorAutor( a, b ) {
         if ( a.nombre < b.nombre ){
           return -1;
@@ -12,17 +12,21 @@ const AsideLinks = () => {
       }
       
       dataAutores.sort( ordenarPorAutor );
-    const enlaces = dataAutores.map((autor)=>
-<li key={autor.id} >
-    {autor.nombre}
-</li>
-    );
+
+function handleClickLista(e) {
+    onAsideLinks(e.target.id);
+    console.log("handleClickLista ",e.target.id)
+}
+;
   return (
-    <div>
-        <ul>
-            {enlaces}
+    
+        <ul className="enlacesAutores">
+            {dataAutores.map((autor)=>
+<li key={autor.id} >
+   <button id={autor.id} onClick={handleClickLista} > {autor.nombre}</button>
+</li>)}
         </ul>
-    </div>
+    
   )
 }
 

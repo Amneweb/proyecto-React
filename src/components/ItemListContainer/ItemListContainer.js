@@ -8,6 +8,8 @@ const ItemListContainer = () => {
     const [tituloCate, setTituloCate] = useState("");
     const [libros, setLibros] = useState([]);
     const categoria = useParams().categoria;
+    const idioma = useParams().idioma;
+    const nombreIdioma = idioma==="EN"?"Inglés":"Español";
     useEffect(() => {
         setLoader(true);
         fetchDatosLibros()
@@ -17,14 +19,20 @@ const ItemListContainer = () => {
                     fetchTituloCatePorID(categoria).then(
                         (respuesta) => setTituloCate(respuesta.titulo));
                 } else {
-                    setLibros(respuesta);
+                    if(idioma ) {
+                        setLibros(respuesta.filter((libro) => libro.idioma.codigo === idioma));
+                    setTituloCate("Libros en "+nombreIdioma);
+                    } else {
+                        setLibros(respuesta);
                     setTituloCate("Todos los libros");
+                    }
+                    
                 };
 
             }).finally(() => {
                 setLoader(false);
             })
-    }, [categoria])
+    }, [categoria,idioma])
 
     return (
         <div className="container">
