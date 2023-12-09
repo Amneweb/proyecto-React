@@ -199,6 +199,14 @@ padding:0;
     background-position:bottom left;
 }
 
+.h__notfound {
+    font-weight: bold;
+   font-family:'Oswald',sans-serif;
+}
+.img__notfound {
+max-width:80%;
+}
+
 
 
 
