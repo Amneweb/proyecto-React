@@ -2,7 +2,7 @@ import CartWidget from "../CartWidget/CartWidget";
 import Logo from "../Logo/Logo";
 import { Link } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
-const NavBar = () => {
+const NavBar = ({ onQueryBusqueda }) => {
   return (
     <nav className="navbar sticky-top navbar-expand-lg">
       <div className="container-fluid">
@@ -164,7 +164,7 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <SearchBar />
+        <SearchBar onQueryBusqueda={onQueryBusqueda} />
         <CartWidget />
       </div>
     </nav>
