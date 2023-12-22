@@ -61,7 +61,7 @@ body {
 .card__botones {
     display:flex;
     justify-content: space-evenly;
-    flex-wrap: no-wrap;
+    flex-wrap:nowrap;
 }
 .card__boton {
     width:40%;
@@ -205,6 +205,28 @@ padding:0;
 }
 .img__notfound {
 max-width:80%;
+}
+.search-bar {
+    margin-left:20px;
+    margin-right:20px;
+    width:auto;
+}
+.form-control {
+    border-color:var(--rosa);
+}
+.input-group-text {
+    border-color:var(--rosa);
+    background-color:var(--verde-brillante);
+
+}
+@media screen and (max-width: 1050px) {
+    .card__botones {
+        flex-wrap:wrap;
+        gap:5px;
+    }
+    .card__boton {
+        width:90%;
+    }
 }
 
 
