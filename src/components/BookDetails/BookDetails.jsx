@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import imagenes from "../../helpers/imagenes";
 import BadgeCategorias from "../BadgeCategorias/BadgeCategorias";
 import nodisponible from "../BookCard/assets/nodisponible.jpg";
 import Botones from "../Botones/Botones";
 import Toast from "../Toast/Toast";
+import { CartContext } from "../../context/CartContext";
 
 const BookDetails = ({ item }) => {
   const rutaImagen = imagenes.find(({ id }) => id === item.isbn)
     ? imagenes.find(({ id }) => id === item.isbn).ruta
     : nodisponible;
+
   const [contador, setContador] = useState(1);
+
+  const { carrito, setCarrito } = useContext(CartContext);
+
   function handleClickSuma() {
     contador < item.stock && setContador(contador + 1);
   }
@@ -17,14 +22,23 @@ const BookDetails = ({ item }) => {
     contador > 0 && setContador(contador - 1);
   }
   function handleClickAgregar(contador) {
-    console.log(
-      "Se han agregado ",
-      contador,
-      " de ejemplares del libro ",
-      item.titulo
+    const libroAgregado = { ...item, contador };
+    console.log("empieza la handleClick ", carrito);
+    console.log("libro a agregar ", libroAgregado);
+    const nuevoCarrito = [...carrito];
+    const consultaRepetido = nuevoCarrito.find(
+      (libro) => libro.id === libroAgregado.id
     );
+    if (consultaRepetido) {
+      consultaRepetido.contador += contador;
+    } else {
+      nuevoCarrito.push(libroAgregado);
+    }
+    setCarrito(nuevoCarrito);
+    console.log("luego de handle ", carrito);
     const mensajeToast =
       "Se han agregado " + contador + " de ejemplares del libro " + item.titulo;
+    console.log(mensajeToast);
   }
 
   return (

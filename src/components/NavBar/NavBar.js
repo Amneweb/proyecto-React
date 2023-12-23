@@ -1,4 +1,5 @@
 import CartWidget from "../CartWidget/CartWidget";
+import WishList from "../WishList/WishList";
 import Logo from "../Logo/Logo";
 import { Link } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
@@ -165,6 +166,7 @@ const NavBar = ({ onQueryBusqueda }) => {
           </ul>
         </div>
         <SearchBar onQueryBusqueda={onQueryBusqueda} />
+        <WishList />
         <CartWidget />
       </div>
     </nav>

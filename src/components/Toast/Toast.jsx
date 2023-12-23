@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../Logo/Logo";
+import logo from "../Logo/assets/logo.png";
 const Toast = ({ mensajeToast }) => {
   return (
     <div
@@ -9,7 +9,7 @@ const Toast = ({ mensajeToast }) => {
       aria-atomic="true"
     >
       <div className="toast-header">
-        <img src={logo} class="rounded me-2" alt="logo Amneweb" />
+        <img src={logo} className="rounded me-2" alt="logo Amneweb" />
         <strong className="me-auto">¡Gracias!!</strong>
         <small>11 mins ago</small>
         <button

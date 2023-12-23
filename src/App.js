@@ -7,30 +7,34 @@ import ContenedorAutorTodos from "./components/ContenedorAutor/ContenedorAutorTo
 import NoEncontrado from "./components/NoEncontrado/NoEncontrado";
 import Busqueda from "./components/Busqueda/Busqueda";
 import { useState } from "react";
+import { CartContext } from "./context/CartContext";
 
 function App() {
   const [queryBusqueda, setQueryBusqueda] = useState("");
-  console.log("en app " + queryBusqueda);
+  const [carrito, setCarrito] = useState([]);
+  console.log("carrito al ppio de App ", carrito);
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar onQueryBusqueda={setQueryBusqueda} />
+      <CartContext.Provider value={{ carrito, setCarrito }}>
+        <BrowserRouter>
+          <NavBar onQueryBusqueda={setQueryBusqueda} />
 
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/libro/:id" element={<ItemDetailContainer />} />
-          <Route path="/libros" element={<ItemListContainer />} />
-          <Route path="/libros/:categoria" element={<ItemListContainer />} />
-          <Route path="/autor/:autor" element={<ContenedorAutor />} />
-          <Route path="/autor/todos" element={<ContenedorAutorTodos />} />
-          <Route path="/idioma/:idioma" element={<ItemListContainer />} />
-          <Route
-            path="/busqueda"
-            element={<Busqueda queryBusqueda={queryBusqueda} />}
-          />
-          <Route path="*" element={<NoEncontrado />} />
-        </Routes>
-      </BrowserRouter>
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/libro/:id" element={<ItemDetailContainer />} />
+            <Route path="/libros" element={<ItemListContainer />} />
+            <Route path="/libros/:categoria" element={<ItemListContainer />} />
+            <Route path="/autor/:autor" element={<ContenedorAutor />} />
+            <Route path="/autor/todos" element={<ContenedorAutorTodos />} />
+            <Route path="/idioma/:idioma" element={<ItemListContainer />} />
+            <Route
+              path="/busqueda"
+              element={<Busqueda queryBusqueda={queryBusqueda} />}
+            />
+            <Route path="*" element={<NoEncontrado />} />
+          </Routes>
+        </BrowserRouter>
+      </CartContext.Provider>
     </div>
   );
 }
