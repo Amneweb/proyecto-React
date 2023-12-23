@@ -11,11 +11,35 @@ import { CartContext } from "./context/CartContext";
 
 function App() {
   const [queryBusqueda, setQueryBusqueda] = useState("");
+
   const [carrito, setCarrito] = useState([]);
-  console.log("carrito al ppio de App ", carrito);
+
+  const alCarrito = (item, contador) => {
+    const libroAgregado = { ...item, contador };
+
+    const nuevoCarrito = [...carrito];
+    const consultaRepetido = nuevoCarrito.find(
+      (libro) => libro.id === libroAgregado.id
+    );
+    if (consultaRepetido) {
+      consultaRepetido.contador += contador;
+    } else {
+      nuevoCarrito.push(libroAgregado);
+    }
+    setCarrito(nuevoCarrito);
+  };
+  const totalProductosEnCarrito = () => {
+    return carrito.reduce(
+      (acumulador, elemento) => acumulador + elemento.contador,
+      0
+    );
+  };
+
   return (
     <div className="App">
-      <CartContext.Provider value={{ carrito, setCarrito }}>
+      <CartContext.Provider
+        value={{ carrito, alCarrito, totalProductosEnCarrito }}
+      >
         <BrowserRouter>
           <NavBar onQueryBusqueda={setQueryBusqueda} />
 

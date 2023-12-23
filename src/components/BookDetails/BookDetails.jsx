@@ -13,32 +13,13 @@ const BookDetails = ({ item }) => {
 
   const [contador, setContador] = useState(1);
 
-  const { carrito, setCarrito } = useContext(CartContext);
+  const { carrito, alCarrito } = useContext(CartContext);
 
   function handleClickSuma() {
     contador < item.stock && setContador(contador + 1);
   }
   function handleClickResta() {
     contador > 0 && setContador(contador - 1);
-  }
-  function handleClickAgregar(contador) {
-    const libroAgregado = { ...item, contador };
-    console.log("empieza la handleClick ", carrito);
-    console.log("libro a agregar ", libroAgregado);
-    const nuevoCarrito = [...carrito];
-    const consultaRepetido = nuevoCarrito.find(
-      (libro) => libro.id === libroAgregado.id
-    );
-    if (consultaRepetido) {
-      consultaRepetido.contador += contador;
-    } else {
-      nuevoCarrito.push(libroAgregado);
-    }
-    setCarrito(nuevoCarrito);
-    console.log("luego de handle ", carrito);
-    const mensajeToast =
-      "Se han agregado " + contador + " de ejemplares del libro " + item.titulo;
-    console.log(mensajeToast);
   }
 
   return (
@@ -69,7 +50,9 @@ const BookDetails = ({ item }) => {
               id={item.id}
               contador={contador}
               stock={item.stock}
-              handleClickAgregar={handleClickAgregar}
+              handleClickAgregar={() => {
+                alCarrito(item, contador);
+              }}
               handleClickSuma={handleClickSuma}
               handleClickResta={handleClickResta}
             />
