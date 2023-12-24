@@ -13,7 +13,7 @@ const BookDetails = ({ item }) => {
 
   const [contador, setContador] = useState(1);
 
-  const { carrito, alCarrito } = useContext(CartContext);
+  const { alCarrito } = useContext(CartContext);
 
   function handleClickSuma() {
     contador < item.stock && setContador(contador + 1);
@@ -37,8 +37,8 @@ const BookDetails = ({ item }) => {
             <h2 className="card-title">{item.titulo}</h2>
             <h4 className="card-text">Autor: {item.autor.nombre}</h4>
             <p className="card-text">
-              Categorías:{" "}
-              {item.genero && <BadgeCategorias categorias={item.genero} />}{" "}
+              Categorías:
+              {item.genero && <BadgeCategorias categorias={item.genero} />}
             </p>
             <p className="card-text">{item.descripcion}</p>
             <p className="card-text">

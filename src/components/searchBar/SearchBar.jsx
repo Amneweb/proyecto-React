@@ -9,9 +9,6 @@ const SearchBar = ({ onQueryBusqueda }) => {
   }
   return (
     <div className="input-group search-bar flex-nowrap">
-      <span className="input-group-text" id="addon-wrapping">
-        <Lupa />
-      </span>
       <input
         type="text"
         className="form-control"
@@ -20,6 +17,9 @@ const SearchBar = ({ onQueryBusqueda }) => {
         aria-describedby="addon-wrapping"
         onChange={handleChange}
       />
+      <span className="input-group-text" id="addon-wrapping">
+        <Lupa />
+      </span>
     </div>
   );
 };

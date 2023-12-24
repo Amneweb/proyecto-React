@@ -6,8 +6,9 @@ const CartWidget = () => {
   const { totalProductosEnCarrito } = useContext(CartContext);
   return (
     <div>
-      <img className="cart-widget" src={bag} alt="icono carrito de compras" />
       <Link to="/carrito">
+        <img className="cart-widget" src={bag} alt="icono carrito de compras" />
+
         <span className="cart-amount">{totalProductosEnCarrito()} </span>
       </Link>
     </div>

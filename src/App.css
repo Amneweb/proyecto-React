@@ -40,6 +40,7 @@ body {
     width:20px;
     height:20px;
     text-align: center;
+    color:var(--negro);
 }
 .nav-img {
     max-height:60px;
@@ -112,6 +113,11 @@ color:var(--celeste);
   vertical-align: bottom;
   font-family:'Oswald',sans-serif;
   font-size:2em;
+}
+h1, h2 {
+    font-family:'Oswald',sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1em;
 }
 .navbar-brand {
     color:var(--fondo-claro);
@@ -230,7 +236,40 @@ max-width:80%;
         width:90%;
     }
 }
+.renglon-compra {
+    display:flex;
+    gap:10px;
+    align-items: center;
+}
+.carrito__imagen {
+    width:15%;
+}
+.renglon-compra img {
+    max-width:100%;
+    height:auto;
+}
 
+.carrito__titulo {
+    justify-self:flex-start;
+    width:40%;
+}
+.carrito__contador {
+    justify-self:flex-start;
+    width: 15%;
+}
+
+.carrito__totalrenglon {
+    width:20%;
+    justify-self:flex-end;
+    text-align:right;
+}
+.carrito__remover {
+    width:5%;
+    background-color:white;
+}
+.icono-bolsa {
+    margin-left:1em;
+}
 
 
 
