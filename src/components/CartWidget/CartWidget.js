@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CartWidget = () => {
   const { totalProductosEnCarrito } = useContext(CartContext);
   return (
-    <div>
+    <div className="widget">
       <Link to="/carrito">
         <img className="cart-widget" src={bag} alt="icono carrito de compras" />
 
