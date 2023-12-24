@@ -288,6 +288,9 @@ max-width:80%;
     flex-wrap:wrap;
     gap: 10px;
 }
+.superior {
+    gap:20px;
+}
 
 
 

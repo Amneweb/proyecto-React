@@ -3,16 +3,18 @@ import WishList from "../WishList/WishList";
 import Logo from "../Logo/Logo";
 import { Link } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
+import LogoMiCuenta from "../LogoMiCuenta/LogoMiCuenta";
 const NavBar = ({ onQueryBusqueda }) => {
   return (
     <nav className="navbar sticky-top navbar-expand-lg">
       <div className="container-fluid nav-flex-contenedor">
-        <div className="nav-flex-item ">
+        <div className="nav-flex-item superior">
           <Link className="navbar-brand" to="/">
             <Logo />
             <span className="texto-logo">LIBROS</span>
           </Link>
           <SearchBar onQueryBusqueda={onQueryBusqueda} />
+          <LogoMiCuenta />
           <WishList />
           <CartWidget />
         </div>
