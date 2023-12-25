@@ -7,78 +7,15 @@ import ContenedorAutorTodos from "./components/ContenedorAutor/ContenedorAutorTo
 import NoEncontrado from "./components/NoEncontrado/NoEncontrado";
 import Busqueda from "./components/Busqueda/Busqueda";
 import { useState } from "react";
-import { CartContext } from "./context/CartContext";
+import { CartProvider } from "./context/CartContext";
 import Carrito from "./components/Carrito/Carrito";
 import Home from "./pages/Home";
 
 function App() {
   const [queryBusqueda, setQueryBusqueda] = useState("");
-
-  const [carrito, setCarrito] = useState([]);
-
-  const alCarrito = (item, contador) => {
-    const libroAgregado = { ...item, contador };
-
-    const nuevoCarrito = [...carrito];
-    const consultaRepetido = nuevoCarrito.find(
-      (libro) => libro.id === libroAgregado.id
-    );
-    if (consultaRepetido) {
-      if (consultaRepetido.contador + contador <= consultaRepetido.stock) {
-        consultaRepetido.contador += contador;
-      }
-    } else {
-      nuevoCarrito.push(libroAgregado);
-    }
-    setCarrito(nuevoCarrito);
-  };
-
-  const vaciarCarrito = () => {
-    setCarrito([]);
-  };
-  const totalProductosEnCarrito = () => {
-    return carrito.reduce(
-      (acumulador, elemento) => acumulador + elemento.contador,
-      0
-    );
-  };
-  const totalApagar = () => {
-    return carrito.reduce(
-      (acumulador, elemento) =>
-        acumulador + elemento.contador * elemento.precio,
-      0
-    );
-  };
-  const removerElemento = (item) => {
-    const posicion = carrito.indexOf(item);
-    const carritoSinElemento = carrito.toSpliced(posicion, 1);
-    setCarrito(carritoSinElemento);
-  };
-
-  const modificarCantidad = (item, nuevaCantidad) => {
-    const posicion = carrito.indexOf(item);
-    const carritoNuevo = carrito.map((elemento, key) => {
-      if (key === posicion) {
-        return { ...elemento, contador: nuevaCantidad };
-      }
-      return elemento;
-    });
-    setCarrito(carritoNuevo);
-  };
-
   return (
     <div className="App">
-      <CartContext.Provider
-        value={{
-          carrito,
-          alCarrito,
-          totalProductosEnCarrito,
-          vaciarCarrito,
-          removerElemento,
-          totalApagar,
-          modificarCantidad,
-        }}
-      >
+      <CartProvider>
         <BrowserRouter>
           <NavBar onQueryBusqueda={setQueryBusqueda} />
 
@@ -99,7 +36,7 @@ function App() {
             <Route path="*" element={<NoEncontrado />} />
           </Routes>
         </BrowserRouter>
-      </CartContext.Provider>
+      </CartProvider>
     </div>
   );
 }
