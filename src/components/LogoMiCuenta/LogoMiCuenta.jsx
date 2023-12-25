@@ -1,9 +1,12 @@
 import React from "react";
-import { SvgMiCuenta } from "./SvgMiCuenta";
+import { SvgMiCuenta } from "../iconos/SvgMiCuenta";
+import { Link } from "react-router-dom";
 const LogoMiCuenta = () => {
   return (
     <div className="widget">
-      <SvgMiCuenta />
+      <Link to="/micuenta">
+        <SvgMiCuenta ancho="1.8em" alto="1.8em" />
+      </Link>
     </div>
   );
 };

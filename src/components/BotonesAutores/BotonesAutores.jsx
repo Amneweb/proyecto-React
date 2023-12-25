@@ -8,7 +8,7 @@ const BotonesAutores = () => {
         <Link
           to={`/autor/${autor.id}`}
           key={`${autor.id}`}
-          className="btn btn-primary"
+          className="btn btn-primary card__boton-ver"
           role="button"
         >
           {autor.nombre}

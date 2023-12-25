@@ -1,12 +1,11 @@
-import corazon from "./assets/chat-square-heart.svg";
+import { Link } from "react-router-dom";
+import { WishHeart } from "../iconos/WishHeart";
 const WishList = () => {
   return (
     <div className="widget">
-      <img
-        className="cart-widget"
-        src={corazon}
-        alt="icono para la wish list"
-      />
+      <Link to="/wishlist">
+        <WishHeart ancho="1.8em" alto="1.8em" />
+      </Link>
     </div>
   );
 };

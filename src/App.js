@@ -23,7 +23,9 @@ function App() {
       (libro) => libro.id === libroAgregado.id
     );
     if (consultaRepetido) {
-      consultaRepetido.contador += contador;
+      if (consultaRepetido.contador + contador <= consultaRepetido.stock) {
+        consultaRepetido.contador += contador;
+      }
     } else {
       nuevoCarrito.push(libroAgregado);
     }
@@ -52,6 +54,17 @@ function App() {
     setCarrito(carritoSinElemento);
   };
 
+  const modificarCantidad = (item, nuevaCantidad) => {
+    const posicion = carrito.indexOf(item);
+    const carritoNuevo = carrito.map((elemento, key) => {
+      if (key === posicion) {
+        return { ...elemento, contador: nuevaCantidad };
+      }
+      return elemento;
+    });
+    setCarrito(carritoNuevo);
+  };
+
   return (
     <div className="App">
       <CartContext.Provider
@@ -62,6 +75,7 @@ function App() {
           vaciarCarrito,
           removerElemento,
           totalApagar,
+          modificarCantidad,
         }}
       >
         <BrowserRouter>
