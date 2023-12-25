@@ -285,5 +285,19 @@
                 "precio": 9900,
                 "stock": 3,
                 "saga": 2
+            },
+            {
+                "id": 21,
+                "titulo": "La casa Neville",
+                "autor": {"id": 10, "nombre":"Florencia Bonelli"} ,
+                "isbn": "9789504983590",
+                "descripcion": "Corre el año 1833 y la Casa Neville, ubicada en el corazon de la City de Londres, se erige como el banco más importante del Reino Unido, incluso de Europa, con una influencia indiscutible sobre pases y monarcas, empresarios y banqueros. Sin embargo, lo que asombra al mundo es que esa potencia financiera esté a cargo de Manon, la hija menor de la familia Neville. Dueña de una gran inteligencia y un carácter decidido, la joven se verá envuelta en una peligrosa red de intrigas y ambiciones desmedidas, traiciones y alianzas, en la que a veces le resultará difícil distinguir amigos de enemigos. En la tarea titánica por preservar a sus seres queridos y el patrimonio familiar, que se extenderá a escenarios tan distantes como China y el Río de la Plata, será su amor secreto por Alexander Blackraven, conde de Stoneville, lo que la sostendrá en la lucha aun cuando amar ponga en riesgo sus vidas. 'La Casa Neville: La formidable señorita Manon' es la primera parte de una nueva saga histórico-romántica de Florencia Bonelli. Este thriller electrizante fascinará por igual a los lectores y lectoras que la siguen desde siempre y a quienes se acerquen por primera vez a la magia de su imaginación y su escritura.",
+                "genero": [
+                    "nh",
+                    "ro"
+                ],
+                "idioma": {"codigo":"ES", "nombre":"Español"},
+                "precio": 19900,
+                "stock": 20
             }
 ]

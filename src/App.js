@@ -9,6 +9,7 @@ import Busqueda from "./components/Busqueda/Busqueda";
 import { useState } from "react";
 import { CartContext } from "./context/CartContext";
 import Carrito from "./components/Carrito/Carrito";
+import Home from "./pages/Home";
 
 function App() {
   const [queryBusqueda, setQueryBusqueda] = useState("");
@@ -90,6 +91,7 @@ function App() {
             <Route path="/autor/todos" element={<ContenedorAutorTodos />} />
             <Route path="/idioma/:idioma" element={<ItemListContainer />} />
             <Route path="/carrito" element={<Carrito />} />
+            <Route path="/home" element={<Home />} />
             <Route
               path="/busqueda"
               element={<Busqueda queryBusqueda={queryBusqueda} />}

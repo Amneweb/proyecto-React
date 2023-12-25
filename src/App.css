@@ -322,5 +322,33 @@ max-width:80%;
 .en-tooltip {
     color:var(--verde-brillante);
 }
+.carousel-caption h5 {
+font-size:5em;
+font-weight:800;
+
+}
+.carousel-caption {
+    right:25%;
+    left:25%;
+    top:25%;
+    border-radius: 10px;
+    bottom:auto;
+    padding:2em;
+    
+}
+.carousel-cta {
+    background-color:var(--verde-brillante);
+    color:var(--negro);
+    padding:10px;
+}
+.carousel-caption.negro {
+    color:var(--negro);
+}
+.carousel-caption.blanco {
+    color:white;
+}
+.termino-busqueda {
+    color:var(--rosa);
+}
 
 

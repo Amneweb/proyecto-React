@@ -26,7 +26,10 @@ const Busqueda = ({ queryBusqueda }) => {
   return (
     <div className="container">
       {loader && <Loader />}
-      <h2>Libros encontrados para el término {queryBusqueda} </h2>
+      <h2>
+        Libros encontrados para el término{" "}
+        <span className="termino-busqueda">"{queryBusqueda}"</span>{" "}
+      </h2>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         <ItemList libros={libros} />
       </div>

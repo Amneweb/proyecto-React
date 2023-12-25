@@ -42,5 +42,9 @@
     {
         "id":"in",
         "titulo": "Infantil"
+    },
+    {
+        "id":"ro",
+        "titulo": "Romántica"
     }
 ]
