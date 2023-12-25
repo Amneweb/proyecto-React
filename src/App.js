@@ -20,7 +20,6 @@ function App() {
           <NavBar onQueryBusqueda={setQueryBusqueda} />
 
           <Routes>
-            <Route path="/" element={<ItemListContainer />} />
             <Route path="/libro/:id" element={<ItemDetailContainer />} />
             <Route path="/libros" element={<ItemListContainer />} />
             <Route path="/libros/:categoria" element={<ItemListContainer />} />
@@ -28,7 +27,7 @@ function App() {
             <Route path="/autor/todos" element={<ContenedorAutorTodos />} />
             <Route path="/idioma/:idioma" element={<ItemListContainer />} />
             <Route path="/carrito" element={<Carrito />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route
               path="/busqueda"
               element={<Busqueda queryBusqueda={queryBusqueda} />}
