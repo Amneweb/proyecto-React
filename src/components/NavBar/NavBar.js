@@ -6,7 +6,7 @@ import SearchBar from "../searchBar/SearchBar";
 import LogoMiCuenta from "../LogoMiCuenta/LogoMiCuenta";
 const NavBar = ({ onQueryBusqueda }) => {
   return (
-    <nav className="navbar sticky-top navbar-expand-lg">
+    <nav className="navbar sticky-top">
       <div className="container-fluid nav-flex-contenedor">
         <div className="nav-flex-item superior">
           <Link className="navbar-brand" to="/">
@@ -19,12 +19,12 @@ const NavBar = ({ onQueryBusqueda }) => {
           <CartWidget />
         </div>
 
-        <div className="nav-flex-item">
+        <div className="navbar nav-flex-item navbar-expand-lg">
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarScroll"
+            data-bs-target="#navbarNavDropdown"
             aria-controls="navbarScroll"
             aria-expanded="false"
             aria-label="Toggle navigation"

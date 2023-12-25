@@ -7,6 +7,7 @@ import BadgeCategorias from "../BadgeCategorias/BadgeCategorias";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import BotonEnCard from "../BotonEnCard/BotonEnCard";
+import BadgeNovedades from "../BadgeNovedades/BadgeNovedades";
 const LibroCard = ({ libro }) => {
   const rutaImagen = imagenes.find(({ id }) => id === libro.isbn)
     ? imagenes.find(({ id }) => id === libro.isbn).ruta
@@ -19,6 +20,7 @@ const LibroCard = ({ libro }) => {
         <div className="card" id={libro.id}>
           <img src={rutaImagen} className="card-img-top" alt={libro.titulo} />
           <div className="card-body">
+            {libro.hasOwnProperty("novedad") && <BadgeNovedades />}
             <h5 className="card-title">{libro.titulo}</h5>
             <p className="card-text">Autor: {libro.autor.nombre}</p>
             <div className="small categorias">

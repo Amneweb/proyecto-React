@@ -350,5 +350,11 @@ font-weight:800;
 .termino-busqueda {
     color:var(--rosa);
 }
+.badge-novedad {
+    background-color:var(--negro);
+    color:white;
+    top:5px;
+    right:5px;
+}
 
 
