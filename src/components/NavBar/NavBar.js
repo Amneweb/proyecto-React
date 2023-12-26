@@ -168,7 +168,7 @@ const NavBar = ({ onQueryBusqueda }) => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="#">
+                <Link className="nav-link" aria-current="page" to="/novedades">
                   Novedades
                 </Link>
               </li>

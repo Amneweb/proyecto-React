@@ -10,6 +10,7 @@ import { useState } from "react";
 import { CartProvider } from "./context/CartContext";
 import Carrito from "./components/Carrito/Carrito";
 import Home from "./pages/Home";
+import Novedades from "./components/Novedades/Novedades";
 
 function App() {
   const [queryBusqueda, setQueryBusqueda] = useState("");
@@ -27,6 +28,7 @@ function App() {
             <Route path="/autor/todos" element={<ContenedorAutorTodos />} />
             <Route path="/idioma/:idioma" element={<ItemListContainer />} />
             <Route path="/carrito" element={<Carrito />} />
+            <Route path="/novedades" element={<Novedades />} />
             <Route path="/" element={<Home />} />
             <Route
               path="/busqueda"
