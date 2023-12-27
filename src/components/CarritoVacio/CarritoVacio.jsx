@@ -1,9 +1,9 @@
 import React from "react";
 import bolsaVacia from "./emptyBag.png";
-import BotonesCategorias from "../BotonesCategorias/BotonesCategorias";
-import BotonesAutores from "../BotonesAutores/BotonesAutores";
-import { StopSign } from "../iconos/StopSign";
-const BolsaVacia = () => {
+import BotonesCategorias from "./BotonesCategorias/BotonesCategorias";
+import BotonesAutores from "./BotonesAutores/BotonesAutores";
+import { StopSign } from "../../iconos/StopSign";
+const CarritoVacio = () => {
   return (
     <div className="card mb-3 border">
       <div className="row g-0">
@@ -40,4 +40,4 @@ const BolsaVacia = () => {
   );
 };
 
-export default BolsaVacia;
+export default CarritoVacio;

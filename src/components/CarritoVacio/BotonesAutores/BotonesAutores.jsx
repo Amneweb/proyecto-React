@@ -1,5 +1,5 @@
 import React from "react";
-import autores from "../../data/dataAutores.json";
+import autores from "../../../data/dataAutores.json";
 import { Link } from "react-router-dom";
 const BotonesAutores = () => {
   return (

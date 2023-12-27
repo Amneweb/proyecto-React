@@ -1,5 +1,5 @@
 import React from "react";
-import { Trash } from "./assets/Trash";
+import { Trash } from "../../../iconos/Trash";
 
 const BotonRemoverElemento = ({ handleRemover }) => {
   return (

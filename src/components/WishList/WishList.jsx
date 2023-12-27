@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { WishHeart } from "../iconos/WishHeart";
+import { WishHeart } from "../../iconos/WishHeart";
 const WishList = () => {
   return (
     <div className="widget">

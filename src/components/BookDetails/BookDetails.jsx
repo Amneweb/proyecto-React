@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import imagenes from "../../helpers/imagenes";
 import BadgeCategorias from "../BookCard/BadgeCategorias/BadgeCategorias";
 import nodisponible from "../BookCard/assets/nodisponible.jpg";
-import Botones from "../Botones/Botones";
+import Botones from "./Botones/Botones";
 import Toast from "../Toast/Toast";
 import { CartContext } from "../../context/CartContext";
 

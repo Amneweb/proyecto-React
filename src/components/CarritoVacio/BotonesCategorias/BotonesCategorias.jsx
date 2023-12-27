@@ -1,5 +1,5 @@
 import React from "react";
-import categorias from "../../data/dataCategorias.json";
+import categorias from "../../../data/dataCategorias.json";
 import { Link } from "react-router-dom";
 const BotonesCategorias = () => {
   return (

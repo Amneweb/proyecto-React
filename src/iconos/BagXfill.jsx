@@ -1,12 +1,14 @@
 import React from "react";
 
-export const BagXfill = () => {
+export const BagXfill = ({ alto, ancho }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
       className="bi bi-bag-x-fill iconosvg"
       viewBox="0 0 16 16"
+      height={alto}
+      width={ancho}
     >
       <path
         fillRule="evenodd"
