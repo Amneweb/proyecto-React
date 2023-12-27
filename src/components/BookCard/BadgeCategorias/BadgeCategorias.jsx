@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import dataCategorias from "../../data/dataCategorias.json";
+import dataCategorias from "../../../data/dataCategorias.json";
 
 const BadgeCategorias = ({ categorias }) => {
   const htmlCategorias = categorias.map((categoria) => (

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import imagenes from "../../helpers/imagenes";
-import BadgeCategorias from "../BadgeCategorias/BadgeCategorias";
+import BadgeCategorias from "../BookCard/BadgeCategorias/BadgeCategorias";
 import nodisponible from "../BookCard/assets/nodisponible.jpg";
 import Botones from "../Botones/Botones";
 import Toast from "../Toast/Toast";

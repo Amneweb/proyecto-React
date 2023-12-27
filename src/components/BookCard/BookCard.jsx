@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import imagenes from "../../helpers/imagenes";
-import nodisponible from "../BookCard/assets/nodisponible.jpg";
-import HayStockBadge from "../HayStockBadge/HayStockBadge";
-import StockBadge from "../StockBadge/StockBadge";
-import BadgeCategorias from "../BadgeCategorias/BadgeCategorias";
+import nodisponible from "./assets/nodisponible.jpg";
+import HayStockBadge from "./HayStockBadge/HayStockBadge";
+import StockBadge from "./StockBadge/StockBadge";
+import BadgeCategorias from "./BadgeCategorias/BadgeCategorias";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import BotonEnCard from "../BotonEnCard/BotonEnCard";
-import BadgeNovedades from "../BadgeNovedades/BadgeNovedades";
+import BotonEnCard from "./BotonEnCard/BotonEnCard";
+import BadgeNovedades from "./BadgeNovedades/BadgeNovedades";
 const LibroCard = ({ libro }) => {
   const rutaImagen = imagenes.find(({ id }) => id === libro.isbn)
     ? imagenes.find(({ id }) => id === libro.isbn).ruta
