@@ -4,7 +4,7 @@ import { createContext } from "react";
 
 export const CartContext = createContext();
 const carritoEnStorage = JSON.parse(localStorage.getItem("carrito")) || [];
-console.log(carritoEnStorage);
+
 export const CartProvider = ({ children }) => {
   const [carrito, setCarrito] = useState(carritoEnStorage);
 

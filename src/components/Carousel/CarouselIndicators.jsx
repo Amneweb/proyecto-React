@@ -5,6 +5,7 @@ const CarouselIndicators = ({ diapositivas }) => {
     <div className="carousel-indicators">
       {diapositivas.map((diapositiva, key) => (
         <button
+          key={diapositiva.diapoID}
           type="button"
           data-bs-target="#carouselHome"
           data-bs-slide-to={key}

@@ -5,7 +5,10 @@ const CarouselInner = ({ diapositivas }) => {
   return (
     <div className="carousel-inner">
       {diapositivas.map((diapositiva, key) => (
-        <div className={key === 0 ? `carousel-item active` : `carousel-item`}>
+        <div
+          key={diapositiva.diapoID}
+          className={key === 0 ? `carousel-item active` : `carousel-item`}
+        >
           <img
             src={diapositiva.imgRoute}
             className="d-block w-100"

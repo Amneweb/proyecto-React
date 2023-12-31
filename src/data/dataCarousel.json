@@ -1,5 +1,6 @@
 [
   {
+    "diapoID": 1,
     "imgName": "slide1",
     "imgRoute": "/assets/bolsillo.jpg",
     "titulo": "¿Te gusta leer en todos lados?",
@@ -9,6 +10,7 @@
     "estilo": "claro"
   },
   {
+    "diapoID": 2,
     "imgName": "slide2",
     "imgRoute": "/assets/infantil.jpg",
     "titulo": "Expandí los horizontes...",
@@ -18,6 +20,7 @@
     "estilo": "claro"
   },
   {
+    "diapoID": 3,
     "imgName": "slide3",
     "imgRoute": "/assets/neville.jpg",
     "titulo": "Viajá al siglo XIX...",
