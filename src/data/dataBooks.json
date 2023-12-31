@@ -11,7 +11,8 @@
                 "genero": [
                     "av",
                     "cl",
-                    "cf"
+                    "cf",
+                    "in"
                 ],
                 "novedad":true
             },
@@ -27,7 +28,8 @@
                 ],
                 "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 11900,
-                "stock": 10
+                "stock": 10,
+                "saga":1
             },
             {
                 "id": 3,
@@ -41,7 +43,8 @@
                 ],
                 "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 11900,
-                "stock": 5
+                "stock": 5,
+                "saga":1
             },
             {
                 "id": 4,
@@ -55,7 +58,8 @@
                 ],
                 "idioma": {"codigo":"ES", "nombre":"Español"},
                 "precio": 11900,
-                "stock": 0
+                "stock": 0,
+                "saga":1
             },
             {
                 "id": 5,
@@ -304,5 +308,46 @@
                 "precio": 19900,
                 "stock": 20,
                 "novedad":true
+            },
+            {
+                "id": 22,
+                "titulo": "Superlistos Animales",
+                "autor": {"id": 11, "nombre":"Latinbooks"} ,
+                "isbn": "9789915670119",
+                "descripcion": "",
+                "genero": [
+                    "in"
+                ],
+                "idioma": {"codigo":"ES", "nombre":"Español"},
+                "precio": 5600,
+                "stock": 3,
+                "novedad":true
+            },
+            {
+                "id": 23,
+                "titulo": "Superlistos Frutas y vegetales",
+                "autor": {"id": 11, "nombre":"Latinbooks"} ,
+                "isbn": "9789915670133",
+                "descripcion": "",
+                "genero": [
+                    "in"
+                ],
+                "idioma": {"codigo":"ES", "nombre":"Español"},
+                "precio": 5600,
+                "stock": 3,
+                "novedad":true
+            },
+            {
+                "id": 24,
+                "titulo": "Superlistos Números",
+                "autor": {"id": 11, "nombre":"Latinbooks"} ,
+                "isbn": "9789915670140",
+                "descripcion": "",
+                "genero": [
+                    "in"
+                ],
+                "idioma": {"codigo":"ES", "nombre":"Español"},
+                "precio": 5600,
+                "stock": 3
             }
 ]

@@ -3,17 +3,18 @@ import imagenes from "../../helpers/imagenes";
 import BadgeCategorias from "../BookCard/BadgeCategorias/BadgeCategorias";
 import nodisponible from "../BookCard/assets/nodisponible.jpg";
 import Botones from "./Botones/Botones";
-import Toast from "../Toast/Toast";
 import { CartContext } from "../../context/CartContext";
 
 const BookDetails = ({ item }) => {
-  const rutaImagen = imagenes.find(({ id }) => id === item.isbn)
-    ? imagenes.find(({ id }) => id === item.isbn).ruta
-    : nodisponible;
+  const rutaImagen =
+    imagenes.find(({ id }) => id === item.isbn).ruta || nodisponible;
 
   const [contador, setContador] = useState(1);
 
-  const { alCarrito } = useContext(CartContext);
+  const { alCarrito, carrito } = useContext(CartContext);
+  const consultaExisteEnCarrito = carrito.find(
+    (elemento) => elemento.id === item.id
+  );
 
   function handleClickSuma() {
     contador < item.stock && setContador(contador + 1);
@@ -46,6 +47,13 @@ const BookDetails = ({ item }) => {
                 Cantidad en stock: {item.stock}
               </small>
             </p>
+            <p className="card-text">
+              <small className="text-body-secondary">
+                {consultaExisteEnCarrito &&
+                  `Hay ${consultaExisteEnCarrito.contador} ejemplares de este libro en tu
+                bolso de compras.`}
+              </small>
+            </p>
             <Botones
               id={item.id}
               contador={contador}
@@ -56,7 +64,6 @@ const BookDetails = ({ item }) => {
               handleClickSuma={handleClickSuma}
               handleClickResta={handleClickResta}
             />
-            <Toast mensaje="hola soy toast" />
           </div>
         </div>
       </div>

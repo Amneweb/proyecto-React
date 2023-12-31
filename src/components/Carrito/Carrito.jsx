@@ -20,7 +20,7 @@ const Carrito = () => {
           <div className="col-8">
             <ul className="list-group">
               {carrito.map((compra) => (
-                <ItemCarrito compra={compra} />
+                <ItemCarrito key={compra.id} compra={compra} />
               ))}
             </ul>
           </div>

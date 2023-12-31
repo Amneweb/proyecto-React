@@ -328,11 +328,10 @@ font-weight:800;
 
 }
 .carousel-caption {
-    right:25%;
-    left:25%;
-    top:25%;
+    right:20%;
+    left:20%;
+    bottom:15%;
     border-radius: 10px;
-    bottom:auto;
     padding:2em;
     
 }
@@ -355,6 +354,50 @@ font-weight:800;
     color:white;
     top:5px;
     right:5px;
+}
+.contenedor__autorSagas img {
+max-width:100%;
+}
+.cardChico {
+    text-decoration:none;
+    color:var(--negro);
+}
+.cardChico:hover {
+    color:var(--rosa);
+}
+.card__boton-chico {
+    width:90%;
+}
+.enlaces {
+    text-decoration:none;
+    color:var(--rosa);
+    text-transform: uppercase;
+    transition:margin-right 1s;
+}
+.enlaces:hover {
+    color:var(--negro);
+    margin-right:20px;
+}
+p:has(.enlaces) {
+    text-align:right;
+    
+}
+.control-prev-homepage {
+    justify-content:start;
+    left:20px;
+    width:5%;
+}
+.control-prev-homepage span,
+.control-next-homepage span {
+    background-color:var(--negro);
+    border-radius:50%;
+    padding:10px;
+    background-size:60% 60%;
+}
+.control-next-homepage {
+    justify-content:end;
+    right:20px;
+    width:5%;
 }
 
 

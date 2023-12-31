@@ -7,7 +7,6 @@ const Botones = ({
 }) => {
   const classAbility =
     stock === 0 ? "btn btn-primary comprar-disabled" : "btn btn-primary";
-
   return (
     <div className="container">
       <div className="row">
@@ -35,7 +34,9 @@ const Botones = ({
         <div className="col-auto">
           <button
             className={classAbility}
-            onClick={() => handleClickAgregar(contador)}
+            onClick={() => {
+              handleClickAgregar(contador);
+            }}
             disabled={!stock}
           >
             Comprar

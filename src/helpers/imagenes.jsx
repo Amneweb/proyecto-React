@@ -19,7 +19,22 @@ import img9789878000145 from "../components/BookCard/assets/9789878000145.jpg";
 import img9789878000152 from "../components/BookCard/assets/9789878000152.jpg";
 import img9789878000169 from "../components/BookCard/assets/9789878000169.jpg";
 import img9789504983590 from "../components/BookCard/assets/9789504983590.jpg";
+import img9789915670119 from "../components/BookCard/assets/9789915670119.jpg";
+import img9789915670133 from "../components/BookCard/assets/9789915670133.jpg";
+import img9789915670140 from "../components/BookCard/assets/9789915670140.jpg";
 const imagenes = [
+  {
+    id: "9789915670140",
+    ruta: img9789915670140,
+  },
+  {
+    id: "9789915670133",
+    ruta: img9789915670133,
+  },
+  {
+    id: "9789915670119",
+    ruta: img9789915670119,
+  },
   {
     id: "9789504983590",
     ruta: img9789504983590,

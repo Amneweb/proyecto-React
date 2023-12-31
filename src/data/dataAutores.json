@@ -52,5 +52,17 @@
         "nombre":"Dante Alighieri",
         "DOB":"",
         "biografia": ""
+    },
+    {
+        "id": 10,
+        "nombre":"Florencia Bonelli",
+        "DOB":"",
+        "biografia": ""
+    },
+    {
+        "id": 11,
+        "nombre":"Latinbooks",
+        "DOB":"",
+        "biografia": ""
     }
 ]

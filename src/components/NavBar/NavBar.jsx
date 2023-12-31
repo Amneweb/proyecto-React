@@ -162,14 +162,32 @@ const NavBar = ({ onQueryBusqueda }) => {
                   </li>
                 </ul>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="#">
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   Sagas
-                </Link>
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to="/saga/1">
+                      Millenium
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/saga/2">
+                      Harry Potter
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/novedades">
-                  Novedades
+                <Link className="nav-link" aria-current="page" to="/libros">
+                  TODOS
                 </Link>
               </li>
             </ul>
