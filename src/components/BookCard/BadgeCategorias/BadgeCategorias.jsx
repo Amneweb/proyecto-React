@@ -6,7 +6,7 @@ const BadgeCategorias = ({ categorias }) => {
     <Link
       to={`/libros/${categoria}`}
       key={`${categoria}`}
-      className={`${categoria} listaCate badge rounded-pill`}
+      className={`${categoria} listaCate badge fw-normal rounded-pill`}
     >
       {dataCategorias.find((el) => el.id === categoria).titulo}
     </Link>

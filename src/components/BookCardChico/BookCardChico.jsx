@@ -14,7 +14,7 @@ const BookCardChico = ({ libro }) => {
         <div className="card" id={libro.id}>
           <img src={rutaImagen} className="card-img-top" alt={libro.titulo} />
           <div className="card-body">
-            <p className="card-title">
+            <p className="card-title fw-bold">
               <Link className="cardChico" to={`/libro/${libro.id}`}>
                 {libro.titulo}
               </Link>

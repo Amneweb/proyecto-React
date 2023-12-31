@@ -2,7 +2,7 @@
   {
     "imgName": "slide1",
     "imgRoute": "/assets/bolsillo.jpg",
-    "titulo": "¿Te gusta leer en todos lados",
+    "titulo": "¿Te gusta leer en todos lados?",
     "descripcion": "Si sos de las personas que no pueden salir a la calle, las ediciones de bolsillo son para vos. Recorré los títulos que tenemos en este formato.",
     "boton": "Ediciones de bolsillo",
     "enlace": "/bolsillo",

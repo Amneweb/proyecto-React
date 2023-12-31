@@ -21,7 +21,9 @@ const LibroCard = ({ libro }) => {
           <img src={rutaImagen} className="card-img-top" alt={libro.titulo} />
           <div className="card-body">
             {libro.hasOwnProperty("novedad") && <BadgeNovedades />}
-            <h5 className="card-title">{libro.titulo}</h5>
+            <p className="card-title fw-bolder">
+              <Link to={`/libro/${libro.id}`}>{libro.titulo}</Link>
+            </p>
             <p className="card-text">Autor: {libro.autor.nombre}</p>
             <div className="small categorias">
               {libro.genero && <BadgeCategorias categorias={libro.genero} />}{" "}

@@ -399,5 +399,8 @@ p:has(.enlaces) {
     right:20px;
     width:5%;
 }
-
+.card-title a {
+    text-decoration:none;
+    color:var(--negro);
+}
 
