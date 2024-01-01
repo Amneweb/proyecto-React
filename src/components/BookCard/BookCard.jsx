@@ -29,15 +29,17 @@ const LibroCard = ({ libro }) => {
               {libro.genero && <BadgeCategorias categorias={libro.genero} />}{" "}
             </div>
             <p>Precio: ${libro.precio}</p>
-            <div className="row card__botones">
+            <div className="btn-group d-flex">
               <Link
                 to={`/libro/${libro.id}`}
-                className="btn btn-primary card__boton card__boton-ver"
+                className="btn btn-outline-primary flex-fill"
+                role="button"
               >
                 Ver
               </Link>
+
               {libro.stock === 0 ? (
-                <button className="btn btn-primary card__boton comprar-disabled">
+                <button disabled className=" btn btn-primary">
                   Comprar
                 </button>
               ) : (

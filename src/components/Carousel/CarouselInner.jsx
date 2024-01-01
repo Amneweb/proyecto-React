@@ -26,7 +26,7 @@ const CarouselInner = ({ diapositivas }) => {
             <Link
               to={diapositiva.enlace}
               type="button"
-              className="btn btn-primary carousel-cta"
+              className="btn btn-warning"
             >
               {diapositiva.boton}
             </Link>

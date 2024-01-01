@@ -2,29 +2,37 @@ import React from "react";
 import imagenes from "../../../helpers/imagenes";
 import nodisponible from "../../../helpers/imagenes";
 
-const CarouselSagas = ({ libros }) => {
+const CarouselSagas = ({ libros, id }) => {
   console.log("en carousel sagas ", libros);
   return (
-    <div id="carouselSagas" className="carousel slide">
+    <div id={`carouselSaga${id}`} className="carousel slide">
       <div className="carousel-inner">
         {libros.map((libro, key) => {
           const rutaImagen = imagenes.find(({ id }) => id === libro.isbn)
             ? imagenes.find(({ id }) => id === libro.isbn).ruta
             : nodisponible;
           console.log(rutaImagen);
-          <div className={key === 0 ? "carousel-item active" : "carousel-item"}>
-            <img
-              src={rutaImagen}
-              className="d-block w-100"
-              alt={libro.titulo}
-            />
-          </div>;
+          return (
+            <div
+              className={
+                key === 0
+                  ? "carousel-item active rounded-start"
+                  : "carousel-item rounded-start"
+              }
+            >
+              <img
+                src={rutaImagen}
+                className="d-block w-100 rounded-start"
+                alt={libro.titulo}
+              />
+            </div>
+          );
         })}
       </div>
       <button
         className="carousel-control-prev"
         type="button"
-        data-bs-target="#carouselSagas"
+        data-bs-target={`#carouselSaga${id}`}
         data-bs-slide="prev"
       >
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -33,7 +41,7 @@ const CarouselSagas = ({ libros }) => {
       <button
         className="carousel-control-next"
         type="button"
-        data-bs-target="#carouselSagas"
+        data-bs-target={`#carouselSaga${id}`}
         data-bs-slide="next"
       >
         <span className="carousel-control-next-icon" aria-hidden="true"></span>

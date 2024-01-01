@@ -31,7 +31,7 @@ const Carrito = () => {
               </li>
               <li className="list-group-item">
                 <div className="d-grid">
-                  <button className="btn">Pagar</button>
+                  <button className="btn btn-primary">Pagar</button>
                 </div>
               </li>
               <li className="list-group-item">

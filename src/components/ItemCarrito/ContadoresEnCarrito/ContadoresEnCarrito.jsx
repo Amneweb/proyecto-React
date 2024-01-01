@@ -17,21 +17,18 @@ const ContadoresEnCarrito = ({
       <div className="btn-group">
         <button
           type="button"
-          className="btn btn-outline-secondary card__boton-ver"
+          className="btn btn-outline-primary"
           onClick={() => handleRestarRemover(item)}
         >
           -
         </button>
-        <button
-          type="button"
-          className="btn small btn-outline-secondary card__boton-ver"
-        >
+        <button type="button" className="btn small btn-outline-primary">
           {estadoContador}
         </button>
         <button
           data-tooltip-id="sinstock"
           type="button"
-          className="btn btn-outline-secondary card__boton-ver"
+          className="btn btn-outline-primary"
           onClick={() => handleSumarAgregar(item)}
         >
           +

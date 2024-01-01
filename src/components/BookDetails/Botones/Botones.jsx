@@ -10,28 +10,37 @@ const Botones = ({
   return (
     <div className="container">
       <div className="row">
-        <div className="col-auto">
-          <div className="row border border-contador rounded align-items-center">
-            <div className="col text-center">
-              <button className="btn btn-blanco" onClick={handleClickResta}>
-                -
-              </button>
-            </div>
-            <div className="col text-center">
-              <input
-                className="input-contador"
-                value={contador}
-                readOnly
-              ></input>
-            </div>
-            <div className="col text-center">
-              <button className="btn btn-blanco" onClick={handleClickSuma}>
-                +
-              </button>
-            </div>
+        <div className="col col-md-4 px-0">
+          <div
+            className="btn-group d-flex"
+            role="group"
+            aria-label="Basic outlined example"
+          >
+            <button
+              type="button"
+              onClick={handleClickResta}
+              className="btn btn-outline-primary flex-fill"
+            >
+              -
+            </button>
+            <button
+              type="input"
+              className="btn btn-outline-primary flex-fill"
+              readOnly
+            >
+              {contador}
+            </button>
+            <button
+              type="button"
+              onClick={handleClickSuma}
+              className="btn btn-outline-primary flex-fill"
+            >
+              +
+            </button>
           </div>
         </div>
-        <div className="col-auto">
+
+        <div className="col col-md-8">
           <button
             className={classAbility}
             onClick={() => {

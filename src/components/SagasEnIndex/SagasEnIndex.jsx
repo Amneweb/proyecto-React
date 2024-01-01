@@ -14,10 +14,15 @@ const SagasEnIndex = () => {
   console.log("solo libros ", soloLibros);
 
   return (
-    soloSagas &&
-    soloSagas.map((saga, llave) => (
-      <SagasCard key={saga.id} saga={saga} libros={soloLibros[llave]} />
-    ))
+    <div className="container">
+      <h2>sagas</h2>
+      <div className="row row-cols-2">
+        {soloSagas &&
+          soloSagas.map((saga, llave) => (
+            <SagasCard key={saga.id} saga={saga} libros={soloLibros[llave]} />
+          ))}
+      </div>
+    </div>
   );
 };
 

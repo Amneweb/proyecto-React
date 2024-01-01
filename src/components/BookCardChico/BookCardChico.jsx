@@ -21,10 +21,10 @@ const BookCardChico = ({ libro }) => {
             </p>
             <p className="card-text small">Autor: {libro.autor.nombre}</p>
             <p className="card-text small">Precio: ${libro.precio}</p>
-            <div className="row card__botones">
+            <div className="d-grid gap-2">
               <Link
                 to={`/libro/${libro.id}`}
-                className="btn btn-primary card__boton-ver card__boton-chico"
+                className="btn btn-outline-primary"
               >
                 Ver
               </Link>
