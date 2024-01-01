@@ -412,3 +412,12 @@ p:has(.enlaces) {
     background-color:var(--verde-agua);
 }
 
+.card__categorias {
+    background-color:var(--negro);
+}
+.card__categorias a {
+    color:var(--verde-brillante);
+}
+.footer-oscuro {
+    background-color:var(--negro);
+}

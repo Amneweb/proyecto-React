@@ -12,6 +12,7 @@ import Carrito from "./components/Carrito/Carrito";
 import Home from "./pages/Home";
 import Novedades from "./components/Novedades/Novedades";
 import ContenedorSagas from "./components/ContenedorSagas/ContenedorSagas";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [queryBusqueda, setQueryBusqueda] = useState("");
@@ -28,6 +29,7 @@ function App() {
             <Route path="/autor/:autor" element={<ContenedorAutor />} />
             <Route path="/autor/todos" element={<ContenedorAutorTodos />} />
             <Route path="/idioma/:idioma" element={<ItemListContainer />} />
+            <Route path="/variante/:variante" element={<ItemListContainer />} />
             <Route path="/saga/:saga" element={<ContenedorSagas />} />
             <Route path="/carrito" element={<Carrito />} />
             <Route path="/novedades" element={<Novedades />} />
@@ -38,6 +40,7 @@ function App() {
             />
             <Route path="*" element={<NoEncontrado />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </CartProvider>
     </div>

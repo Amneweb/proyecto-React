@@ -1,5 +1,5 @@
 import React from "react";
-import { SvgMiCuenta } from "../../iconos/SvgMiCuenta";
+import { SvgMiCuenta } from "../iconos/SvgMiCuenta";
 import { Link } from "react-router-dom";
 const LogoMiCuenta = () => {
   return (

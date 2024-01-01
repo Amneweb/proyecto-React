@@ -12,6 +12,7 @@ const ItemListContainer = () => {
   const [libros, setLibros] = useState([]);
   const categoria = useParams().categoria;
   const idioma = useParams().idioma;
+  const variante = useParams().variante;
   const nombreIdioma = idioma === "EN" ? "Inglés" : "Español";
   useEffect(() => {
     setLoader(true);
@@ -33,15 +34,28 @@ const ItemListContainer = () => {
             );
             setTituloCate("Libros en " + nombreIdioma);
           } else {
-            setLibros(respuesta);
-            setTituloCate("Todos los libros");
+            if (variante) {
+              setLibros(
+                respuesta
+                  .filter((el) => el.hasOwnProperty("variante"))
+                  .filter((el) => el.variante.hasOwnProperty("ediciones"))
+                  .filter((el) =>
+                    el.variante.ediciones.some((elem) => elem === variante)
+                  )
+              );
+
+              setTituloCate("Edicion: " + variante);
+            } else {
+              setLibros(respuesta);
+              setTituloCate("Todos los libros");
+            }
           }
         }
       })
       .finally(() => {
         setLoader(false);
       });
-  }, [categoria, idioma]);
+  }, [categoria, idioma, variante]);
 
   return (
     <div className="container">

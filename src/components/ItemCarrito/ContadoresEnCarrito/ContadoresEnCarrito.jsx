@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
-import { CloseCircle } from "../../../iconos/CloseCircle";
+import { CloseCircle } from "../../iconos/CloseCircle";
 const ContadoresEnCarrito = ({
   estadoContador,
   handleSumarAgregar,

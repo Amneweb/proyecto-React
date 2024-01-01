@@ -1,32 +1,38 @@
 import React, { useEffect, useState } from "react";
 import ItemListChico from "../ItemListChico/ItemListChico";
-import { ArrowRight } from "../../iconos/ArrowRight";
+import { ArrowRight } from "../iconos/ArrowRight";
 import { fetchDatosNovedades } from "../../helpers/fetchDatosNovedades";
 import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader";
 const NovedadesEnIndex = () => {
-  const [loader, setLoader] = useState(true);
   const [libros, setLibros] = useState([]);
+  const [loader, setLoader] = useState(true);
   const porVez = 5;
   useEffect(() => {
-    fetchDatosNovedades().then((respuesta) => {
-      const cantidadNovedades = respuesta.length;
-      console.log("cantidad de novedades ", cantidadNovedades);
-      const iteraciones = Math.ceil(cantidadNovedades / porVez);
-      console.log("iteraciones ", iteraciones);
-      const librosEnSlide = [];
-      for (let contador = 0; contador < iteraciones; contador++) {
-        librosEnSlide[contador] = respuesta.slice(
-          contador * porVez,
-          contador * porVez + porVez
-        );
-        console.log("libros en slide", librosEnSlide);
-        setLibros(librosEnSlide);
-      }
-    });
+    fetchDatosNovedades()
+      .then((respuesta) => {
+        const cantidadNovedades = respuesta.length;
+
+        const iteraciones = Math.ceil(cantidadNovedades / porVez);
+
+        const librosEnSlide = [];
+        for (let contador = 0; contador < iteraciones; contador++) {
+          librosEnSlide[contador] = respuesta.slice(
+            contador * porVez,
+            contador * porVez + porVez
+          );
+
+          setLibros(librosEnSlide);
+        }
+      })
+      .finally(() => {
+        setLoader(false);
+      });
   }, []);
 
   return (
     <div className="container">
+      {loader && <Loader />}
       <h2>Novedades</h2>
       <div id="carouselNovedades" className="carousel slide">
         <div className="carousel-inner  py-4">

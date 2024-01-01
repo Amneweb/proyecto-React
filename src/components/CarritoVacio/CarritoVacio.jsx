@@ -2,7 +2,7 @@ import React from "react";
 import bolsaVacia from "./emptyBag.png";
 import BotonesCategorias from "./BotonesCategorias/BotonesCategorias";
 import BotonesAutores from "./BotonesAutores/BotonesAutores";
-import { StopSign } from "../../iconos/StopSign";
+import { StopSign } from "../iconos/StopSign";
 const CarritoVacio = () => {
   return (
     <div className="card mb-3 border">

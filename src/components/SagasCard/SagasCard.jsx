@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CarouselSagas from "../SagasEnIndex/CarouselSagas/CarouselSagas";
-import { ArrowRight } from "../../iconos/ArrowRight";
+import { ArrowRight } from "../iconos/ArrowRight";
 
 const SagasCard = ({ saga, libros }) => {
   console.log("saga en card ", saga);

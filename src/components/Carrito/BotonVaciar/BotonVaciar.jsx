@@ -1,5 +1,5 @@
 import React from "react";
-import { BagXfill } from "../../../iconos/BagXfill";
+import { BagXfill } from "../../iconos/BagXfill";
 
 const BotonVaciar = ({ handleVaciar }) => {
   return (

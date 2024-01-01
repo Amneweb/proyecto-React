@@ -11,9 +11,10 @@ const CarouselSagas = ({ libros, id }) => {
           const rutaImagen = imagenes.find(({ id }) => id === libro.isbn)
             ? imagenes.find(({ id }) => id === libro.isbn).ruta
             : nodisponible;
-          console.log(rutaImagen);
+
           return (
             <div
+              key={libro.id}
               className={
                 key === 0
                   ? "carousel-item active rounded-start"

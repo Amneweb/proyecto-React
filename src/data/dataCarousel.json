@@ -6,7 +6,7 @@
     "titulo": "¿Te gusta leer en todos lados?",
     "descripcion": "Si sos de las personas que no pueden salir a la calle, las ediciones de bolsillo son para vos. Recorré los títulos que tenemos en este formato.",
     "boton": "Ediciones de bolsillo",
-    "enlace": "/bolsillo",
+    "enlace": "/variante/bolsillo",
     "estilo": "claro"
   },
   {

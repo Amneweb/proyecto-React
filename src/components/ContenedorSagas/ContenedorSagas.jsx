@@ -36,8 +36,7 @@ const ContenedorSagas = () => {
   const imgruta = imagenesAutores.find(({ id }) => Number(id) === datosAutor.id)
     ? imagenesAutores.find(({ id }) => Number(id) === datosAutor.id).ruta
     : noDisponible;
-  console.log("error ", errorStatus);
-  console.log("autor saga ", datosSaga.autor);
+
   return (
     <div className="container">
       {loader && <Loader />}
