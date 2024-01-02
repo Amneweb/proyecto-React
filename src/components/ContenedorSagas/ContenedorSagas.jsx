@@ -38,7 +38,7 @@ const ContenedorSagas = () => {
     : noDisponible;
 
   return (
-    <div className="container">
+    <section className="container sagas-en-index">
       {loader && <Loader />}
       {errorStatus && <div>{errorStatus}</div>}
       <div className="row">
@@ -69,7 +69,7 @@ const ContenedorSagas = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

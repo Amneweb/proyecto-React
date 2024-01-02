@@ -9,7 +9,7 @@ import { fetchDatosAutor } from "../../helpers/fetchDatosAutor";
 const ContenedorAutor = () => {
   const [loader, setLoader] = useState(true);
   const [libros, setLibros] = useState([]);
-  const [datosAutor, setDatosAutor] = useState("");
+  const [datosAutor, setDatosAutor] = useState([]);
 
   const autor = useParams().autor;
 
@@ -22,11 +22,11 @@ const ContenedorAutor = () => {
             respuesta.filter((libro) => libro.autor.id === Number(autor))
           );
 
-          fetchDatosAutor(autor).then((respuesta) =>
+          fetchDatosAutor(autor).then((respuesta) => {
             setDatosAutor(
               respuesta.find((cadaautor) => cadaautor.id === Number(autor))
-            )
-          );
+            );
+          });
         } else {
           function ordenarPorAutor(a, b) {
             if (a.autor.nombre < b.autor.nombre) {
@@ -51,7 +51,10 @@ const ContenedorAutor = () => {
     <div className="container">
       {loader && <Loader />}
       <div className="row">
-        <h2>Libros de {datosAutor.nombre} </h2>
+        <h2>
+          Libros de{" "}
+          <span className="termino-busqueda">{datosAutor.nombre}</span>{" "}
+        </h2>
         <div className="aside col-4 border rounded pe-4">
           <AsideAutor datosAutor={datosAutor} />
         </div>

@@ -11,7 +11,7 @@ const SearchBar = ({ onQueryBusqueda }) => {
     <div className="input-group search-bar flex-nowrap">
       <input
         type="text"
-        className="form-control"
+        className="form-control form-control-primary"
         placeholder="¿Qué buscás?"
         aria-label="Buscador"
         aria-describedby="addon-wrapping"

@@ -236,8 +236,11 @@ max-width:80%;
     height:fit-content;
     align-self: center;
 }
-.form-control {
+.form-control-primary {
     border-color:var(--rosa);
+}
+.form-control-warning {
+    border-color:var(--verde-brillante)
 }
 .input-group-text {
     border-color:var(--rosa);
@@ -420,4 +423,7 @@ p:has(.enlaces) {
 }
 .footer-oscuro {
     background-color:var(--negro);
+}
+.justificado {
+    text-align: justify;
 }

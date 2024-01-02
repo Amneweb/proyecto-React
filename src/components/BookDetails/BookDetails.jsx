@@ -33,7 +33,7 @@ const BookDetails = ({ item, ruta }) => {
         <div className="col-md-8">
           <div className="card-body">
             <h2 className="card-title">{item.titulo}</h2>
-            <h4 className="card-text">Autor: </h4>
+            <h4 className="card-text">Autor: {item.autor.nombre} </h4>
             <p className="card-text">
               Categorías:
               {item.genero && <BadgeCategorias categorias={item.genero} />}

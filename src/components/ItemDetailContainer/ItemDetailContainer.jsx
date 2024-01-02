@@ -7,16 +7,12 @@ import imagenes from "../../helpers/imagenes";
 import Loader from "../Loader/Loader";
 const ItemDetailContainer = () => {
   const [libro, setLibro] = useState(null);
-  const [ruta, setRuta] = useState(nodisponible);
   const [loader, setLoader] = useState(true);
   const id = useParams().id;
   useEffect(() => {
     fetchDetallePorID(id)
       .then((respuesta) => {
-        setLibro(respuesta);
-        const rutaImagen =
-          imagenes.find(({ id }) => id === libro.isbn).ruta || nodisponible;
-        setRuta(rutaImagen);
+        setLibro(respuesta[0]);
       })
       .finally(() => {
         setLoader(false);
@@ -27,7 +23,16 @@ const ItemDetailContainer = () => {
     <div className="container">
       {loader && <Loader />}
       <h2>Detalle del libro buscado</h2>
-      {libro && <BookDetails item={libro} ruta={ruta} />}
+      {libro && (
+        <BookDetails
+          item={libro}
+          ruta={
+            imagenes.find(({ id }) => id === libro.isbn)
+              ? imagenes.find(({ id }) => id === libro.isbn).ruta
+              : nodisponible
+          }
+        />
+      )}
     </div>
   );
 };

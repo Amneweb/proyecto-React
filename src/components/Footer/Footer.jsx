@@ -110,10 +110,10 @@ const Footer = () => {
                 <input
                   id="newsletter1"
                   type="text"
-                  className="form-control"
+                  className="form-control form-control-warning"
                   placeholder="Email address"
                 />
-                <button className="btn btn-primary" type="button">
+                <button className="btn btn-warning" type="button">
                   Subscribe
                 </button>
               </div>
