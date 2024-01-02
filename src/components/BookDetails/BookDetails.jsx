@@ -1,14 +1,11 @@
 import { useContext, useState } from "react";
-import imagenes from "../../helpers/imagenes";
+
 import BadgeCategorias from "../BookCard/BadgeCategorias/BadgeCategorias";
-import nodisponible from "../BookCard/assets/nodisponible.jpg";
+
 import Botones from "./Botones/Botones";
 import { CartContext } from "../../context/CartContext";
 
-const BookDetails = ({ item }) => {
-  const rutaImagen =
-    imagenes.find(({ id }) => id === item.isbn).ruta || nodisponible;
-
+const BookDetails = ({ item, ruta }) => {
   const [contador, setContador] = useState(1);
 
   const { alCarrito, carrito } = useContext(CartContext);
@@ -28,7 +25,7 @@ const BookDetails = ({ item }) => {
       <div className="row g-0">
         <div className="col-md-4 horizontal-card__img">
           <img
-            src={rutaImagen}
+            src={ruta}
             className="img-fluid rounded-start"
             alt={item.titulo}
           />
@@ -36,7 +33,7 @@ const BookDetails = ({ item }) => {
         <div className="col-md-8">
           <div className="card-body">
             <h2 className="card-title">{item.titulo}</h2>
-            <h4 className="card-text">Autor: {item.autor.nombre}</h4>
+            <h4 className="card-text">Autor: </h4>
             <p className="card-text">
               Categorías:
               {item.genero && <BadgeCategorias categorias={item.genero} />}

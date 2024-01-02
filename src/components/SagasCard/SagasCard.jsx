@@ -4,8 +4,6 @@ import CarouselSagas from "../SagasEnIndex/CarouselSagas/CarouselSagas";
 import { ArrowRight } from "../iconos/ArrowRight";
 
 const SagasCard = ({ saga, libros }) => {
-  console.log("saga en card ", saga);
-  console.log("libros en card ", libros);
   return (
     <div className="col">
       <div className="card mb-3 shadow-sm" id={saga.id}>

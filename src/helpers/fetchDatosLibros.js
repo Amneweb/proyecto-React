@@ -1,22 +1,46 @@
-import dataBooks from "../data/dataBooks";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+  limit,
+} from "firebase/firestore";
 import dataCategorias from "../data/dataCategorias";
 
 export const fetchDatosLibros = () => {
   return new Promise((resuelta, rechazada) => {
-    setTimeout(() => {
-      resuelta(dataBooks);
-    }, 2000);
+    const db = getFirestore();
+    const itemsCollection = collection(db, "libros");
+
+    getDocs(itemsCollection).then((snapshot) => {
+      resuelta(snapshot.docs.map((doc) => ({ IDfire: doc.id, ...doc.data() })));
+    });
   });
 };
 
 export const fetchDetallePorID = (id) => {
   return new Promise((resuelta, rechazada) => {
-    const libro = dataBooks.find((el) => el.id === id);
-    if (libro) {
-      resuelta(libro);
-    } else {
-      rechazada({ error: "no se encontró el libro buscado" });
-    }
+    const db = getFirestore();
+    const itemsCollection = collection(db, "libros");
+
+    const libro = query(
+      itemsCollection,
+      where("id", "==", Number(id)),
+      limit(1)
+    );
+    getDocs(libro).then(
+      (snapshot) => {
+        resuelta(
+          snapshot.docs.map((doc) => ({ IDfire: doc.id, ...doc.data() }))
+        );
+        console.log("en funcion fetchDetalle ", resuelta);
+        console.log("snapshot", snapshot);
+      },
+      () => {
+        rechazada();
+      }
+    );
   });
 };
 
@@ -38,11 +62,16 @@ export const fetchTituloCatePorID = (id) => {
 };
 export const fetchLibrosPorAutor = (autorID) => {
   return new Promise((resuelta, rechazada) => {
-    const libros = dataBooks.filter((el) => el.autor.id === autorID);
-    if (libros) {
-      resuelta(libros);
-    } else {
-      rechazada({ error: "no se encontró el libro buscado" });
-    }
+    const db = getFirestore();
+    const itemsCollection = collection(db, "libros");
+
+    const libros = query(
+      itemsCollection,
+      where("autor.id", "==", Number(autorID))
+    );
+    getDocs(libros).then((snapshot) => {
+      resuelta(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      rechazada("no se encontraron libros para ese autor");
+    });
   });
 };

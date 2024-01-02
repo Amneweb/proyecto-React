@@ -5,7 +5,7 @@ const CardsCategoriasEnIndex = ({ categorias }) => {
   return (
     <div className="row row-cols-6 g-4">
       {categorias.map((categoria) => (
-        <div className="col">
+        <div className="col" key={categoria.id}>
           <div className="card shadow-sm">
             <Link
               className="stretched-link"

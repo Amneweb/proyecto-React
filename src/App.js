@@ -13,13 +13,11 @@ import Home from "./pages/Home";
 import Novedades from "./components/Novedades/Novedades";
 import ContenedorSagas from "./components/ContenedorSagas/ContenedorSagas";
 import Footer from "./components/Footer/Footer";
-import DatosAFire from "./components/DatosAFire";
 
 function App() {
   const [queryBusqueda, setQueryBusqueda] = useState("");
   return (
     <div className="App">
-      <DatosAFire />
       <CartProvider>
         <BrowserRouter>
           <NavBar onQueryBusqueda={setQueryBusqueda} />

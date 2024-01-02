@@ -3,7 +3,6 @@ import imagenes from "../../../helpers/imagenes";
 import nodisponible from "../../../helpers/imagenes";
 
 const CarouselSagas = ({ libros, id }) => {
-  console.log("en carousel sagas ", libros);
   return (
     <div id={`carouselSaga${id}`} className="carousel slide">
       <div className="carousel-inner">

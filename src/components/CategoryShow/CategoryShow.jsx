@@ -12,7 +12,7 @@ const CategoryShow = () => {
         setLoader(false);
       });
   }, []);
-  console.log("categorias en cardscate", categorias);
+
   return (
     <div className="container my-5">
       {loader && <Loader />}
