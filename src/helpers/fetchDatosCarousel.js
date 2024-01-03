@@ -1,9 +1,19 @@
-import dataCarousel from "../data/dataCarousel.json";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 export const fetchDatosCarousel = () => {
   return new Promise((resuelta, rechazada) => {
-    setTimeout(() => {
-      resuelta(dataCarousel);
-    }, 1000);
+    const db = getFirestore();
+    const itemsCollection = collection(db, "carousel");
+
+    getDocs(itemsCollection).then(
+      (snapshot) => {
+        resuelta(
+          snapshot.docs.map((doc) => ({ IDfire: doc.id, ...doc.data() }))
+        );
+      },
+      () => {
+        rechazada();
+      }
+    );
   });
 };

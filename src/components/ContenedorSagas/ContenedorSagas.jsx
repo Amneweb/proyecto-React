@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import {
-  fetchDataSagas,
+  fetchDatosSagas,
   fetchLibrosDeSagas,
 } from "../../helpers/fetchDatosSagas";
 import ItemList from "../ItemList/ItemList";
@@ -19,11 +19,11 @@ const ContenedorSagas = () => {
   const [errorStatus, setErrorStatus] = useState(null);
   useEffect(() => {
     setLoader(true);
-    Promise.all([fetchDataSagas(saga), fetchLibrosDeSagas(saga)])
-      .then(([[sagaSeleccionada, autorSaga], librosDeSaga]) => {
-        setLibros(librosDeSaga);
-        setDatosSaga(sagaSeleccionada);
-        setDatosAutor(autorSaga);
+    Promise.all([fetchDatosSagas(saga), fetchLibrosDeSagas(saga)])
+      .then(([[sagaSeleccionada, autorSaga], librosSaga]) => {
+        setLibros(librosSaga);
+        setDatosSaga(sagaSeleccionada[0]);
+        setDatosAutor(autorSaga[0]);
       })
 
       .catch((error) => {
@@ -33,9 +33,6 @@ const ContenedorSagas = () => {
         setLoader(false);
       });
   }, [saga]);
-  const imgruta = imagenesAutores.find(({ id }) => Number(id) === datosAutor.id)
-    ? imagenesAutores.find(({ id }) => Number(id) === datosAutor.id).ruta
-    : noDisponible;
 
   return (
     <section className="container sagas-en-index">
@@ -62,7 +59,16 @@ const ContenedorSagas = () => {
         </div>
         <div className="row align-items-center">
           <div className="contenedor__autorSagas col-3 g-4 px-4">
-            <img src={imgruta} alt={`Foto de ${datosAutor.nombre}`} />
+            <img
+              src={
+                imagenesAutores.find(({ id }) => Number(id) === datosAutor.id)
+                  ? imagenesAutores.find(
+                      ({ id }) => Number(id) === datosAutor.id
+                    ).ruta
+                  : noDisponible
+              }
+              alt={`Foto de ${datosAutor.nombre}`}
+            />
           </div>
           <div className="col-9 g-4">
             <p>{datosAutor.biografia} </p>

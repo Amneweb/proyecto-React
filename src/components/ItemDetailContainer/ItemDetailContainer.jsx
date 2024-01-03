@@ -17,7 +17,6 @@ const ItemDetailContainer = () => {
       .finally(() => {
         setLoader(false);
       });
-    console.log("en contenedor de detalle ", libro);
   }, [id]);
   return (
     <div className="container">

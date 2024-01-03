@@ -1,22 +1,16 @@
 import { useState, useEffect } from "react";
-import { fetchDatosLibros } from "../../helpers/fetchDatosLibros";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
+import { fetchBusqueda } from "../../helpers/fetchBusqueda";
 const Busqueda = ({ queryBusqueda }) => {
   console.log("en busqueda ", queryBusqueda);
   const [loader, setLoader] = useState(true);
   const [libros, setLibros] = useState([]);
   useEffect(() => {
     setLoader(true);
-    fetchDatosLibros()
+    fetchBusqueda(queryBusqueda)
       .then((respuesta) => {
-        if (queryBusqueda) {
-          setLibros(
-            respuesta.filter((libro) => libro.titulo.includes(queryBusqueda))
-          );
-        } else {
-          console.log("no se encontraron libros");
-        }
+        setLibros(respuesta);
       })
       .finally(() => {
         setLoader(false);

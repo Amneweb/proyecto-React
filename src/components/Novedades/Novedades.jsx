@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchDatosLibros } from "../../helpers/fetchDatosLibros";
+import { fetchNovedades } from "../../helpers/fetchDatosLibros";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
 const Novedades = () => {
@@ -7,9 +7,9 @@ const Novedades = () => {
   const [libros, setLibros] = useState([]);
   useEffect(() => {
     setLoader(true);
-    fetchDatosLibros()
+    fetchNovedades()
       .then((respuesta) => {
-        setLibros(respuesta.filter((libro) => libro.hasOwnProperty("novedad")));
+        setLibros(respuesta);
       })
       .finally(() => {
         setLoader(false);

@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
 import ItemListChico from "../ItemListChico/ItemListChico";
 import { ArrowRight } from "../iconos/ArrowRight";
-import { fetchDatosNovedades } from "../../helpers/fetchDatosNovedades";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
+import { fetchNovedades } from "../../helpers/fetchDatosLibros";
 const NovedadesEnIndex = () => {
   const [libros, setLibros] = useState([]);
   const [loader, setLoader] = useState(true);
   const porVez = 5;
+  const maxIteraciones = 2;
   useEffect(() => {
-    fetchDatosNovedades()
+    fetchNovedades()
       .then((respuesta) => {
         const cantidadNovedades = respuesta.length;
 
-        const iteraciones = Math.ceil(cantidadNovedades / porVez);
+        const iteraciones =
+          Math.ceil(cantidadNovedades / porVez) > maxIteraciones
+            ? maxIteraciones
+            : Math.ceil(cantidadNovedades / porVez);
 
         const librosEnSlide = [];
         for (let contador = 0; contador < iteraciones; contador++) {
@@ -29,7 +33,6 @@ const NovedadesEnIndex = () => {
         setLoader(false);
       });
   }, []);
-
   return (
     <div className="container">
       {loader && <Loader />}
@@ -38,7 +41,7 @@ const NovedadesEnIndex = () => {
         <div className="carousel-inner  py-4">
           {libros.map((libro, key) => (
             <div
-              key={key}
+              key={`pantalla${key}`}
               className={key === 0 ? `carousel-item active` : `carousel-item`}
             >
               <div className="row row-cols-5">
