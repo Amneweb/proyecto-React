@@ -25,15 +25,15 @@ const AutorEnIndex = () => {
     <section className="container autor-del-mes">
       {loader && <Loader />}
       <div className="row align-items-center my-5">
-        <h2>Autor del mes</h2>
+        <h2 className="titulos">Autor del mes</h2>
         <p>
           Como todos los meses, en esta sección te dejamos los datos de alguno
           de los autores de los libros que podés encontrar en MW.{" "}
-          <span className="fw-bold">¿Por qué lo elegimos?</span> Ya sea porque
-          hace poco publicó un nuevo libro, o porque hay algún hecho de
-          actualidad relacionado con él, o simplemente porque nos vino a la
-          memoria algún libro suyo del que hayamos disfrutado y tuvimos ganas de
-          hablar de él.
+          <span className="fw-bold">¿Por qué lo elegimos?</span> Puede ser que
+          haya publicado un nuevo libro, o que se cumpla algún aniversario o
+          haya algún hecho de actualidad relacionado con él, o simplemente
+          porque nos vino a la memoria algún libro suyo del que hayamos
+          disfrutado... y tuvimos ganas de hablar de él.
         </p>
         <p>Más abajo encontrás el enlace a todos los libros del autor.</p>
         <h3 className="termino-busqueda fw-bold">{datosAutor.nombre}</h3>

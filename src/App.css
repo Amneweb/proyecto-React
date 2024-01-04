@@ -427,3 +427,8 @@ p:has(.enlaces) {
 .justificado {
     text-align: justify;
 }
+h2.titulos {
+    font-size: 3em;
+    margin-top:2em;
+    margin-bottom:1.5em;
+}

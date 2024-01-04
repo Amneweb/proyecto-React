@@ -36,7 +36,7 @@ const NovedadesEnIndex = () => {
   return (
     <div className="container">
       {loader && <Loader />}
-      <h2>Novedades</h2>
+      <h2 className="titulos">Novedades</h2>
       <div id="carouselNovedades" className="carousel slide">
         <div className="carousel-inner  py-4">
           {libros.map((libro, key) => (

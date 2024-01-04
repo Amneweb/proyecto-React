@@ -13,7 +13,7 @@ const SagasEnIndex = () => {
 
   return (
     <div className="container">
-      <h2>sagas</h2>
+      <h2 className="titulos">sagas</h2>
       <div className="row row-cols-2">
         {soloSagas &&
           soloSagas.map((saga, llave) => (

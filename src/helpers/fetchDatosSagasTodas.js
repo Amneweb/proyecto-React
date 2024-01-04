@@ -1,22 +1,42 @@
-import dataSagas from "../data/dataSagas.json";
-import dataBooks from "../data/dataBooks.json";
-
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 export const fetchDatosSagasTodas = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(dataSagas);
-    }, 1000);
-  }).then((dataSagas) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const librosSaga = [];
-        dataSagas.forEach((saga, key) => {
-          librosSaga[key] = dataBooks.filter((book) => book.saga === saga.id);
-        });
-        const datosSagasLibros = [dataSagas, librosSaga];
-
-        resolve(datosSagasLibros);
-      }, 2000);
+  return new Promise((resuelta, rechazada) => {
+    const db = getFirestore();
+    const itemsCollection = collection(db, "sagas");
+    getDocs(itemsCollection).then((snapshot) => {
+      const sagas = snapshot.docs.map((doc) => ({
+        IDfire: doc.id,
+        ...doc.data(),
+      }));
+      resuelta(sagas);
     });
+  }).then((sagas) => {
+    return new Promise(
+      (resuelta, rechazada) => {
+        const db = getFirestore();
+        const itemsCollection = collection(db, "libros");
+        let librosSagas = [];
+        librosSagas = sagas.forEach((saga) =>
+          getDocs(query(itemsCollection, where("saga", "==", saga.id))).then(
+            (snapshot) => {
+              snapshot.docs.map((doc) => ({
+                IDfire: doc.id,
+                ...doc.data(),
+              }));
+            }
+          )
+        );
+        resuelta([sagas, librosSagas]);
+      }
+      //() => {
+      //  rechazada();
+      //}
+    );
   });
 };

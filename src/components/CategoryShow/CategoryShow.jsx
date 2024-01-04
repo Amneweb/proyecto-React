@@ -16,7 +16,7 @@ const CategoryShow = () => {
   return (
     <div className="container my-5">
       {loader && <Loader />}
-      <h2 className="fw-bold my-5">¿qué tipo de contenido te gusta leer?</h2>
+      <h2 className="titulos">¿qué tipo de contenido te gusta leer?</h2>
       <CardsCategoriasEnIndex categorias={categorias} />
     </div>
   );
