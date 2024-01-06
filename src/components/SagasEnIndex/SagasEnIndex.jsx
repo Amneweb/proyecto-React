@@ -1,41 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { fetchDatosSagasIndex } from "../../helpers/fetchDatosSagasIndex";
-import { fetchLibrosDeSagas } from "../../helpers/fetchDatosSagas";
+import { fetchDatosSagasTodas } from "../../helpers/fetchDatosSagasTodas";
 import SagasCard from "../SagasCard/SagasCard";
-import Loader from "../Loader/Loader";
 
 const SagasEnIndex = () => {
+  console.log("sagas en index");
   const [sagas, setSagas] = useState([]);
-  const [librosDeSagas, setLibrosDeSagas] = useState([]);
-  const [loader, setLoader] = useState([]);
   useEffect(() => {
-    setLoader(true);
-    fetchDatosSagasIndex()
-      .then(([libros, saga]) => {
-        console.log("spread libros ", libros);
-        setLibrosDeSagas(libros);
-        setSagas(saga);
-      })
-
-      .finally(() => {
-        setLoader(false);
-      });
+    fetchDatosSagasTodas().then((respuesta) => setSagas(respuesta));
   }, []);
-  console.log("en use effect ", sagas);
-  console.log("libros en use effect ", librosDeSagas);
+  console.log("sagas en index seteadas ", sagas);
+  const soloSagas = sagas[0];
+  const soloLibros = sagas[1];
+  console.log("solo libros ", soloLibros);
 
   return (
     <div className="container">
-      {loader && <Loader />}
-      <h2 className="titulos">sagas</h2>
+      <h2>sagas</h2>
       <div className="row row-cols-2">
-        {sagas &&
-          sagas.map((saga, llave) => (
-            <SagasCard
-              key={saga.id}
-              saga={saga}
-              libros={librosDeSagas[llave]}
-            />
+        {soloSagas &&
+          soloSagas.map((saga, llave) => (
+            <SagasCard key={saga.id} saga={saga} libros={soloLibros[llave]} />
           ))}
       </div>
     </div>
