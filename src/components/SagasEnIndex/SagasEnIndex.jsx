@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { fetchDatosSagasTodas } from "../../helpers/fetchDatosSagasTodas";
+import { fetchDatosSagasIndex } from "../../helpers/fetchDatosSagasIndex";
 import SagasCard from "../SagasCard/SagasCard";
 
 const SagasEnIndex = () => {
   const [sagas, setSagas] = useState([]);
   useEffect(() => {
-    fetchDatosSagasTodas().then((respuesta) => setSagas(respuesta));
+    fetchDatosSagasIndex().then((respuesta) => setSagas(respuesta));
   }, []);
-
-  const soloSagas = sagas[0];
-  const soloLibros = sagas[1];
+  console.log("en use effect ", sagas);
+  const soloSagas = sagas[1];
+  const soloLibros = sagas[0];
 
   return (
     <div className="container">
