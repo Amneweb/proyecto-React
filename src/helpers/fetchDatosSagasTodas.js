@@ -1,13 +1,6 @@
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  query,
-  where,
-} from "firebase/firestore";
-
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import dataBooks from "../data/dataBooks.json";
 export const fetchDatosSagasTodas = () => {
-  console.log("en fetch sagas");
   return new Promise((resuelta, rechazada) => {
     const db = getFirestore();
     const itemsCollection = collection(db, "sagas");
@@ -24,30 +17,17 @@ export const fetchDatosSagasTodas = () => {
       }
     );
   }).then((dataSagas) => {
-    return new Promise((resuelta, rechazada) => {
-      const db = getFirestore();
-      const itemsCollection = collection(db, "libros");
-      const librosSaga = [];
-      dataSagas.forEach((saga, key) => {
-        getDocs(query(itemsCollection, where("saga", "==", Number(saga)))).then(
-          (snapshot) => {
-            const libros = snapshot.docs.map((doc) => ({
-              IDfire: doc.id,
-              ...doc.data(),
-            }));
-            resuelta(libros);
-          },
-          () => {
-            rechazada();
-          }
-        );
-        librosSaga[key] = resuelta;
-      });
-      resuelta([dataSagas, librosSaga]);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const librosSaga = [];
+        dataSagas.forEach((saga, key) => {
+          librosSaga[key] = dataBooks.filter((book) => book.saga === saga.id);
+        });
 
-      console.log("data sagas en fetch segundo", librosSaga);
+        const datosSagasLibros = [dataSagas, librosSaga];
 
-      console.log("datos sagas libros en fetch ", dataSagas);
+        resolve(datosSagasLibros);
+      }, 2000);
     });
   });
 };
