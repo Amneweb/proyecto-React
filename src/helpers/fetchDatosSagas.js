@@ -59,6 +59,7 @@ export const fetchLibrosDeSagas = (sagaID) => {
           IDfire: doc.id,
           ...doc.data(),
         }));
+
         resuelta(librosSaga);
       },
       () => {
