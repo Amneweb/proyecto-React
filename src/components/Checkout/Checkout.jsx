@@ -5,12 +5,14 @@ import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { HandThumbsUp } from "../iconos/HandThumbsUp";
 import { ClipboardIcon } from "../iconos/ClipboardIcon";
 import { Tooltip } from "react-tooltip";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const { carrito, vaciarCarrito, totalApagar } = useContext(CartContext);
   const { register, handleSubmit } = useForm();
   const [idNuevaOrden, setIdNuevaOrden] = useState("");
   const [mensajeCopiado, setMensajeCopiado] = useState("");
+
   const db = getFirestore();
 
   const realizarCompra = (data) => {
@@ -23,9 +25,12 @@ const Checkout = () => {
     const ordenCollection = collection(db, "ordenes");
     addDoc(ordenCollection, nuevaOrden).then((resultado) => {
       setIdNuevaOrden(resultado.id);
-      vaciarCarrito();
     });
   };
+
+  function handleClickCerrar() {
+    vaciarCarrito();
+  }
 
   const copyToClipBoard = async (copyMe) => {
     try {
@@ -58,13 +63,22 @@ const Checkout = () => {
           </Tooltip>
         </div>
         <p className="mt-3">Guardalo para futuras referencias</p>
+        <Link
+          role="button"
+          to="/"
+          data-bs-dismiss="modal"
+          className="btn btn-outline-secondary mt-5"
+          onClick={handleClickCerrar}
+        >
+          Cerrar y vaciar carrito
+        </Link>
       </div>
     );
   }
 
   return (
     <div className="container">
-      <h2 className="titulos">checkout</h2>
+      <h2>checkout</h2>
       <form onSubmit={handleSubmit(realizarCompra)}>
         <div className="form-floating mb-3">
           <input
@@ -106,9 +120,25 @@ const Checkout = () => {
           <label htmlFor="checkoutFormPassword">Password</label>
         </div>
 
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <div className="form-floating">
+          <div className="row">
+            <div className="col-auto">
+              <button type="submit" className="btn btn-primary">
+                Comprar
+              </button>
+            </div>
+            <div className="col-auto">
+              <Link
+                role="button"
+                to="/"
+                data-bs-dismiss="modal"
+                className="btn btn-outline-secondary bg-white"
+              >
+                Cerrar y seguir comprando
+              </Link>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   );

@@ -4,13 +4,14 @@ import BotonVaciar from "./BotonVaciar/BotonVaciar";
 import CarritoVacio from "../CarritoVacio/CarritoVacio";
 import { precioFormateado } from "../../helpers/formatearPrecios";
 import ItemCarrito from "../ItemCarrito/ItemCarrito";
-import { Link } from "react-router-dom";
+import ModalCheckout from "../ModalCheckout/ModalCheckout";
 
 const Carrito = () => {
   const { carrito, vaciarCarrito, totalApagar } = useContext(CartContext);
   const handleVaciar = () => {
     vaciarCarrito();
   };
+
   return (
     <div className="container">
       <h1>Bolso de compras</h1>
@@ -18,6 +19,7 @@ const Carrito = () => {
         <CarritoVacio />
       ) : (
         <div className="row">
+          <ModalCheckout />
           <div className="col-8">
             <ul className="list-group">
               {carrito.map((compra) => (
@@ -32,8 +34,12 @@ const Carrito = () => {
               </li>
               <li className="list-group-item">
                 <div className="d-grid">
-                  <button className="btn btn-primary">
-                    <Link to="/checkout">Pagar</Link>
+                  <button
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Finalizar compra
                   </button>
                 </div>
               </li>

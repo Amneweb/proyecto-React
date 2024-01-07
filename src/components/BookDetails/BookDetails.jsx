@@ -4,6 +4,7 @@ import BadgeCategorias from "../BookCard/BadgeCategorias/BadgeCategorias";
 
 import Botones from "./Botones/Botones";
 import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 const BookDetails = ({ item, ruta }) => {
   const [contador, setContador] = useState(1);
@@ -46,21 +47,38 @@ const BookDetails = ({ item, ruta }) => {
             </p>
             <p className="card-text">
               <small className="text-body-secondary">
-                {consultaExisteEnCarrito &&
-                  `Hay ${consultaExisteEnCarrito.contador} ejemplares de este libro en tu
-                bolso de compras.`}
+                {consultaExisteEnCarrito
+                  ? `Hay ${consultaExisteEnCarrito.contador} ejemplares de este libro en tu
+                bolso de compras.`
+                  : `Elegí la cantidad y hacé click en el botón comprar`}
               </small>
             </p>
-            <Botones
-              id={item.id}
-              contador={contador}
-              stock={item.stock}
-              handleClickAgregar={() => {
-                alCarrito(item, contador);
-              }}
-              handleClickSuma={handleClickSuma}
-              handleClickResta={handleClickResta}
-            />
+
+            <div className="container">
+              <div className="row">
+                <Botones
+                  id={item.id}
+                  contador={contador}
+                  stock={item.stock}
+                  handleClickAgregar={() => {
+                    alCarrito(item, contador);
+                  }}
+                  handleClickSuma={handleClickSuma}
+                  handleClickResta={handleClickResta}
+                />
+                {consultaExisteEnCarrito && (
+                  <div className="col col-md-4 px-0">
+                    <Link
+                      role="button"
+                      className="btn btn-outline-primary"
+                      to="/carrito"
+                    >
+                      Ver en el carrito
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
