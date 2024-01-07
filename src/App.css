@@ -110,6 +110,11 @@ body {
     --bs-btn-disabled-bg: #c5fe02;
     --bs-btn-disabled-border-color: #c5fe02;
 }
+.bg-warning {
+    --bs-bg-opacity: 1;
+    background-color: var(--verde-brillante);
+    padding:1em;
+}
 
 .menu {
     justify-content: center;
@@ -431,4 +436,8 @@ h2.titulos {
     font-size: 3em;
     margin-top:2em;
     margin-bottom:1.5em;
+}
+.orderID {
+    font-family:'Oswald', sans-serif;
+    font-size:1.5em;
 }

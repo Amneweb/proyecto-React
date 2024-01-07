@@ -13,6 +13,7 @@ import Home from "./pages/Home";
 import Novedades from "./components/Novedades/Novedades";
 import ContenedorSagas from "./components/ContenedorSagas/ContenedorSagas";
 import Footer from "./components/Footer/Footer";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   const [queryBusqueda, setQueryBusqueda] = useState("");
@@ -32,6 +33,7 @@ function App() {
             <Route path="/variante/:variante" element={<ItemListContainer />} />
             <Route path="/saga/:saga" element={<ContenedorSagas />} />
             <Route path="/carrito" element={<Carrito />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/novedades" element={<Novedades />} />
             <Route path="/" element={<Home />} />
             <Route

@@ -4,6 +4,7 @@ import BotonVaciar from "./BotonVaciar/BotonVaciar";
 import CarritoVacio from "../CarritoVacio/CarritoVacio";
 import { precioFormateado } from "../../helpers/formatearPrecios";
 import ItemCarrito from "../ItemCarrito/ItemCarrito";
+import { Link } from "react-router-dom";
 
 const Carrito = () => {
   const { carrito, vaciarCarrito, totalApagar } = useContext(CartContext);
@@ -31,7 +32,9 @@ const Carrito = () => {
               </li>
               <li className="list-group-item">
                 <div className="d-grid">
-                  <button className="btn btn-primary">Pagar</button>
+                  <button className="btn btn-primary">
+                    <Link to="/checkout">Pagar</Link>
+                  </button>
                 </div>
               </li>
               <li className="list-group-item">
