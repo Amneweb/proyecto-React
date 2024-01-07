@@ -55,11 +55,12 @@ Todas las funciones de acceso a firebase y de ayuda al funcionamiento de la app 
 ## Páginas
 
 La página inicial de la app es Home, que tiene los componentes
-<Carousel />
-<NovedadesEnIndex />
-<SagasEnIndex />
-<CategoryShow />
-<AutorEnIndex />
+
+1. Carousel
+1. NovedadesEnIndex
+1. SagasEnIndex
+1. CategoryShow
+1. AutorEnIndex
 
 ## Firebase
 
