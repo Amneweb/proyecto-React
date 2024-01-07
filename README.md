@@ -60,3 +60,14 @@ La página inicial de la app es Home, que tiene los componentes
 <SagasEnIndex />
 <CategoryShow />
 <AutorEnIndex />
+
+## Firebase
+
+Hay 6 colecciones:
+
+1. Libros
+1. Autores
+1. Categorías
+1. Carousel (para las imágenes, textos y enlaces del carousel en la página de inicio)
+1. Sagas
+1. Órdenes
