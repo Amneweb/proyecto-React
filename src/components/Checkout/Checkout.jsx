@@ -132,7 +132,7 @@ const Checkout = () => {
                 role="button"
                 to="/"
                 data-bs-dismiss="modal"
-                className="btn btn-outline-secondary bg-white"
+                className="btn btn-outline-primary"
               >
                 Cerrar y seguir comprando
               </Link>
