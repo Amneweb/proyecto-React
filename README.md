@@ -47,3 +47,16 @@ Están guardadas localmente y se accede a ellas de dos maneras:
 
 1. A las imágenes de autores y productos se accede a través de un archivo js que importa las imágenes y genera las variables de ruta (imagenes.js e imagenesAutores.js)
 1. A las imágenes del carousel se accede con la ruta directa y están ubicadas en una subcarpeta de public
+
+## Funciones
+
+Todas las funciones de acceso a firebase y de ayuda al funcionamiento de la app se encuentran en la carpeta helpers
+
+## Páginas
+
+La página inicial de la app es Home, que tiene los componentes
+<Carousel />
+<NovedadesEnIndex />
+<SagasEnIndex />
+<CategoryShow />
+<AutorEnIndex />
