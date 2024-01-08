@@ -7,7 +7,7 @@ const Footer = () => {
       <footer className="py-5 container">
         <div className="row">
           <div className="col-6 col-md-2 mb-3">
-            <h2 className="text-light">Contactanos</h2>
+            <h2 className="text-light">LIBROS</h2>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <Link to="#" className="nav-link p-0 text-body-secondary">

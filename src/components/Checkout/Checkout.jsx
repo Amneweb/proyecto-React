@@ -2,16 +2,20 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { useForm } from "react-hook-form";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
-import { HandThumbsUp } from "../iconos/HandThumbsUp";
-import { ClipboardIcon } from "../iconos/ClipboardIcon";
-import { Tooltip } from "react-tooltip";
 import { Link } from "react-router-dom";
+import FinalizarCompra from "./FinalizarCompra";
+import { ResetIcon } from "../iconos/ResetIcon";
 
 const Checkout = () => {
   const { carrito, vaciarCarrito, totalApagar } = useContext(CartContext);
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm();
   const [idNuevaOrden, setIdNuevaOrden] = useState("");
-  const [mensajeCopiado, setMensajeCopiado] = useState("");
 
   const db = getFirestore();
 
@@ -32,92 +36,78 @@ const Checkout = () => {
     vaciarCarrito();
   }
 
-  const copyToClipBoard = async (copyMe) => {
-    try {
-      await navigator.clipboard.writeText(copyMe);
-      setMensajeCopiado("ID copiado con éxito :)");
-    } catch (err) {
-      setMensajeCopiado("No pudimos copiar el ID :(");
-    }
-  };
-
   if (idNuevaOrden) {
     return (
-      <div className="container text-center">
-        <h2>
-          gracias por tu compra <HandThumbsUp ancho="1.2em" alto="1.2em" />
-        </h2>
-        <p>El ID de tu compra es</p>
-        <div className="btn-group">
-          <button className="btn btn-warning orderID">{idNuevaOrden}</button>
-          <button
-            data-tooltip-id="copiado"
-            className="btn btn-primary"
-            onClick={() => copyToClipBoard(idNuevaOrden)}
-          >
-            <ClipboardIcon lado="1em" />
-          </button>
-
-          <Tooltip id="copiado" openOnClick="true">
-            <p className="lh-1 mb-0">{mensajeCopiado} </p>
-          </Tooltip>
-        </div>
-        <p className="mt-3">Guardalo para futuras referencias</p>
-        <Link
-          role="button"
-          to="/"
-          data-bs-dismiss="modal"
-          className="btn btn-outline-secondary mt-5"
-          onClick={handleClickCerrar}
-        >
-          Cerrar y vaciar carrito
-        </Link>
-      </div>
+      <FinalizarCompra
+        handleClickCerrar={handleClickCerrar}
+        idNuevaOrden={idNuevaOrden}
+        carrito={carrito}
+        total={totalApagar()}
+      />
     );
   }
 
   return (
     <div className="container">
       <h2>checkout</h2>
-      <form onSubmit={handleSubmit(realizarCompra)}>
+      <form
+        onSubmit={handleSubmit(realizarCompra)}
+        className="needs-validation"
+      >
         <div className="form-floating mb-3">
           <input
             type="text"
             className="form-control"
             id="checkoutFormNombre"
-            placeholder="Nombre"
-            {...register("nombre")}
+            placeholder="Nombre y apellido"
+            {...register("nombre", { required: true })}
           />
+          {errors.nombre && (
+            <span className="badge text-bg-danger">
+              Debés completar este campo
+            </span>
+          )}
           <label htmlFor="checkoutFormNombre">Nombre</label>
         </div>
         <div className="form-floating mb-3">
           <input
             type="text"
             className="form-control"
-            id="checkoutFormApellido"
-            placeholder="Apellido"
-            {...register("apellido")}
+            id="checkoutFormEmail"
+            placeholder="Email"
+            {...register("email", { required: true })}
           />
-          <label htmlFor="checkoutFormApellido">Apellido</label>
+          {errors.email && (
+            <span className="badge text-bg-danger">El email es requerido</span>
+          )}
+          <label htmlFor="checkoutFormEmail">Email</label>
         </div>
         <div className="form-floating mb-3">
           <input
             type="email"
+            autoComplete="off"
             className="form-control"
-            id="checkoutFormEmail"
+            id="checkoutFormEmailVerificado"
             placeholder="name@example.com"
-            {...register("email")}
+            {...register("emailValidation", {
+              validate: (value) => value === getValues("email"),
+            })}
           />
-          <label htmlFor="checkoutFormEmail">Email address</label>
+          {errors.emailValidation && (
+            <span className="badge text-bg-danger">
+              Las casillas de correo deben coincidir
+            </span>
+          )}
+          <label htmlFor="checkoutFormEmailVerificado">Confirmar Email</label>
         </div>
         <div className="form-floating mb-3">
           <input
-            type="password"
+            type="number"
             className="form-control"
-            id="checkoutFormPassword"
-            placeholder="Password"
+            id="checkoutFormTelefoono"
+            placeholder="Telefono"
           />
-          <label htmlFor="checkoutFormPassword">Password</label>
+          <label htmlFor="checkoutFormTelefono">Teléfono</label>
         </div>
 
         <div className="form-floating">
@@ -125,6 +115,15 @@ const Checkout = () => {
             <div className="col-auto">
               <button type="submit" className="btn btn-primary">
                 Comprar
+              </button>
+            </div>
+            <div className="col-auto">
+              <button
+                type="reset"
+                className="btn btn-primary"
+                onClick={() => reset()}
+              >
+                <ResetIcon lado="1em" />
               </button>
             </div>
             <div className="col-auto">

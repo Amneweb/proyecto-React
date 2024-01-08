@@ -1,5 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  getFirestore,
+} from "firebase/firestore";
 import dataBooks from "../data/dataBooks.json";
 import dataCategorias from "../data/dataCategorias.json";
 import dataSagas from "../data/dataSagas.json";
@@ -24,7 +31,6 @@ export const SubidaAfire = () => {
 
     dataBooks.forEach((libro) => addDoc(librosCollection, libro));
   };
-  subirLibros();
 
   const subirCategorias = () => {
     const db = getFirestore();
@@ -34,7 +40,6 @@ export const SubidaAfire = () => {
       addDoc(categoriasCollection, categoria)
     );
   };
-  subirCategorias();
 
   const subirAutores = () => {
     const db = getFirestore();
@@ -42,7 +47,6 @@ export const SubidaAfire = () => {
 
     dataAutores.forEach((autor) => addDoc(autoresCollection, autor));
   };
-  subirAutores();
 
   const subirSagas = () => {
     const db = getFirestore();
@@ -50,7 +54,6 @@ export const SubidaAfire = () => {
 
     dataSagas.forEach((saga) => addDoc(sagasCollection, saga));
   };
-  subirSagas();
 
   const subirCarousel = () => {
     const db = getFirestore();
@@ -58,5 +61,30 @@ export const SubidaAfire = () => {
 
     dataCarousel.forEach((carousel) => addDoc(carouselCollection, carousel));
   };
-  subirCarousel();
+
+  const borrarOrdenes = () => {
+    console.log("en borrar ordenes");
+    return new Promise((resuelta, rechazada) => {
+      const db = getFirestore();
+      const ordenesCollection = collection(db, "ordenes");
+
+      getDocs(ordenesCollection).then(
+        (snapshot) => {
+          resuelta(
+            snapshot.docs.map((doc) => ({ IDfire: doc.id, ...doc.data() }))
+          );
+        },
+        () => {
+          rechazada();
+        }
+      );
+    }).then((respuesta) => {
+      console.log("respuesta ", respuesta);
+      const db = getFirestore();
+      respuesta.forEach((cadarespuesta) =>
+        deleteDoc(doc(db, "ordenes", cadarespuesta.IDfire))
+      );
+    });
+  };
+  borrarOrdenes();
 };
