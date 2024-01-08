@@ -1,70 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { fetchDatosCategorias } from "../../helpers/fetchDatosCategorias";
+import { fetchDatosAutorTodos } from "../../helpers/fetchDatosAutor";
+import Loader from "../Loader/Loader";
 
 const Footer = () => {
+  const [categorias, setCategorias] = useState([]);
+  const [autores, setAutores] = useState([]);
+  const [loader, setLoader] = useState(true);
+  useEffect(() => {
+    fetchDatosCategorias()
+      .then((respuesta) => setCategorias(respuesta))
+      .finally(() => {
+        setLoader(false);
+      });
+  }, []);
+  useEffect(() => {
+    fetchDatosAutorTodos()
+      .then((respuesta) => setAutores(respuesta))
+      .finally(() => {
+        setLoader(false);
+      });
+  }, []);
+
   return (
     <div className="container-fluid footer-oscuro">
+      {loader && <Loader />}
       <footer className="py-5 container">
         <div className="row">
           <div className="col-6 col-md-2 mb-3">
-            <h2 className="text-light">LIBROS</h2>
+            <h2 className="text-light">género</h2>
             <ul className="nav flex-column">
-              <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  Features
-                </Link>
-              </li>
-              <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  Pricing
-                </Link>
-              </li>
-              <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  FAQs
-                </Link>
-              </li>
-              <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  About
-                </Link>
-              </li>
+              {categorias.map((categoria) => (
+                <li className="nav-item mb-2">
+                  <Link
+                    to={`/libros/${categoria.id}`}
+                    key={`${categoria.id}`}
+                    className="nav-link p-0 text-body-secondary"
+                  >
+                    {categoria.titulo}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
+            <h2 className="text-light">autores</h2>
             <ul className="nav flex-column">
-              <li className="nav-item mb-2">
-                <Link to="/" className="nav-link p-0 text-body-secondary">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item mb-2">
-                <Link to="/libros" className="nav-link p-0 text-body-secondary">
-                  Todos los libros
-                </Link>
-              </li>
-              <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  Pricing
-                </Link>
-              </li>
-              <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  FAQs
-                </Link>
-              </li>
-              <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  About
-                </Link>
-              </li>
+              {autores.map((autor) => (
+                <li className="nav-item mb-2">
+                  <Link
+                    to={`/autor/${autor.id}`}
+                    key={`${autor.id}`}
+                    className="nav-link p-0 text-body-secondary"
+                  >
+                    {autor.nombre}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

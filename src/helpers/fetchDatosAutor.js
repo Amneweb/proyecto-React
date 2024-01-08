@@ -20,3 +20,13 @@ export const fetchDatosAutor = (autorID) => {
     });
   });
 };
+export const fetchDatosAutorTodos = () => {
+  return new Promise((resolve, reject) => {
+    const db = getFirestore();
+    const autor = collection(db, "autores");
+
+    getDocs(autor).then((snapshot) => {
+      resolve(snapshot.docs.map((doc) => ({ IDfire: doc.id, ...doc.data() })));
+    });
+  });
+};
