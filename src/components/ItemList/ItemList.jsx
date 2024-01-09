@@ -1,9 +1,9 @@
-import LibroCard from "../BookCard/BookCard";
+import BookCard from "../BookCard/BookCard";
 const ItemList = ({ libros }) => {
   return (
     <>
       {libros.map((cadalibro) => (
-        <LibroCard libro={cadalibro} key={cadalibro.id} />
+        <BookCard libro={cadalibro} key={cadalibro.id} />
       ))}
     </>
   );

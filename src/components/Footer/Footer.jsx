@@ -1,64 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { fetchDatosCategorias } from "../../helpers/fetchDatosCategorias";
-import { fetchDatosAutorTodos } from "../../helpers/fetchDatosAutor";
-import Loader from "../Loader/Loader";
+import { useCollections } from "../../hooks/useCollections";
 
 const Footer = () => {
-  const [categorias, setCategorias] = useState([]);
-  const [autores, setAutores] = useState([]);
-  const [loader, setLoader] = useState(true);
-  useEffect(() => {
-    fetchDatosCategorias()
-      .then((respuesta) => setCategorias(respuesta))
-      .finally(() => {
-        setLoader(false);
-      });
-  }, []);
-  useEffect(() => {
-    fetchDatosAutorTodos()
-      .then((respuesta) => setAutores(respuesta))
-      .finally(() => {
-        setLoader(false);
-      });
-  }, []);
+  const categorias = useCollections("categorias", "titulo");
+  const autores = useCollections("autores", "nombre");
 
   return (
     <div className="container-fluid footer-oscuro">
-      {loader && <Loader />}
       <footer className="py-5 container">
         <div className="row">
           <div className="col-6 col-md-2 mb-3">
             <h2 className="text-light">género</h2>
             <ul className="nav flex-column">
-              {categorias.map((categoria) => (
-                <li className="nav-item mb-2">
-                  <Link
-                    to={`/libros/${categoria.id}`}
-                    key={`${categoria.id}`}
-                    className="nav-link p-0 text-body-secondary"
-                  >
-                    {categoria.titulo}
-                  </Link>
-                </li>
-              ))}
+              {categorias &&
+                categorias.map((categoria) => (
+                  <li className="nav-item mb-2">
+                    <Link
+                      to={`/libros/${categoria.id}`}
+                      key={`${categoria.id}`}
+                      className="nav-link p-0 text-body-secondary"
+                    >
+                      {categoria.titulo}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
 
           <div className="col-6 col-md-2 mb-3">
             <h2 className="text-light">autores</h2>
             <ul className="nav flex-column">
-              {autores.map((autor) => (
-                <li className="nav-item mb-2">
-                  <Link
-                    to={`/autor/${autor.id}`}
-                    key={`${autor.id}`}
-                    className="nav-link p-0 text-body-secondary"
-                  >
-                    {autor.nombre}
-                  </Link>
-                </li>
-              ))}
+              {autores &&
+                autores.map((autor) => (
+                  <li className="nav-item mb-2">
+                    <Link
+                      to={`/autor/${autor.id}`}
+                      key={`${autor.id}`}
+                      className="nav-link p-0 text-body-secondary"
+                    >
+                      {autor.nombre}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
 

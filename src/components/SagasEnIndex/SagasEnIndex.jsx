@@ -3,7 +3,6 @@ import { fetchDatosSagasTodas } from "../../helpers/fetchDatosSagasTodas";
 import SagasCard from "../SagasCard/SagasCard";
 
 const SagasEnIndex = () => {
-  console.log("sagas en index");
   const [sagas, setSagas] = useState([]);
   useEffect(() => {
     fetchDatosSagasTodas().then((respuesta) => setSagas(respuesta));

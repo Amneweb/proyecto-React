@@ -7,7 +7,7 @@ const SagasEnIndex = () => {
   useEffect(() => {
     fetchDatosSagasIndex().then((respuesta) => setSagas(respuesta));
   }, []);
-  console.log("en use effect ", sagas);
+
   const soloSagas = sagas[1];
   const soloLibros = sagas[0];
 

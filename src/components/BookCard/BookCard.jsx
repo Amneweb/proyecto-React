@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import BotonEnCard from "./BotonEnCard/BotonEnCard";
 import BadgeNovedades from "./BadgeNovedades/BadgeNovedades";
-const LibroCard = ({ libro }) => {
+const BookCard = ({ libro }) => {
   const rutaImagen = imagenes.find(({ id }) => id === libro.isbn)
     ? imagenes.find(({ id }) => id === libro.isbn).ruta
     : nodisponible;
@@ -61,4 +61,4 @@ const LibroCard = ({ libro }) => {
     </div>
   );
 };
-export default LibroCard;
+export default BookCard;

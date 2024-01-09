@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { fetchDatosCarousel } from "../../helpers/fetchDatosCarousel";
+import React from "react";
+import { useCollections } from "../../hooks/useCollections";
 import CarouselIndicators from "./CarouselIndicators";
 import CarouselInner from "./CarouselInner";
 
 const Carousel = () => {
-  const [diapositivas, setDiapositivas] = useState([]);
-  useEffect(() => {
-    fetchDatosCarousel().then((respuesta) => {
-      setDiapositivas(respuesta);
-    });
-  }, []);
+  const diapositivas = useCollections("carousel");
   return (
     <div className="container-fluid p-0">
       <div id="carouselHome" className="carousel slide">

@@ -11,7 +11,7 @@ import imagenesAutores from "../../helpers/imagenesAutores";
 import noDisponible from "../ContenedorAutor/assets/noDisponible.png";
 const ContenedorSagas = () => {
   const saga = useParams().saga;
-  console.log("saga id ", saga);
+
   const [loader, setLoader] = useState(true);
   const [libros, setLibros] = useState([]);
   const [datosSaga, setDatosSaga] = useState({});

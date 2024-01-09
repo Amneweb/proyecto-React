@@ -9,7 +9,7 @@ import { CartContext } from "../../context/CartContext";
 const FinalizarCompra = ({ idNuevaOrden }) => {
   const { carrito, vaciarCarrito, totalApagar } = useContext(CartContext);
   const [mensajeCopiado, setMensajeCopiado] = useState("");
-  console.log(carrito);
+
   function handleClickCerrar() {
     vaciarCarrito();
   }

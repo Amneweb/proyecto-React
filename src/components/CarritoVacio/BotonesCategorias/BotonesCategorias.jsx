@@ -1,21 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { fetchDatosCategorias } from "../../../helpers/fetchDatosCategorias";
 import { Link } from "react-router-dom";
-import Loader from "../../Loader/Loader";
+import { useCollections } from "../../../hooks/useCollections";
+
 const BotonesCategorias = () => {
-  const [categorias, setCategorias] = useState([]);
-  const [loader, setLoader] = useState(true);
-  useEffect(() => {
-    fetchDatosCategorias()
-      .then((respuesta) => setCategorias(respuesta))
-      .finally(() => {
-        setLoader(false);
-      });
-  }, []);
+  const categorias = useCollections("categorias", "titulo");
 
   return (
     <div className="botones-bolsavacia">
-      {loader && <Loader />}
       {categorias.map((categoria) => (
         <Link
           to={`/libros/${categoria.id}`}
