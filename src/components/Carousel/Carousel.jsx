@@ -8,8 +8,8 @@ const Carousel = () => {
   return (
     <div className="container-fluid p-0">
       <div id="carouselHome" className="carousel slide">
-        <CarouselIndicators diapositivas={diapositivas} />
-        <CarouselInner diapositivas={diapositivas} />
+        {diapositivas && <CarouselIndicators diapositivas={diapositivas} />}
+        {diapositivas && <CarouselInner diapositivas={diapositivas} />}
         <button
           className="carousel-control-prev"
           type="button"

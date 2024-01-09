@@ -6,7 +6,7 @@ const CategoryShow = () => {
   return (
     <div className="container my-5">
       <h2 className="titulos">¿qué tipo de contenido te gusta leer?</h2>
-      <CardsCategoriasEnIndex categorias={categorias} />
+      {categorias && <CardsCategoriasEnIndex categorias={categorias} />}
     </div>
   );
 };

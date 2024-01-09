@@ -7,8 +7,8 @@ const Footer = () => {
   const autores = useCollections("autores", "nombre");
 
   return (
-    <div className="container-fluid footer-oscuro">
-      <footer className="py-5 container">
+    <div className="container-fluid footer-oscuro pt-3 mb-0">
+      <footer className="container pt-3 mb-0">
         <div className="row">
           <div className="col-6 col-md-2 mb-3">
             <h2 className="text-light">género</h2>
@@ -47,31 +47,32 @@ const Footer = () => {
           </div>
 
           <div className="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
+            <h2 className="text-light">miscelánea</h2>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  Home
+                <Link
+                  to="/novedades"
+                  className="nav-link p-0 text-body-secondary"
+                >
+                  Novedades
                 </Link>
               </li>
               <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  Features
+                <Link to="/sagas" className="nav-link p-0 text-body-secondary">
+                  Sagas
                 </Link>
               </li>
               <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  Pricing
-                </Link>
-              </li>
-              <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
+                <Link to="/faq" className="nav-link p-0 text-body-secondary">
                   FAQs
                 </Link>
               </li>
               <li className="nav-item mb-2">
-                <Link to="#" className="nav-link p-0 text-body-secondary">
-                  About
+                <Link
+                  to="/nosotros"
+                  className="nav-link p-0 text-body-secondary"
+                >
+                  Sobre nosotros
                 </Link>
               </li>
             </ul>
@@ -79,8 +80,13 @@ const Footer = () => {
 
           <div className="col-md-5 offset-md-1 mb-3">
             <form>
-              <h5>Subscribe to our newsletter</h5>
-              <p>Monthly digest of what's new and exciting from us.</p>
+              <h5 className="text-light fw-bold mb-3">
+                Suscribite a nuestro newsletter
+              </h5>
+              <p className="small text-light mb-3">
+                Encontrá en tu inbox toda la información sobre libros, autores,
+                editoriales y por supuesto, sobre nosotros
+              </p>
               <div className="d-flex flex-column flex-sm-row w-100 gap-2">
                 <label htmlFor="newsletter1" className="visually-hidden">
                   Email address
@@ -92,15 +98,17 @@ const Footer = () => {
                   placeholder="Email address"
                 />
                 <button className="btn btn-warning" type="button">
-                  Subscribe
+                  Subscribite
                 </button>
               </div>
             </form>
           </div>
         </div>
 
-        <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-          <p>© 2023 MW Libros, Inc. Todos los derechos reservados.</p>
+        <div className="d-flex flex-column flex-sm-row justify-content-between py-4 border-top">
+          <p className="text-light">
+            © 2023 MW Libros, Inc. Todos los derechos reservados.
+          </p>
           <ul className="list-unstyled d-flex">
             <li className="ms-3">
               <Link className="link-body-emphasis" to="#">
