@@ -15,10 +15,9 @@ const Footer = () => {
             <ul className="nav flex-column">
               {categorias &&
                 categorias.map((categoria) => (
-                  <li className="nav-item mb-2">
+                  <li key={`${categoria.id}`} className="nav-item mb-2">
                     <Link
                       to={`/libros/${categoria.id}`}
-                      key={`${categoria.id}`}
                       className="nav-link p-0 text-body-secondary"
                     >
                       {categoria.titulo}
@@ -33,10 +32,9 @@ const Footer = () => {
             <ul className="nav flex-column">
               {autores &&
                 autores.map((autor) => (
-                  <li className="nav-item mb-2">
+                  <li key={`${autor.id}`} className="nav-item mb-2">
                     <Link
                       to={`/autor/${autor.id}`}
-                      key={`${autor.id}`}
                       className="nav-link p-0 text-body-secondary"
                     >
                       {autor.nombre}

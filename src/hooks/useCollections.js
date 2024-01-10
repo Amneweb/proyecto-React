@@ -14,11 +14,15 @@ export function useCollections(nombreColeccion, ordenarPor) {
     const q = ordenarPor
       ? query(itemsCollection, orderBy(ordenarPor))
       : query(itemsCollection);
-    getDocs(q).then((snapshot) => {
-      setColeccion(
-        snapshot.docs.map((doc) => ({ IDfire: doc.id, ...doc.data() }))
-      );
-    });
+    getDocs(q)
+      .then((snapshot) => {
+        setColeccion(
+          snapshot.docs.map((doc) => ({ IDfire: doc.id, ...doc.data() }))
+        );
+      })
+      .catch((error) => {
+        console.log("Ha ocurrido un error en la carga de datos " + error);
+      });
   }, []);
 
   return coleccion;

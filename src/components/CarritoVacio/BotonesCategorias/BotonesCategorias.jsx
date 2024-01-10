@@ -6,16 +6,17 @@ const BotonesCategorias = () => {
 
   return (
     <div className="botones-bolsavacia">
-      {categorias.map((categoria) => (
-        <Link
-          to={`/libros/${categoria.id}`}
-          key={`${categoria.id}`}
-          className="btn btn-primary"
-          role="button"
-        >
-          {categoria.titulo}
-        </Link>
-      ))}
+      {categorias &&
+        categorias.map((categoria) => (
+          <Link
+            to={`/libros/${categoria.id}`}
+            key={`${categoria.id}`}
+            className="btn btn-primary"
+            role="button"
+          >
+            {categoria.titulo}
+          </Link>
+        ))}
     </div>
   );
 };

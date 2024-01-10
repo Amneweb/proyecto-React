@@ -5,6 +5,7 @@ import CarouselInner from "./CarouselInner";
 
 const Carousel = () => {
   const diapositivas = useCollections("carousel");
+
   return (
     <div className="container-fluid p-0">
       <div id="carouselHome" className="carousel slide">
