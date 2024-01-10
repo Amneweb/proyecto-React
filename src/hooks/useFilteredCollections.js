@@ -3,6 +3,7 @@ import {
   collection,
   getDocs,
   query,
+  where,
   orderBy,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
@@ -23,11 +24,7 @@ export function useFilteredCollections(
           where(filtrarPor, operando, comparador),
           orderBy(ordenarPor)
         )
-      : query(
-          itemsCollection,
-          where(filtrarPor, operando, comparador),
-          orderBy(ordenarPor)
-        );
+      : query(itemsCollection, where(filtrarPor, operando, comparador));
     getDocs(q).then((snapshot) => {
       setColeccion(
         snapshot.docs.map((doc) => ({ IDfire: doc.id, ...doc.data() }))

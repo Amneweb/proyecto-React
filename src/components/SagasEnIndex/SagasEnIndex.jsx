@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { fetchDatosSagasTodas } from "../../helpers/fetchDatosSagasTodas";
 import SagasCard from "../SagasCard/SagasCard";
-
+import { useCollections } from "../../hooks/useCollections";
 const SagasEnIndex = () => {
-  const [sagas, setSagas] = useState([]);
-  useEffect(() => {
-    fetchDatosSagasTodas().then((respuesta) => setSagas(respuesta));
-  }, []);
-
-  const soloSagas = sagas[0];
-  const soloLibros = sagas[1];
+  const sagas = useCollections("sagas", "id");
 
   return (
     <div className="container">
       <h2 className="titulos">sagas</h2>
       <div className="row row-cols-2">
-        {soloSagas &&
-          soloSagas.map((saga, llave) => (
-            <SagasCard key={saga.id} saga={saga} libros={soloLibros[llave]} />
-          ))}
+        {sagas && sagas.map((saga) => <SagasCard key={saga.id} saga={saga} />)}
       </div>
     </div>
   );

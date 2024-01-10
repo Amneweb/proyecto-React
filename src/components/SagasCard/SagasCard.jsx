@@ -2,14 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CarouselSagas from "../SagasEnIndex/CarouselSagas/CarouselSagas";
 import { ArrowRight } from "../iconos/ArrowRight";
+import { useFilteredCollections } from "../../hooks/useFilteredCollections";
 
-const SagasCard = ({ saga, libros }) => {
+const SagasCard = ({ saga }) => {
+  const libros = useFilteredCollections(
+    "libros",
+    "saga",
+    "==",
+    Number(saga.id)
+  );
   return (
     <div className="col">
       <div className="card mb-3 shadow-sm" id={saga.id}>
         <div className="row g-0">
           <div className="col-md-5 horizontal-card__img">
-            <CarouselSagas libros={libros} id={saga.id} />
+            {libros && <CarouselSagas libros={libros} id={saga.id} />}
           </div>
           <div className="col-md-7">
             <div className="card-body">
