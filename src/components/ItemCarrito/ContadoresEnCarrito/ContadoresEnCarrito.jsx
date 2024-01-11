@@ -26,7 +26,7 @@ const ContadoresEnCarrito = ({
           {estadoContador}
         </button>
         <button
-          data-tooltip-id="sinstock"
+          data-tooltip-id={`sinstock${item.id}`}
           type="button"
           className="btn btn-outline-primary"
           onClick={() => handleSumarAgregar(item)}
@@ -35,7 +35,11 @@ const ContadoresEnCarrito = ({
         </button>
       </div>
       {tool && (
-        <Tooltip id="sinstock" openOnClick="true" closeEvents="click">
+        <Tooltip
+          id={`sinstock${item.id}`}
+          openOnClick="true"
+          closeEvents="click"
+        >
           <p className="lh-1 mb-0">No hay más stock</p>
           <p className="text-center lh-2 mb-0 en-tooltip">
             <CloseCircle ancho="0.8em" alto="0.8em" />

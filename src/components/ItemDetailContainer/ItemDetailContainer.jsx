@@ -10,6 +10,7 @@ const ItemDetailContainer = () => {
   const [loader, setLoader] = useState(true);
   const id = useParams().id;
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     fetchDetallePorID(id)
       .then((respuesta) => {
         setLibro(respuesta[0]);

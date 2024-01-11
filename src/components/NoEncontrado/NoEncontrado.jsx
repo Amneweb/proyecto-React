@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import notFound from "./notFound.png";
 const NoEncontrado = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+
   return (
     <div className="container text-center">
       <div className="row justify-content-center">

@@ -1,10 +1,12 @@
 import CartWidget from "../CartWidget/CartWidget";
 import WishList from "../WishList/WishList";
 import Logo from "../Logo/Logo";
+import { useCollections } from "../../hooks/useCollections";
 import { Link } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
 import LogoMiCuenta from "../LogoMiCuenta/LogoMiCuenta";
 const NavBar = ({ onQueryBusqueda }) => {
+  const autores = useCollections("autores", "nombre");
   return (
     <nav className="navbar sticky-top">
       <div className="container-fluid nav-flex-contenedor">
@@ -112,26 +114,21 @@ const NavBar = ({ onQueryBusqueda }) => {
                   Por autor
                 </a>
                 <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" to="/autor/1">
-                      J K Rowling
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/autor/2">
-                      George Orwell
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/autor/4">
-                      Julio Verne
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/autor/3">
-                      Stieg Larsson
-                    </Link>
-                  </li>
+                  {autores ? (
+                    autores.map((autor) => (
+                      <li key={`${autor.id}`}>
+                        <Link
+                          to={`/autor/${autor.id}`}
+                          className="dropdown-item"
+                        >
+                          {autor.nombre}
+                        </Link>
+                      </li>
+                    ))
+                  ) : (
+                    <p>Cargando datos...</p>
+                  )}
+
                   <li>
                     <Link className="dropdown-item" to="/autor/todos">
                       TODOS

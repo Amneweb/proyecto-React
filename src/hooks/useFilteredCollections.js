@@ -4,7 +4,6 @@ import {
   getDocs,
   query,
   where,
-  orderBy,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 export function useFilteredCollections(
