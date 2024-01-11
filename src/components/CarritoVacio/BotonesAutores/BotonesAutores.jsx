@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useCollections } from "../../../hooks/useCollections";
+import Loader from "../../Loader/Loader";
 
 const BotonesAutores = () => {
   const autores = useCollections("autores", "nombre");
   return (
     <div className="botones-bolsavacia">
-      {autores &&
+      {autores ? (
         autores.map((autor) => (
           <Link
             to={`/autor/${autor.id}`}
@@ -15,7 +16,10 @@ const BotonesAutores = () => {
           >
             {autor.nombre}
           </Link>
-        ))}
+        ))
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

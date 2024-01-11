@@ -19,6 +19,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoader(true);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     let termino = "";
     if (categoria) {
       termino = categoria;

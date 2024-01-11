@@ -19,6 +19,7 @@ const ContenedorSagas = () => {
   const [errorStatus, setErrorStatus] = useState(null);
   useEffect(() => {
     setLoader(true);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     Promise.all([fetchDatosSagas(saga), fetchLibrosDeSagas(saga)])
       .then(([[sagaSeleccionada, autorSaga], librosSaga]) => {
         setLibros(librosSaga);

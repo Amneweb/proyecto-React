@@ -16,10 +16,11 @@ const Checkout = () => {
     formState: { errors },
   } = useForm();
   const [idNuevaOrden, setIdNuevaOrden] = useState("");
-
+  const [loading, setLoading] = useState(false);
   const db = getFirestore();
 
-  const realizarCompra = (data) => {
+  const realizarCompra = async (data) => {
+    setLoading(true);
     const nuevaOrden = {
       cliente: data,
       compra: carrito,
@@ -27,15 +28,19 @@ const Checkout = () => {
     };
 
     const ordenCollection = collection(db, "ordenes");
-    addDoc(ordenCollection, nuevaOrden).then((resultado) => {
-      setIdNuevaOrden(resultado.id);
-    });
+    await addDoc(ordenCollection, nuevaOrden)
+      .then((resultado) => {
+        setIdNuevaOrden(resultado.id);
+      })
+      .finally(() => setLoading(false));
   };
 
   function handleClickCerrar() {
     vaciarCarrito();
   }
-
+  if (loading) {
+    return <h2>Cargando datos...</h2>;
+  }
   if (idNuevaOrden) {
     return (
       <FinalizarCompra

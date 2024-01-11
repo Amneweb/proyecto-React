@@ -17,6 +17,7 @@ import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   const [queryBusqueda, setQueryBusqueda] = useState("");
+
   return (
     <div className="App">
       <CartProvider>

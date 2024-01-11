@@ -2,6 +2,7 @@ import React from "react";
 import { useCollections } from "../../hooks/useCollections";
 import CarouselIndicators from "./CarouselIndicators";
 import CarouselInner from "./CarouselInner";
+import Loader from "../Loader/Loader";
 
 const Carousel = () => {
   const diapositivas = useCollections("carousel");
@@ -9,8 +10,14 @@ const Carousel = () => {
   return (
     <div className="container-fluid p-0">
       <div id="carouselHome" className="carousel slide">
-        {diapositivas && <CarouselIndicators diapositivas={diapositivas} />}
-        {diapositivas && <CarouselInner diapositivas={diapositivas} />}
+        {diapositivas ? (
+          <>
+            <CarouselIndicators diapositivas={diapositivas} />{" "}
+            <CarouselInner diapositivas={diapositivas} />
+          </>
+        ) : (
+          <Loader />
+        )}
         <button
           className="carousel-control-prev"
           type="button"

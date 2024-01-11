@@ -15,6 +15,7 @@ const ContenedorAutor = () => {
 
   useEffect(() => {
     setLoader(true);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     fetchDatosLibros()
       .then((respuesta) => {
         if (autor) {
