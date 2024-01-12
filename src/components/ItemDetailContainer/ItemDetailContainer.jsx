@@ -5,33 +5,25 @@ import { useParams } from "react-router-dom";
 import nodisponible from "../BookCard/assets/nodisponible.jpg";
 import imagenes from "../../helpers/imagenes";
 import Loader from "../Loader/Loader";
+import { useFilteredCollections } from "../../hooks/useFilteredCollections";
 const ItemDetailContainer = () => {
-  const [libro, setLibro] = useState(null);
-  const [loader, setLoader] = useState(true);
   const id = useParams().id;
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    fetchDetallePorID(id)
-      .then((respuesta) => {
-        setLibro(respuesta[0]);
-      })
-      .finally(() => {
-        setLoader(false);
-      });
-  }, [id]);
+  const libro = useFilteredCollections("libros", "id", "==", Number(id));
+  console.log("en detalle libro ", libro);
   return (
     <div className="container">
-      {loader && <Loader />}
       <h2>Detalle del libro buscado</h2>
-      {libro && (
+      {libro ? (
         <BookDetails
-          item={libro}
+          item={libro[0]}
           ruta={
-            imagenes.find(({ id }) => id === libro.isbn)
-              ? imagenes.find(({ id }) => id === libro.isbn).ruta
+            imagenes.find(({ id }) => id === libro[0].isbn)
+              ? imagenes.find(({ id }) => id === libro[0].isbn).ruta
               : nodisponible
           }
         />
+      ) : (
+        <Loader />
       )}
     </div>
   );

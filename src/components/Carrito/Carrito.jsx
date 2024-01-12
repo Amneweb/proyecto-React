@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { CartContext } from "../../context/CartContext";
 import BotonVaciar from "./BotonVaciar/BotonVaciar";
 import CarritoVacio from "../CarritoVacio/CarritoVacio";
@@ -8,6 +8,9 @@ import ModalCheckout from "../ModalCheckout/ModalCheckout";
 
 const Carrito = () => {
   const { carrito, vaciarCarrito, totalApagar } = useContext(CartContext);
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   const handleVaciar = () => {
     vaciarCarrito();
   };

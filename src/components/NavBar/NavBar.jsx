@@ -7,6 +7,8 @@ import SearchBar from "../searchBar/SearchBar";
 import LogoMiCuenta from "../LogoMiCuenta/LogoMiCuenta";
 const NavBar = ({ onQueryBusqueda }) => {
   const autores = useCollections("autores", "nombre");
+  const categorias = useCollections("categorias", "titulo");
+  const sagas = useCollections("sagas", "id");
   return (
     <nav className="navbar sticky-top">
       <div className="container-fluid nav-flex-contenedor">
@@ -51,56 +53,20 @@ const NavBar = ({ onQueryBusqueda }) => {
                   Por género
                 </a>
                 <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" to="/libros/cf">
-                      Ciencia ficción
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/libros/nh">
-                      Novela histórica
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/libros/di">
-                      Distopía
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/libros/av">
-                      Aventuras
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/libros/bi">
-                      Biográfico
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/libros/po">
-                      Policial
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/libros/de">
-                      Denuncia
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/libros/hi">
-                      Historia
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/libros/cl">
-                      Clásicos
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/libros/pt">
-                      Poesía
-                    </Link>
-                  </li>
+                  {categorias ? (
+                    categorias.map((categoria) => (
+                      <li key={`${categoria.id}`}>
+                        <Link
+                          to={`/libros/${categoria.id}`}
+                          className="dropdown-item"
+                        >
+                          {categoria.titulo}
+                        </Link>
+                      </li>
+                    ))
+                  ) : (
+                    <p>Cargando datos...</p>
+                  )}
                 </ul>
               </li>
               <li className="nav-item dropdown">
@@ -170,16 +136,17 @@ const NavBar = ({ onQueryBusqueda }) => {
                   Sagas
                 </a>
                 <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" to="/saga/1">
-                      Millenium
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/saga/2">
-                      Harry Potter
-                    </Link>
-                  </li>
+                  {sagas ? (
+                    sagas.map((saga) => (
+                      <li key={`${saga.id}`}>
+                        <Link to={`/saga/${saga.id}`} className="dropdown-item">
+                          {saga.nombre}
+                        </Link>
+                      </li>
+                    ))
+                  ) : (
+                    <p>Cargando datos...</p>
+                  )}
                 </ul>
               </li>
               <li className="nav-item">
