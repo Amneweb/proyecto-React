@@ -23,8 +23,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-src/helpers/subidaAfirebase.js
-src/components/DatosAFire.jsx
+/src/helpers/subidaAfirebase.js
+/src/components/DatosAFire.jsx
 
-src/data
+/src/data
+
+/src/helpers/fetchDatosAutor.js
+/src/helpers/fetchDatosCarousel.js
+/src/helpers/fecthDatosCategorias.js
+/src/helpers/fetchDatosSagas.js
+/src/helpers/fetchDatosSagasTodas.js
+
 
