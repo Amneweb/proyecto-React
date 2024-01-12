@@ -86,12 +86,16 @@ Hay 6 colecciones:
 
 ## Navegación entre páginas
 
-En muchos casos me pasaba que cuando estoy en el footer y llamo al catálogo filtrado por categoría, se abría la página correspondiente pero el cambio no se notaba porque se seguía viendo el footer. Para evitar esto puse una función de scrollToTop (no funciona en todos los casos, pero sí en la mayoría)
+En muchos casos me pasaba que cuando una página estaba desplazada hasta abajo de todo (con el footer visible) y hacía click en algún enlace del footer o de la barra de navegacióno, por ejemplo, al catálogo filtrado por categoría, se renderizaba el componente contenedor, pero el cambio no se notaba y se seguía viendo el footer. Para evitar esto puse una función de scrollToTop dentro de la función del componente, pero no funciona en todos los casos. No sé cómo resolverlo.
 
 ## Pendientes
 
-Me quedaron pendientes el wishlist y el login para la persistencia de las órdenes.
-Además, me hubiera gustado que al vaciarse el carrito al final de la compra, se pudiera navegar automáticamente a la página de inicio, pero no lo logré. :(
+Me quedaron pendientes los extras sugeridos en la consigna del PF:
+
+1. El wishlist
+1. Un login para la persistencia de las órdenes
+1. Productos con variantes (lo de las ediciones de bolsillo que aparece en el carousel de inicio tenía como objetivo hacer variantes pero no me iba a dar el tiempo si hacía toda la programación. Hay una propiedad variante en los objetos de los productos, pero no funciona como tal).
+1. Además, me hubiera gustado que al vaciarse el carrito al final de la compra, se pudiera navegar automáticamente a la página de inicio, pero no lo logré. :(
 
 ## Video presentación
 
