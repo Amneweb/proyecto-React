@@ -1,4 +1,4 @@
-# Mi primer e-commerce con React App
+# Mi primer e-commerce con React
 
 Este proyecto consiste en el e-commerce de una librería.
 La intención del proyecto es mostrar el layout de un sitio web lo más parecido a los sitios web reales. Para eso:
@@ -8,6 +8,7 @@ La intención del proyecto es mostrar el layout de un sitio web lo más parecido
 1. En la parte superior de la página hay una barra de búsqueda que busca en el nombre del libro, autor y descripción. Esta búsqueda se realiza del lado del cliente dado que firebase no permite realizar búsquedas de manera simple (hay que instalar Algolia, que es un servicio pago)
 
 Se puede ver el sitio funcionando en esta url 👇
+
 [https://amneweb.com.ar/](https://amneweb.com.ar/)
 
 Al final del readme también se puede ver un video de un posible recorrido del usuario.
@@ -22,30 +23,30 @@ El proyecto se hizo utilizando el framework de bootstrap, modificado con estilos
 
 Se encuentran presentes los componentes solicitados en la consigna del trabajo, que son:
 
-1. ItemListContainer
-1. ItemList
-1. BookCard (que es el componente que muestra al producto en el catálogo)
-1. ItemDetailContainer
-1. CartWidget
-1. Carrito, que contiene:
-   - ItemCarrito (donde se muestra cada uno de los productos con su cantidad y precio unitario y total)
-   - CarritoVacio (que aparece cuando no se ha cargado nada en el carrito)
-1. BookDetail (equivalente a _ItemDetail_), que a su vez contiene a los
-   - Botones (equivalente a _ItemQuantitySelector_), que incluyen al botón de compra
-1. Checkout (aparece como overlay sobre el carrito de compras)
+1. **ItemListContainer**
+1. **ItemList**
+1. **BookCard** (que es el componente que muestra al producto en el catálogo)
+1. **ItemDetailContainer**
+1. **CartWidget**
+1. **Carrito**, que contiene:
+   - **ItemCarrito** (donde se muestra cada uno de los productos con su cantidad y precio unitario y total)
+   - **CarritoVacio** (que aparece cuando no se ha cargado nada en el carrito)
+1. **BookDetail** (equivalente a _ItemDetail_), que a su vez contiene a los
+   - **Botones** (equivalente a _ItemQuantitySelector_), que incluyen al botón de compra
+1. **Checkout** (aparece como overlay sobre el carrito de compras)
 
 ### Componentes extra
 
 A su vez, hay otros componentes no requeridos en la consigna:
 
-1. Carousel, que contiene al carousel de imágenes en página de inicio
-1. NovedadesEnIndex, que es un carousel que muestra los libros nuevos en la página de inicio
-1. SagasEnIndex, que muestra la información de las sagas destacadas y a su vez contiene un carousel con los libros que componen cada saga
-1. SearchBar, input en menú superior para buscar libros.
-1. Búsqueda, equivalente a ItemListContainer pero para contener los libros que cumplen con el término de búsqueda
-1. ContenedorSagas, equivalente a ItemListContainer, pero para mostrar la saga elegida
-1. Novedades, equivalente a ItemListContainer pero para mostrar las novedades
-1. ContenedorAutor, que a su vez tiene dos componentes, uno que muestra los libros del autor seleccionado y un aside que puede mostrar la biografía del autor seleccionado, o un menú lateral para filtrar los libros por autor, según si en el menú superior se eligió un autor o TODOS
+1. **Carousel**, que contiene al carousel de imágenes en página de inicio
+1. **NovedadesEnIndex**, que es un carousel que muestra los libros nuevos en la página de inicio
+1. **SagasEnIndex**, que muestra la información de las sagas destacadas y a su vez contiene un carousel con los libros que componen cada saga
+1. **SearchBar**, input en menú superior para buscar libros.
+1. **Búsqueda**, equivalente a ItemListContainer pero para contener los libros que cumplen con el término de búsqueda
+1. **ContenedorSagas**, equivalente a ItemListContainer, pero para mostrar la saga elegida
+1. **Novedades**, equivalente a ItemListContainer pero para mostrar las novedades
+1. **ContenedorAutor**, que a su vez tiene dos componentes, uno que muestra los libros del autor seleccionado y un aside que puede mostrar la biografía del autor seleccionado, o un menú lateral para filtrar los libros por autor, según si en el menú superior se eligió un autor o TODOS
 
 ## Imágenes
 
@@ -94,4 +95,5 @@ Además, me hubiera gustado que al vaciarse el carrito al final de la compra, se
 
 ## Video presentación
 
+Click en la imagen para ver en Youtube
 [![MI PRIMER E-COMMERCE CON REACT](https://img.youtube.com/vi/wTy66sJDB-U/0.jpg)](https://www.youtube.com/watch?v=wTy66sJDB-U)
