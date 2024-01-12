@@ -30,7 +30,7 @@ yarn-error.log*
 
 /src/helpers/fetchDatosAutor.js
 /src/helpers/fetchDatosCarousel.js
-/src/helpers/fecthDatosCategorias.js
+/src/helpers/fetchDatosCategorias.js
 /src/helpers/fetchDatosSagas.js
 /src/helpers/fetchDatosSagasTodas.js
 

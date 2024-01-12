@@ -1,11 +1,16 @@
 # Mi primer e-commerce con React App
 
 Este proyecto consiste en el e-commerce de una librería.
-La intención del proyecto es mostrar el layout de un sitio web lo más parecido a los sitios web reales:
+La intención del proyecto es mostrar el layout de un sitio web lo más parecido a los sitios web reales. Para eso:
 
-1. La página inicial no contiene el muestrario de todos los productos, sino que tiene un carousel de imágenes, un display de novedades donde se muestran los diferentes libros nuevos, cada con el enlace a su detalle; un "menú de categorías" con imágenes, un sector de "autor del mes" y un muestrario de las sagas o colecciones de libros destacadas.
-1. El menú superior permite la navegabilidad por diferentes criterios: género, autor, idioma
-1. Hay una barra de búsqueda que permanece en todo el sitio, al igual que el menú superior
+1. La página inicial no contiene el muestrario de todos los productos, sino que tiene un carousel de imágenes, un display de novedades, un "menú de categorías" con imágenes, un sector de "autor del mes" y un muestrario de las sagas o colecciones de libros destacadas.
+1. El menú superior permite la navegabilidad según diferentes criterios: género, autor, idioma, sagas
+1. En la parte superior de la página hay una barra de búsqueda que busca en el nombre del libro, autor y descripción. Esta búsqueda se realiza del lado del cliente dado que firebase no permite realizar búsquedas de manera simple (hay que instalar Algolia, que es un servicio pago)
+
+Se puede ver el sitio funcionando en esta url 👇
+[https://amneweb.com.ar/](https://amneweb.com.ar/)
+
+Al final del readme también se puede ver un video de un posible recorrido del usuario.
 
 ## Librerías
 
@@ -27,6 +32,7 @@ Se encuentran presentes los componentes solicitados en la consigna del trabajo, 
    - CarritoVacio (que aparece cuando no se ha cargado nada en el carrito)
 1. BookDetail (equivalente a _ItemDetail_), que a su vez contiene a los
    - Botones (equivalente a _ItemQuantitySelector_), que incluyen al botón de compra
+1. Checkout (aparece como overlay sobre el carrito de compras)
 
 ### Componentes extra
 
@@ -52,6 +58,10 @@ Están guardadas localmente y se accede a ellas de dos maneras:
 
 Todas las funciones de acceso a firebase y de ayuda al funcionamiento de la app se encuentran en la carpeta helpers
 
+## Custom Hooks
+
+Armé dos hooks para la traida de datos de firebase. Un hook trae la respectiva colección completa (x ejemplo todos los libros, o todos los autores) y el otro la colección filtrada según los datos que se le pasen a la función. Estos hooks son llamados desde la mayoría de los componentes, a excepción del itemlistcontainer (este componente tiene varios condicionales que dependen del parámetro url y no tuve tiempo de ir probando cada uno, pero también se podrían usar ambos hooks)
+
 ## Páginas
 
 La página inicial de la app es Home, que tiene los componentes
@@ -72,3 +82,16 @@ Hay 6 colecciones:
 1. Carousel (para las imágenes, textos y enlaces del carousel en la página de inicio)
 1. Sagas
 1. Órdenes
+
+## Navegación entre páginas
+
+En muchos casos me pasaba que cuando estoy en el footer y llamo al catálogo filtrado por categoría, se abría la página correspondiente pero el cambio no se notaba porque se seguía viendo el footer. Para evitar esto puse una función de scrollToTop (no funciona en todos los casos, pero sí en la mayoría)
+
+## Pendientes
+
+Me quedaron pendientes el wishlist y el login para la persistencia de las órdenes.
+Además, me hubiera gustado que al vaciarse el carrito al final de la compra, se pudiera navegar automáticamente a la página de inicio, pero no lo logré. :(
+
+## Video presentación
+
+[![MI PRIMER E-COMMERCE CON REACT](https://img.youtube.com/vi/wTy66sJDB-U/0.jpg)](https://www.youtube.com/watch?v=wTy66sJDB-U)
