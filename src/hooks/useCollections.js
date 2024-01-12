@@ -25,7 +25,7 @@ export function useCollections(nombreColeccion, ordenarPor) {
         }
       })
       .catch((error) => {
-        console.log("Ha ocurrido un error en la carga de datos " + error);
+        const msj = "Ha ocurrido un error en la carga de datos " + error;
       });
     return () => {
       ignore = true;

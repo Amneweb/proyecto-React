@@ -6,7 +6,6 @@ import {
   orderBy,
 } from "firebase/firestore";
 export const fetchDatosCategorias = () => {
-  console.log("en fetch");
   return new Promise((resuelta, rechazada) => {
     const db = getFirestore();
     const itemsCollection = collection(db, "categorias");
@@ -16,7 +15,6 @@ export const fetchDatosCategorias = () => {
         resuelta(
           snapshot.docs.map((doc) => ({ IDfire: doc.id, ...doc.data() }))
         );
-        console.log("snap ", snapshot.docs);
       },
       () => {
         rechazada();

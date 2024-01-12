@@ -10,7 +10,7 @@ const ContenedorSagas = () => {
 
   const datosSaga = useFilteredCollections("sagas", "id", "==", Number(saga));
   const libros = useFilteredCollections("libros", "saga", "==", Number(saga));
-  console.log("saga datos ", datosSaga);
+
   return (
     <section className="container sagas-en-index">
       {datosSaga ? (
@@ -39,11 +39,7 @@ const ContenedorSagas = () => {
       </div>
       <div className="row mt-5">
         <h2>Sobre el autor</h2>
-        {datosSaga ? (
-          <AutorEnSagas autor={datosSaga[0].autor.id} />
-        ) : (
-          <Loader />
-        )}
+        {datosSaga ? <AutorEnSagas id={datosSaga[0].autor.id} /> : <Loader />}
       </div>
     </section>
   );

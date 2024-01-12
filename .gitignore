@@ -25,3 +25,5 @@ yarn-error.log*
 src/helpers/subidaAfirebase.js
 src/components/DatosAFire.jsx
 
+src/data
+

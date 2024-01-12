@@ -9,7 +9,7 @@ import { useFilteredCollections } from "../../hooks/useFilteredCollections";
 const ItemDetailContainer = () => {
   const id = useParams().id;
   const libro = useFilteredCollections("libros", "id", "==", Number(id));
-  console.log("en detalle libro ", libro);
+
   return (
     <div className="container">
       <h2>Detalle del libro buscado</h2>

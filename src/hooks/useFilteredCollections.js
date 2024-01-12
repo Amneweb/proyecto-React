@@ -30,6 +30,6 @@ export function useFilteredCollections(
       ignore = true;
     };
   }, [comparador]);
-  console.log("resultado filtered ", coleccion);
+
   return coleccion;
 }
