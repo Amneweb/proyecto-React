@@ -96,4 +96,5 @@ Además, me hubiera gustado que al vaciarse el carrito al final de la compra, se
 ## Video presentación
 
 Click en la imagen para ver en Youtube
+
 [![MI PRIMER E-COMMERCE CON REACT](https://img.youtube.com/vi/wTy66sJDB-U/0.jpg)](https://www.youtube.com/watch?v=wTy66sJDB-U)
