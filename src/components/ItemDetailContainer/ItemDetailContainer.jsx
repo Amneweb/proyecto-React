@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import { fetchDetallePorID } from "../../helpers/fetchDatosLibros";
 import BookDetails from "../BookDetails/BookDetails";
 import { useParams } from "react-router-dom";
 import nodisponible from "../BookCard/assets/nodisponible.jpg";

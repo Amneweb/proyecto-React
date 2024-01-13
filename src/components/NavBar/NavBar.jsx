@@ -43,15 +43,13 @@ const NavBar = ({ onQueryBusqueda }) => {
                 </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
+                <button
                   className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Por género
-                </a>
+                </button>
                 <ul className="dropdown-menu">
                   {categorias ? (
                     categorias.map((categoria) => (
@@ -70,15 +68,13 @@ const NavBar = ({ onQueryBusqueda }) => {
                 </ul>
               </li>
               <li className="nav-item dropdown">
-                <a
+                <button
                   className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Por autor
-                </a>
+                </button>
                 <ul className="dropdown-menu">
                   {autores ? (
                     autores.map((autor) => (
@@ -103,15 +99,13 @@ const NavBar = ({ onQueryBusqueda }) => {
                 </ul>
               </li>
               <li className="nav-item dropdown">
-                <a
+                <button
                   className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Por idioma
-                </a>
+                </button>
                 <ul className="dropdown-menu">
                   <li>
                     <Link className="dropdown-item" to="/idioma/EN">
@@ -126,15 +120,13 @@ const NavBar = ({ onQueryBusqueda }) => {
                 </ul>
               </li>
               <li className="nav-item dropdown">
-                <a
+                <button
                   className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Sagas
-                </a>
+                </button>
                 <ul className="dropdown-menu">
                   {sagas ? (
                     sagas.map((saga) => (

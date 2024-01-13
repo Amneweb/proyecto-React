@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCollections } from "../../hooks/useCollections";
+import Social from "../Social/Social";
 
 const Footer = () => {
   const categorias = useCollections("categorias", "titulo");
@@ -83,7 +84,7 @@ const Footer = () => {
               </h5>
               <p className="small text-light mb-3">
                 Encontrá en tu inbox toda la información sobre libros, autores,
-                editoriales y por supuesto, sobre nosotros
+                editoriales y por supuesto, sobre nosotros.
               </p>
               <div className="d-flex flex-column flex-sm-row w-100 gap-2">
                 <label htmlFor="newsletter1" className="visually-hidden">
@@ -100,6 +101,20 @@ const Footer = () => {
                 </button>
               </div>
             </form>
+            <p className="small fst-italic text-light pt-5">
+              Hola. 👋 Mi nombre es{" "}
+              <span className="fw-bold">Amneris Calle</span> y soy la autora de
+              este e-commerce ficticio realizado con React y Bootstrap. El
+              trabajo se realizó para presentar como proyecto final del curso
+              React JS, que forma parte de la carrera Full Stack Developer de
+              Coderhouse. Faltan corregir algunos detalles y agregar
+              funcionalidades, pero aun así estoy más que orgullosa del
+              resultado final. Espero que les guste y si tienen algún proyecto
+              de desarrollo web en mente y necesitan alguien que lo haga
+              realidad, me pueden contactar a través de cualquiera de mis
+              canales.
+            </p>
+            <Social />
           </div>
         </div>
 
@@ -107,23 +122,6 @@ const Footer = () => {
           <p className="text-light">
             © 2023 MW Libros, Inc. Todos los derechos reservados.
           </p>
-          <ul className="list-unstyled d-flex">
-            <li className="ms-3">
-              <Link className="link-body-emphasis" to="#">
-                <svg className="bi" width="24" height="24"></svg>
-              </Link>
-            </li>
-            <li className="ms-3">
-              <Link className="link-body-emphasis" to="#">
-                <svg className="bi" width="24" height="24"></svg>
-              </Link>
-            </li>
-            <li className="ms-3">
-              <Link className="link-body-emphasis" to="#">
-                <svg className="bi" width="24" height="24"></svg>
-              </Link>
-            </li>
-          </ul>
         </div>
       </footer>
     </div>
