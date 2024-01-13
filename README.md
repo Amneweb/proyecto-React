@@ -7,11 +7,12 @@ La intención del proyecto es mostrar el layout de un sitio web lo más parecido
 1. El menú superior permite la navegabilidad según diferentes criterios: género, autor, idioma, sagas
 1. En la parte superior de la página hay una barra de búsqueda que busca en el nombre del libro, autor y descripción. Esta búsqueda se realiza del lado del cliente dado que firebase no permite realizar búsquedas de manera simple (hay que instalar Algolia, que es un servicio pago)
 
-Se puede ver el sitio funcionando en esta url 👇
+Se puede ver el sitio funcionando en esta url 👇 (\*\*)
 
 [https://amneweb.com.ar/](https://amneweb.com.ar/)
 
 Al final del readme también se puede ver un video de un posible recorrido del usuario.
+_(\*\*) NOTA: el deployment al servidor funciona bien cuando entro a las páginas desde el homepage. Cuando copio y pego la ruta en el navegador, me da error. Por ejemplo si voy a mi página de inicio (amneweb.com.ar) y desde ahí voy a la página para ver los libros del autor con id=10 (o sea en el menú superior voy a Por autor y elijo Florencia Bonelli) funciona. Pero si yo pego la dirección https://amneweb.com.ar/autor/10 directamente en un navegador, no funciona._
 
 ## Librerías
 
@@ -48,7 +49,7 @@ A su vez, hay otros componentes no requeridos en la consigna:
 1. **Novedades**, equivalente a ItemListContainer pero para mostrar las novedades
 1. **ContenedorAutor**, que a su vez tiene dos componentes, uno que muestra los libros del autor seleccionado y un aside que puede mostrar la biografía del autor seleccionado, o un menú lateral para filtrar los libros por autor, según si en el menú superior se eligió un autor o TODOS
 
-- NOTA: sólo se escribieron las biografías de 4 autores (Verne, Orwells, Rowling y Larssen), por lo que si en el menú superior "Por autor" se elige un autor distinto a los cuatro mencionados, al renderizarse el componente el sector lateral donde se debería mostrar la biografía aparecerá vacío
+_NOTA: sólo se escribieron las biografías de 4 autores (Verne, Orwells, Rowling y Larssen), por lo que si en el menú superior "Por autor" se elige un autor distinto a los cuatro mencionados, al renderizarse el componente el sector lateral donde se debería mostrar la biografía aparecerá vacío._
 
 ## Imágenes
 
