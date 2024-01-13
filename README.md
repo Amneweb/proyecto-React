@@ -48,6 +48,8 @@ A su vez, hay otros componentes no requeridos en la consigna:
 1. **Novedades**, equivalente a ItemListContainer pero para mostrar las novedades
 1. **ContenedorAutor**, que a su vez tiene dos componentes, uno que muestra los libros del autor seleccionado y un aside que puede mostrar la biografía del autor seleccionado, o un menú lateral para filtrar los libros por autor, según si en el menú superior se eligió un autor o TODOS
 
+- NOTA: sólo se escribieron las biografías de 4 autores (Verne, Orwells, Rowling y Larssen), por lo que si en el menú superior "Por autor" se elige un autor distinto a los cuatro mencionados, al renderizarse el componente el sector lateral donde se debería mostrar la biografía aparecerá vacío
+
 ## Imágenes
 
 Están guardadas localmente y se accede a ellas de dos maneras:
