@@ -12,6 +12,7 @@ Se puede ver el sitio funcionando en esta url 👇 (\*\*)
 [https://amneweb.com.ar/](https://amneweb.com.ar/)
 
 Al final del readme también se puede ver un video de un posible recorrido del usuario.
+
 _(\*\*) NOTA: el deployment al servidor funciona bien cuando entro a las páginas desde el homepage. Cuando copio y pego la ruta en el navegador, me da error. Por ejemplo si voy a mi página de inicio (amneweb.com.ar) y desde ahí voy a la página para ver los libros del autor con id=10 (o sea en el menú superior voy a Por autor y elijo Florencia Bonelli) funciona. Pero si yo pego la dirección https://amneweb.com.ar/autor/10 directamente en un navegador, no funciona._
 
 ## Librerías
