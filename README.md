@@ -9,7 +9,7 @@ La intención del proyecto es mostrar el layout de un sitio web lo más parecido
 
 Se puede ver el sitio funcionando en esta url 👇 (\*\*)
 
-[https://amneweb.com.ar/](https://amneweb.com.ar/)
+[https://amneweb.github.io/proyecto-React/](https://amneweb.github.io/proyecto-React/)
 
 Al final del readme también se puede ver un video de un posible recorrido del usuario.
 

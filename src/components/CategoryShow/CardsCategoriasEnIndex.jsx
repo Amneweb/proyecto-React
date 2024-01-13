@@ -14,7 +14,7 @@ const CardsCategoriasEnIndex = ({ categorias }) => {
               role="button"
             >
               <img
-                src={`/assets/imgcategoria${categoria.id}.jpg`}
+                src={`assets/imgcategoria${categoria.id}.jpg`}
                 className="card-img-top"
                 alt={categoria.titulo}
               />
