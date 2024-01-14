@@ -7,8 +7,8 @@ La intención del proyecto es mostrar el layout de un sitio web lo más parecido
 1. El menú superior permite la navegabilidad según diferentes criterios: género, autor, idioma, sagas
 1. En la parte superior de la página hay una barra de búsqueda que busca en el nombre del libro, autor y descripción. Esta búsqueda se realiza del lado del cliente dado que firebase no permite realizar búsquedas de manera simple (hay que instalar Algolia, que es un servicio pago)
 
-Se puede ver el sitio funcionando en esta url 👇 (\*\*)
-[https://amneweb.com.ar/mw-libros/](https://amneweb.com.ar/mw-libros/)
+Se puede ver el sitio funcionando en esta url 👉
+[https://amneweb.com.ar/mw-libros/](https://amneweb.com.ar/mw-libros/) (\*\*)
 
 O en Github pages: [https://amneweb.github.io/proyecto-React/](https://amneweb.github.io/proyecto-React/)
 
