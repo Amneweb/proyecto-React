@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <CartProvider>
-        <BrowserRouter basename="/proyecto-React">
+        <BrowserRouter basename="/mw-libros">
           <NavBar onQueryBusqueda={setQueryBusqueda} />
 
           <Routes>

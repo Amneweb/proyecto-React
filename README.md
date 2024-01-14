@@ -8,12 +8,15 @@ La intención del proyecto es mostrar el layout de un sitio web lo más parecido
 1. En la parte superior de la página hay una barra de búsqueda que busca en el nombre del libro, autor y descripción. Esta búsqueda se realiza del lado del cliente dado que firebase no permite realizar búsquedas de manera simple (hay que instalar Algolia, que es un servicio pago)
 
 Se puede ver el sitio funcionando en esta url 👇 (\*\*)
+[https://amneweb.com.ar/mw-libros/](https://amneweb.com.ar/mw-libros/)
 
-[https://amneweb.github.io/proyecto-React/](https://amneweb.github.io/proyecto-React/)
+O en Github pages: [https://amneweb.github.io/proyecto-React/](https://amneweb.github.io/proyecto-React/)
 
 Al final del readme también se puede ver un video de un posible recorrido del usuario.
 
 _(\*\*) NOTA: el deployment al servidor funciona bien cuando entro a las páginas desde el homepage. Cuando copio y pego la ruta en el navegador, me da error. Por ejemplo si voy a mi página de inicio (amneweb.com.ar) y desde ahí voy a la página para ver los libros del autor con id=10 (o sea en el menú superior voy a Por autor y elijo Florencia Bonelli) funciona. Pero si yo pego la dirección https://amneweb.com.ar/autor/10 directamente en un navegador, no funciona._
+
+**EL SITIO TODAVIA NO ES RESPONSIVE** 😔 Estoy trabajando en eso.
 
 ## Librerías
 
