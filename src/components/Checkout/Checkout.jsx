@@ -55,6 +55,7 @@ const Checkout = () => {
   return (
     <div className="container">
       <h2>checkout</h2>
+
       <form
         onSubmit={handleSubmit(realizarCompra)}
         className="needs-validation"

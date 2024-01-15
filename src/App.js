@@ -14,38 +14,49 @@ import Novedades from "./components/Novedades/Novedades";
 import ContenedorSagas from "./components/ContenedorSagas/ContenedorSagas";
 import Footer from "./components/Footer/Footer";
 import Checkout from "./components/Checkout/Checkout";
+import MiCuenta from "./components/MiCuenta/MiCuenta";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   const [queryBusqueda, setQueryBusqueda] = useState("");
 
   return (
     <div className="App">
-      <CartProvider>
-        <BrowserRouter basename="/mw-libros">
-          <NavBar onQueryBusqueda={setQueryBusqueda} />
+      <AuthProvider>
+        <CartProvider>
+          <BrowserRouter basename="/mw-libros">
+            <NavBar onQueryBusqueda={setQueryBusqueda} />
 
-          <Routes>
-            <Route path="/libro/:id" element={<ItemDetailContainer />} />
-            <Route path="/libros" element={<ItemListContainer />} />
-            <Route path="/libros/:categoria" element={<ItemListContainer />} />
-            <Route path="/autor/:autor" element={<ContenedorAutor />} />
-            <Route path="/autor/todos" element={<ContenedorAutorTodos />} />
-            <Route path="/idioma/:idioma" element={<ItemListContainer />} />
-            <Route path="/variante/:variante" element={<ItemListContainer />} />
-            <Route path="/saga/:saga" element={<ContenedorSagas />} />
-            <Route path="/carrito" element={<Carrito />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/novedades" element={<Novedades />} />
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/busqueda"
-              element={<Busqueda queryBusqueda={queryBusqueda} />}
-            />
-            <Route path="*" element={<NoEncontrado />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </CartProvider>
+            <Routes>
+              <Route path="/libro/:id" element={<ItemDetailContainer />} />
+              <Route path="/libros" element={<ItemListContainer />} />
+              <Route
+                path="/libros/:categoria"
+                element={<ItemListContainer />}
+              />
+              <Route path="/autor/:autor" element={<ContenedorAutor />} />
+              <Route path="/autor/todos" element={<ContenedorAutorTodos />} />
+              <Route path="/idioma/:idioma" element={<ItemListContainer />} />
+              <Route
+                path="/variante/:variante"
+                element={<ItemListContainer />}
+              />
+              <Route path="/saga/:saga" element={<ContenedorSagas />} />
+              <Route path="/carrito" element={<Carrito />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/novedades" element={<Novedades />} />
+              <Route path="/micuenta" element={<MiCuenta />} />
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/busqueda"
+                element={<Busqueda queryBusqueda={queryBusqueda} />}
+              />
+              <Route path="*" element={<NoEncontrado />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </CartProvider>
+      </AuthProvider>
     </div>
   );
 }

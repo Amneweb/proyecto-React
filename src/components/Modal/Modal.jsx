@@ -1,7 +1,10 @@
 import React from "react";
 import Checkout from "../Checkout/Checkout";
+import SignUp from "../SignUp/SignUp";
+import Login from "../Login/Login";
+import CheckoutUser from "../Checkout/CheckoutUser";
 
-const ModalCheckout = () => {
+const Modal = ({ formulario }) => {
   return (
     <div
       className="modal fade"
@@ -19,7 +22,10 @@ const ModalCheckout = () => {
             </h1>
           </div>
           <div className="modal-body">
-            <Checkout />
+            {formulario === "checkout" && <Checkout />}
+            {formulario === "checkoutuser" && <CheckoutUser />}
+            {formulario === "signup" && <SignUp />}
+            {formulario === "login" && <Login />}
           </div>
           <div className="modal-footer">
             <p className="small text-right">&copy; Amneris Calle</p>
@@ -30,4 +36,4 @@ const ModalCheckout = () => {
   );
 };
 
-export default ModalCheckout;
+export default Modal;
