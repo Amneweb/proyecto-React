@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import imagenes from "../../helpers/imagenesCarousel";
+import nodisponible from "./assets/nodisponible.jpg";
 const CarouselInner = ({ diapositivas }) => {
   return (
     <div className="carousel-inner">
@@ -10,7 +11,13 @@ const CarouselInner = ({ diapositivas }) => {
           className={key === 0 ? `carousel-item active` : `carousel-item`}
         >
           <img
-            src={diapositiva.imgRoute}
+            src={
+              imagenes.find(({ imgName }) => imgName === diapositiva.imgName)
+                ? imagenes.find(
+                    ({ imgName }) => imgName === diapositiva.imgName
+                  ).imgRoute
+                : nodisponible
+            }
             className="d-block w-100"
             alt="de bolsillo"
           />

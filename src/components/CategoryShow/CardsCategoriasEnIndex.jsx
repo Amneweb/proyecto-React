@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import imagenes from "../../helpers/imagenesCategoryShow";
+import nodisponible from "../BookCard/assets/nodisponible.jpg";
 const CardsCategoriasEnIndex = ({ categorias }) => {
   return (
     <div className="row row-cols-6 g-4">
@@ -14,7 +15,11 @@ const CardsCategoriasEnIndex = ({ categorias }) => {
               role="button"
             >
               <img
-                src={`assets/imgcategoria${categoria.id}.jpg`}
+                src={
+                  imagenes.find(({ id }) => id === categoria.id)
+                    ? imagenes.find(({ id }) => id === categoria.id).imgRoute
+                    : nodisponible
+                }
                 className="card-img-top"
                 alt={categoria.titulo}
               />
