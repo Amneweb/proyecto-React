@@ -467,3 +467,11 @@ h2.titulos {
     --bs-btn-hover-border-color: #262b2f;
     padding:1em;
 }
+.micuenta {
+    position: absolute !important;
+    left:-50% !important;
+}
+.micuenta li a {
+    color:var(--rosa);
+    text-decoration:none;
+}

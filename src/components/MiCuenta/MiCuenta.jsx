@@ -15,7 +15,8 @@ const MiCuenta = () => {
         const token = credential.accessToken;
 
         const user = result.user;
-        setFormulario("checkoutuser");
+        console.log("usuario de google recién creado", user);
+        setFormulario("bienvenido");
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { auth } from "../../helpers/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ResetIcon } from "../iconos/ResetIcon";
 
 const SignUp = () => {
-  const navigate = useNavigate();
+  const [usuarioRegistrado, setUsuarioRegistrado] = useState(null);
   const {
     register,
     handleSubmit,
@@ -15,26 +15,46 @@ const SignUp = () => {
   } = useForm();
 
   const crearUsuario = async (data) => {
-    await createUserWithEmailAndPassword(
-      auth,
-      data.email,
-      data.password,
-      data.displayName
-    )
+    await createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        navigate("/login");
-        // ...
+        console.log(userCredential);
+        updateProfile(userCredential.user, {
+          displayName: data.displayName,
+        }).then(() => setUsuarioRegistrado(userCredential.user));
       })
+
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        // ..
       });
   };
+  if (usuarioRegistrado) {
+    console.log(usuarioRegistrado);
+    return (
+      <div>
+        <h2>Bienvenido</h2>
+        <p>
+          Gracias, {usuarioRegistrado.displayName}, por sumarte a nuestra
+          comunidad.
+        </p>
+        <p>
+          Te invitamos a seguir recorriendo nuestra tienda y descubriendo los
+          títulos que pueden transformar tu vida.
+        </p>
+        <div className="col-auto">
+          <Link
+            role="button"
+            to="/"
+            data-bs-dismiss="modal"
+            className="btn btn-outline-primary"
+          >
+            Volver a la tienda
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container">
@@ -45,7 +65,7 @@ const SignUp = () => {
             type="text"
             className="form-control"
             id="signUpFormNombreUsuario"
-            placeholder="Nombre de usuario"
+            placeholder="Nombre o apodo"
             {...register("displayName", { required: true })}
           />
           {errors.displayName && (
@@ -53,7 +73,7 @@ const SignUp = () => {
               El nombre de usuario es requerido
             </span>
           )}
-          <label htmlFor="signUpFormEmail">Nombre de usuario</label>
+          <label htmlFor="signUpFormNombreUsuario">Nombre de usuario</label>
         </div>
         <div className="form-floating mb-3">
           <input
