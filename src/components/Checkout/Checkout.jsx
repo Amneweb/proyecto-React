@@ -55,6 +55,18 @@ const Checkout = () => {
   return (
     <div className="container">
       <h2>checkout</h2>
+      <p className="small">
+        Estás por hacer una compra en forma anónima. Para disfrutar de una mejor
+        experiencia de usuario, podés{" "}
+        <Link
+          to="/micuenta"
+          data-bs-dismiss="modal"
+          className="enlace-rosa link-offset-3"
+        >
+          loguearte
+        </Link>{" "}
+        desde el menú superior.
+      </p>
       <form
         onSubmit={handleSubmit(realizarCompra)}
         className="needs-validation"

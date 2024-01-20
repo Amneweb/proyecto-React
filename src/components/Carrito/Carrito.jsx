@@ -4,10 +4,13 @@ import BotonVaciar from "./BotonVaciar/BotonVaciar";
 import CarritoVacio from "../CarritoVacio/CarritoVacio";
 import { precioFormateado } from "../../helpers/formatearPrecios";
 import ItemCarrito from "../ItemCarrito/ItemCarrito";
-import ModalCheckout from "../ModalCheckout/ModalCheckout";
+import Modal from "../Modal/Modal";
+import { AuthContext } from "../../context/AuthContext";
 
 const Carrito = () => {
   const { carrito, vaciarCarrito, totalApagar } = useContext(CartContext);
+  const { usuario, isLoggedIn } = useContext(AuthContext);
+  console.log("usuario en carrito ", usuario);
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
@@ -22,7 +25,11 @@ const Carrito = () => {
         <CarritoVacio />
       ) : (
         <div className="row">
-          <ModalCheckout />
+          {isLoggedIn ? (
+            <Modal formulario="checkoutuser" />
+          ) : (
+            <Modal formulario="checkout" />
+          )}
           <div className="col-8">
             <ul className="list-group">
               {carrito.map((compra) => (

@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
-
+import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: "AIzaSyAp2QWYZa2Si8VJaWBIkYs21n8VuVjgYys",
   authDomain: "mw-libros.firebaseapp.com",
   projectId: "mw-libros",
   storageBucket: "mw-libros.appspot.com",
@@ -10,3 +10,4 @@ const firebaseConfig = {
 };
 
 export const appFire = initializeApp(firebaseConfig);
+export const auth = getAuth(appFire);
