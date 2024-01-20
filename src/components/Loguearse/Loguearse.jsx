@@ -17,6 +17,7 @@ const MiCuenta = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
+
         const token = credential.accessToken;
 
         const user = result.user;
@@ -30,6 +31,7 @@ const MiCuenta = () => {
         const email = error.customData.email;
 
         const credential = GoogleAuthProvider.credentialFromError(error);
+        console.log(errorCode, errorMessage, error);
       });
   }
   return (

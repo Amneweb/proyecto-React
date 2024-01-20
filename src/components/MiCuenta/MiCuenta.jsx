@@ -1,34 +1,27 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-
+import { SignOut } from "../iconos/SignOut";
 import { Link, useNavigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
-import { auth } from "../../helpers/firebase";
+import ListadoOrdenesUsuario from "../ListadoOrdenesUsuario/ListadoOrdenesUsuario";
 
 const MiCuenta = () => {
-  const { usuario, isLoggedIn } = useContext(AuthContext);
+  const { usuario, isLoggedIn, desloguearse } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogOut = () => {
-    signOut(auth)
-      .then(() => {
-        navigate("/");
-        isLoggedIn = false;
-        console.log("Signed out successfully");
-      })
-      .catch((error) => {
-        // An error happened.
-      });
+    desloguearse();
+    navigate("/");
   };
   return (
     <div className="container">
       {isLoggedIn ? (
         <div>
-          <h5>Hola, {usuario.displayName} </h5>
-          <p>Acá te mostramos tu historial de compras</p>
-          <p>¿Querés desloguearte? Hacé click acá: </p>
-          <p>
+          <h2>Hola, {usuario.displayName} </h2>
+          <p>Acá iremos mostrando el listado de tus compras...</p>
+          <ListadoOrdenesUsuario />
+
+          <p className="mt-2">
             <button className="btn btn-outline-primary" onClick={handleLogOut}>
-              Desloguearme
+              Desloguearme <SignOut lado="1em" />
             </button>
           </p>
         </div>
@@ -37,8 +30,8 @@ const MiCuenta = () => {
           <div>
             <h5>ATENCION</h5>
             <p>
-              Aun no estás logueado, por favor logueate utilizando el link de
-              más abajo
+              Aun no estás logueado, por favor logueate utilizando el link que
+              sigue
             </p>
 
             <p>

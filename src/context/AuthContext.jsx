@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../helpers/firebase";
 
 export const AuthContext = createContext();
@@ -9,6 +9,16 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [usuario, setUsuario] = useState(null);
+  const desloguearse = () => {
+    signOut(auth)
+      .then(() => {
+        setIsLoggedIn(false);
+        console.log("Signed out successfully");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -22,7 +32,7 @@ export const AuthProvider = ({ children }) => {
     });
   }, []);
   return (
-    <AuthContext.Provider value={{ isLoggedIn, usuario }}>
+    <AuthContext.Provider value={{ isLoggedIn, usuario, desloguearse }}>
       {children}
     </AuthContext.Provider>
   );

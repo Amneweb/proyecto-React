@@ -7,7 +7,7 @@ import FinalizarCompra from "./FinalizarCompra";
 
 const CheckoutUser = () => {
   const { carrito, vaciarCarrito, totalApagar } = useContext(CartContext);
-  const { usuario } = useContext(AuthContext);
+  const { usuario, desloguearse } = useContext(AuthContext);
 
   const [idNuevaOrden, setIdNuevaOrden] = useState("");
   const [loading, setLoading] = useState(false);
@@ -60,7 +60,8 @@ const CheckoutUser = () => {
           </p>
           <p>
             Si no sos vos, o si sos vos pero querés loguearte con otra cuenta o
-            hacer la compra en forma anónima, hacé click en Sign Out
+            hacer la compra en forma anónima, hacé click en Sign Out y volvé a
+            loguearte
           </p>
         </div>
 
@@ -71,7 +72,15 @@ const CheckoutUser = () => {
                 Comprar
               </button>
             </div>
-
+            <div className="col-auto">
+              <button
+                data-bs-dismiss="modal"
+                className="btn btn-outline-secondary"
+                onClick={() => desloguearse()}
+              >
+                Sign Out
+              </button>
+            </div>
             <div className="col-auto">
               <Link
                 role="button"
