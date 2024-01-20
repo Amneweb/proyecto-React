@@ -1,82 +1,58 @@
-import React, { useState } from "react";
-import Modal from "../Modal/Modal";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-const MiCuenta = () => {
-  const [formulario, setFormulario] = useState("signup");
-  function handleClick(tipo) {
-    setFormulario(tipo);
-  }
-  function handleGoogle() {
-    const auth = getAuth();
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
+import React, { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
-        const user = result.user;
-        console.log("usuario de google recién creado", user);
-        setFormulario("bienvenido");
+import { Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../../helpers/firebase";
+
+const MiCuenta = () => {
+  const { usuario, isLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogOut = () => {
+    signOut(auth)
+      .then(() => {
+        navigate("/");
+        isLoggedIn = false;
+        console.log("Signed out successfully");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        const email = error.customData.email;
-
-        const credential = GoogleAuthProvider.credentialFromError(error);
+        // An error happened.
       });
-  }
+  };
   return (
-    <div>
-      <div className="col-4">
-        <ul className="list-group">
-          <li className="list-group-item">
-            <div className="d-grid">
-              <button
-                className="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                onClick={() => {
-                  handleClick("signup");
-                }}
-              >
-                Registrate
-              </button>
-            </div>
-          </li>
-          <li className="list-group-item">
-            <div className="d-grid">
-              <button
-                className="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                onClick={() => {
-                  handleClick("login");
-                }}
-              >
-                Logueate
-              </button>
-            </div>
-          </li>
-          <li className="list-group-item">
-            <div className="d-grid">
-              <button
-                className="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                onClick={() => {
-                  handleGoogle();
-                }}
-              >
-                Registrate con Google
-              </button>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <div className="container">
+      {isLoggedIn ? (
+        <div>
+          <h5>Hola, {usuario.displayName} </h5>
+          <p>Acá te mostramos tu historial de compras</p>
+          <p>¿Querés desloguearte? Hacé click acá: </p>
+          <p>
+            <button className="btn btn-outline-primary" onClick={handleLogOut}>
+              Desloguearme
+            </button>
+          </p>
+        </div>
+      ) : (
+        <>
+          <div>
+            <h5>ATENCION</h5>
+            <p>
+              Aun no estás logueado, por favor logueate utilizando el link de
+              más abajo
+            </p>
 
-      <Modal formulario={formulario} />
+            <p>
+              <Link
+                role="button"
+                to="/loguearse"
+                className="btn btn-outline-primary"
+              >
+                QUIERO LOGUEARME
+              </Link>
+            </p>
+          </div>
+        </>
+      )}
     </div>
   );
 };

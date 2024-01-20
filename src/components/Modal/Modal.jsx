@@ -1,7 +1,5 @@
 import React from "react";
 import Checkout from "../Checkout/Checkout";
-import SignUp from "../SignUp/SignUp";
-import Login from "../Login/Login";
 import CheckoutUser from "../Checkout/CheckoutUser";
 
 const Modal = ({ formulario }) => {
@@ -24,8 +22,6 @@ const Modal = ({ formulario }) => {
           <div className="modal-body">
             {formulario === "checkout" && <Checkout />}
             {formulario === "checkoutuser" && <CheckoutUser />}
-            {formulario === "signup" && <SignUp />}
-            {formulario === "login" && <Login />}
           </div>
           <div className="modal-footer">
             <p className="small text-right">&copy; Amneris Calle</p>

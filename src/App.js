@@ -15,6 +15,7 @@ import ContenedorSagas from "./components/ContenedorSagas/ContenedorSagas";
 import Footer from "./components/Footer/Footer";
 import Checkout from "./components/Checkout/Checkout";
 import MiCuenta from "./components/MiCuenta/MiCuenta";
+import Loguearse from "./components/Loguearse/Loguearse";
 import { AuthProvider } from "./context/AuthContext";
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/novedades" element={<Novedades />} />
               <Route path="/micuenta" element={<MiCuenta />} />
+              <Route path="/loguearse" element={<Loguearse />} />
               <Route path="/" element={<Home />} />
               <Route
                 path="/busqueda"

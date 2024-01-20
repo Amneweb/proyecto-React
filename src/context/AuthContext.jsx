@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
         setIsLoggedIn(true);
         setUsuario(user);
 
-        console.log("uid", usuario);
+        console.log("uid en context", usuario);
       } else {
         console.log("user is logged out");
       }
