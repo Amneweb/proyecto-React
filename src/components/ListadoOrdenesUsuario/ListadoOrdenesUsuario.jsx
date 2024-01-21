@@ -18,7 +18,7 @@ const ListadoOrdenesUsuario = () => {
     <div>
       {ordenes &&
         ordenes.map((orden) => (
-          <div>
+          <div key={orden.IDfire}>
             <h5 className="fw-bold mt-3">Orden: {orden.IDfire} </h5>
             <OrdenUsuario orden={orden.compra} total={orden.total} />
           </div>

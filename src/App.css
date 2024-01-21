@@ -148,6 +148,12 @@ body {
     background-color: var(--verde-brillante);
     padding:1em;
 }
+.alert-warning {
+    --bs-alert-color: var(--negro);
+    --bs-alert-bg: rgba(197, 254, 2,0.25);
+    --bs-alert-border-color: var(--verde-brillante);
+    --bs-alert-link-color: var(--negro);
+}
 
 .menu {
     justify-content: center;
@@ -195,6 +201,11 @@ h1, h2 {
 }
 .listaCate:hover {
     background-color:var(--verde-brillante);
+}
+.cerrartooltip {
+    background-color:transparent;
+    color:var(--verde-agua);
+    border:1px solid var(--verde-agua);
 }
 p.card-text {
     margin-bottom:0.5rem;

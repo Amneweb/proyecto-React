@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { auth } from "../../helpers/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
 import { ResetIcon } from "../iconos/ResetIcon";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 const Login = ({ onLogin }) => {
   const {
     register,
@@ -10,20 +11,41 @@ const Login = ({ onLogin }) => {
     reset,
     formState: { errors },
   } = useForm();
+  const [error, setError] = useState(false);
+  const [errorMsj, setErrorMsj] = useState("");
+
   const loguearUsuario = async (data) => {
-    await signInWithEmailAndPassword(auth, data.email, data.password)
-      .then((userCredential) => {
-        onLogin(userCredential.user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password).then(
+        (userCredential) => {
+          onLogin(userCredential.user);
+        }
+      );
+    } catch (e) {
+      const errorCode = e.code;
+
+      switch (errorCode) {
+        case "auth/invalid-credential":
+          setErrorMsj("Los datos de login son erróneos");
+
+          break;
+        case "auth/email-already-exists":
+          setErrorMsj("La casilla de correo ya está registrada");
+          break;
+        case "auth/uid-already-exists":
+          setErrorMsj("El usuario ya existe en nuestra base de datos");
+          break;
+        default:
+          setErrorMsj("Error desconocido");
+      }
+    }
+    console.log("error code ", errorMsj);
+    setError(true);
   };
 
   return (
     <div className="container">
+      {error && <ErrorMessage errorMsj={errorMsj} />}
       <h2>Log In</h2>
       <p className="small">
         Si ya tenés una cuenta, ingresá con email y password.

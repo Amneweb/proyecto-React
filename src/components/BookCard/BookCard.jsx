@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import BotonEnCard from "./BotonEnCard/BotonEnCard";
 import BadgeNovedades from "./BadgeNovedades/BadgeNovedades";
+
 const BookCard = ({ libro }) => {
   const rutaImagen = imagenes.find(({ id }) => id === libro.isbn)
     ? imagenes.find(({ id }) => id === libro.isbn).ruta
@@ -51,6 +52,7 @@ const BookCard = ({ libro }) => {
               )}
             </div>
           </div>
+
           {libro.stock === 0 ? (
             <StockBadge />
           ) : (

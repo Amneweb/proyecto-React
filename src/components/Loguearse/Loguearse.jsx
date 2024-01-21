@@ -5,35 +5,39 @@ import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 import { Link } from "react-router-dom";
 import Bienvenido from "../Bienvenido/Bienvenido";
-const MiCuenta = () => {
+const Loguearse = () => {
   const [usuarioRegistrado, setUsuarioRegistrado] = useState(null);
   if (usuarioRegistrado) {
     return <Bienvenido usuarioRegistrado={usuarioRegistrado} />;
   }
 
-  function handleGoogle() {
+  const handleGoogle = async () => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then((result) => {
+
+    try {
+      await signInWithPopup(auth, provider).then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
-
-        const token = credential.accessToken;
-
+        console.log("credential from sign in ", credential);
         const user = result.user;
         console.log("usuario de google recién creado", user);
         setUsuarioRegistrado(user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        const email = error.customData.email;
-
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        console.log(errorCode, errorMessage, error);
       });
-  }
+    } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(
+        "error code ",
+        errorCode,
+        "error msj ",
+        errorMessage,
+        "credential from error ",
+        credential
+      );
+    }
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -60,4 +64,4 @@ const MiCuenta = () => {
   );
 };
 
-export default MiCuenta;
+export default Loguearse;

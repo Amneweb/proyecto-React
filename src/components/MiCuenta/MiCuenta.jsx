@@ -16,7 +16,11 @@ const MiCuenta = () => {
       {isLoggedIn ? (
         <div>
           <h2>Hola, {usuario.displayName} </h2>
-          <p>Acá iremos mostrando el listado de tus compras...</p>
+          <p>
+            Si ya tenés compras, en unos segundos irán apareciendo acá abajo. 👇
+            Si aún no realizaste ninguna... ¿qué esperás para regalarte un
+            libro? 📖
+          </p>
           <ListadoOrdenesUsuario />
 
           <p className="mt-2">
