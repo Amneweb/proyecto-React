@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <CartProvider>
-          <BrowserRouter basename="/mw-libros">
+          <BrowserRouter basename="/mw-libreria">
             <NavBar onQueryBusqueda={setQueryBusqueda} />
 
             <Routes>

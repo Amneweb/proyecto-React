@@ -5,6 +5,7 @@ import { fetchDatosLibros } from "../../helpers/fetchDatosLibros";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { fetchDatosAutor } from "../../helpers/fetchDatosAutor";
+import { Tooltip } from "react-tooltip";
 
 const ContenedorAutor = () => {
   const [loader, setLoader] = useState(true);
@@ -66,6 +67,21 @@ const ContenedorAutor = () => {
           </div>
         </div>
       </div>
+      <Tooltip
+        id="tooltip-agregar"
+        anchorSelect=".card__boton"
+        openOnClick="true"
+        closeEvents="click"
+      >
+        <p className="small text-center mb-0">
+          Se agregó el libro a tu bolso de compras.
+        </p>
+        <p className="text-center mb-0">
+          <span className="cerrartooltip badge rounded-pill fw-normal">
+            Click para cerrar
+          </span>
+        </p>
+      </Tooltip>
     </div>
   );
 };

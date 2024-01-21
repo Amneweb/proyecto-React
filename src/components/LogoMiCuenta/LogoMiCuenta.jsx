@@ -12,7 +12,7 @@ const LogoMiCuenta = () => {
       </Link>
       {isLoggedIn && (
         <span className="position-relative start-0 translate-middle badge rounded-pill user-badge">
-          {usuario.displayName.slice(0, 4).toUpperCase()}
+          {usuario.displayName && usuario.displayName.slice(0, 4).toUpperCase()}
           <span className="visually-hidden">Usuario Logueado</span>
         </span>
       )}

@@ -10,7 +10,7 @@ import { AuthContext } from "../../context/AuthContext";
 const Carrito = () => {
   const { carrito, vaciarCarrito, totalApagar } = useContext(CartContext);
   const { usuario, isLoggedIn } = useContext(AuthContext);
-  console.log("usuario en carrito ", usuario);
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);

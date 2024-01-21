@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { auth } from "../../helpers/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useForm } from "react-hook-form";
 import { ResetIcon } from "../iconos/ResetIcon";
-
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 const SignUp = ({ onSignUp }) => {
   const {
     register,
@@ -11,25 +11,48 @@ const SignUp = ({ onSignUp }) => {
     reset,
     formState: { errors },
   } = useForm();
-
+  const [error, setError] = useState(false);
+  const [errorMsj, setErrorMsj] = useState("");
   const crearUsuario = async (data) => {
-    await createUserWithEmailAndPassword(auth, data.email, data.password)
-      .then((userCredential) => {
-        console.log(userCredential);
+    try {
+      await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+      ).then((userCredential) => {
         updateProfile(userCredential.user, {
           displayName: data.displayName,
         }).then(() => onSignUp(userCredential.user));
-      })
-
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
       });
+    } catch (e) {
+      const errorCode = e.code;
+      console.log("error code", errorCode);
+      switch (errorCode) {
+        case "auth/invalid-credential":
+          setErrorMsj("Los datos de login son erróneos");
+
+          break;
+        case "auth/email-already-exists":
+          setErrorMsj("La casilla de correo ya está registrada");
+          break;
+        case "auth/email-already-in-use":
+          setErrorMsj(
+            "Ya existe un usuario registrado con esa casilla de correo"
+          );
+        case "auth/uid-already-exists":
+          setErrorMsj("El usuario ya existe en nuestra base de datos");
+          break;
+        default:
+          setErrorMsj("Error desconocido");
+      }
+    }
+
+    setError(true);
   };
 
   return (
     <div className="container">
+      {error && <ErrorMessage errorMsj={errorMsj} />}
       <h2>Crear cuenta</h2>
       <p className="small">Si NO tenés una cuenta, ¡registrate! 😄.</p>
       <form onSubmit={handleSubmit(crearUsuario)} className="needs-validation">

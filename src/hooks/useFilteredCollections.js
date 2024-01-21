@@ -6,6 +6,7 @@ import {
   where,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
+
 export function useFilteredCollections(
   nombreColeccion,
   filtrarPor,

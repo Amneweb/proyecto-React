@@ -18,6 +18,7 @@ const CheckoutUser = () => {
     const nuevaOrden = {
       cliente: { uid: usuario.uid, email: usuario.email },
       compra: carrito,
+      fecha: new Date(),
       total: totalApagar(),
     };
 

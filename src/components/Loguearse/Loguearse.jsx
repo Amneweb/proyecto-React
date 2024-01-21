@@ -18,9 +18,9 @@ const Loguearse = () => {
     try {
       await signInWithPopup(auth, provider).then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        console.log("credential from sign in ", credential);
+
         const user = result.user;
-        console.log("usuario de google recién creado", user);
+
         setUsuarioRegistrado(user);
       });
     } catch (error) {

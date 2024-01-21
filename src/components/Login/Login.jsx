@@ -39,7 +39,7 @@ const Login = ({ onLogin }) => {
           setErrorMsj("Error desconocido");
       }
     }
-    console.log("error code ", errorMsj);
+
     setError(true);
   };
 
