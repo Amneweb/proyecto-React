@@ -9,9 +9,7 @@ La intención del proyecto es mostrar el layout de un sitio web lo más parecido
 - Se permite agregar productos al carrito directamente desde el catálogo, no hace falta ir al detalle del producto. El botón 'comprar' en el catálogo permite agregar un elemento por vez. (acá me faltó programar un modal o tooltip para que el usuario sepa que se agregó el producto. La única manera de verificar que el producto se agregó al carrito es yendo al carrito ubicado en la esquina superior derecha.) En el detalle del producto la compra funciona diferente ya que se puede agregar la cantidad que el cliente quiera, y aparece un popover que le confirma al usuario que se agregó el producto.
 
 Se puede ver el sitio funcionando en esta url 👉
-[https://amneweb.com.ar/mw-libros/](https://amneweb.com.ar/mw-libros/) (\*\*)
-
-O en Github pages: [https://amneweb.github.io/proyecto-React/](https://amneweb.github.io/proyecto-React/)
+[https://amneweb.com.ar/mw-libreria/](https://amneweb.com.ar/mw-libreria/) (\*\*)
 
 Al final del readme también se puede ver un video de un posible recorrido del usuario.
 
