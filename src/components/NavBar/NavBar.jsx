@@ -10,12 +10,17 @@ const NavBar = ({ onQueryBusqueda }) => {
   const sagas = useCollections("sagas", "id");
   return (
     <nav className="navbar sticky-top">
-      <div className="container-fluid nav-flex-contenedor">
-        <div className="nav-flex-item superior">
-          <Link className="navbar-brand" to="/">
-            <Logo />
-            <span className="texto-logo">LIBROS</span>
-          </Link>
+    <div className="container-fluid nav-flex-contenedor">
+      <div className="nav-flex-item superior">
+        <Link className="navbar-brand" to="/">
+          <Logo />
+          <span className="texto-logo">LIBROS</span>
+        </Link>
+        <SearchBar onQueryBusqueda={onQueryBusqueda} />
+        <LogoMiCuenta />
+        <WishList />
+        <CartWidget />
+      </div>
           <div className="navbar nav-flex-item navbar-expand-lg">
             <button
               className="navbar-toggler"
