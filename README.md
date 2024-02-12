@@ -5,7 +5,7 @@ La intención del proyecto es mostrar el layout de un sitio web lo más parecido
 
 - La página inicial no contiene el muestrario de todos los productos, sino que tiene un carousel de imágenes, un display de novedades, un "menú de categorías" con imágenes, un sector de "autor del mes" y un muestrario de las sagas o colecciones de libros destacadas.
 - El menú superior permite la navegabilidad según diferentes criterios: género, autor, idioma, sagas
-- En la parte superior de la página hay una barra de búsqueda que busca por nombre, autor y descripción. (No es case sensitive, pero aun me falta programar para que obvie las tildes -por ejemplo, si escribimos Garcia no trae ningún resultado, en cambio si escribimos García sí nos trae el libro de García Márquez-) La función que ejecuta esta búsqueda no es en firebase directamente porque firebase no permite realizar búsquedas de manera simple (hay que instalar Algolia, que es un servicio pago), por lo que la búsqueda se hace localmente, una vez que recuperamos el array de libros completos.
+- En la parte superior de la página hay una barra de búsqueda que busca por nombre, autor y descripción. (No es case sensitive, pero aun me falta programar para que obvie las tildes -por ejemplo, si escribimos Garcia no trae ningún resultado, en cambio si escribimos García sí nos trae el libro de García Márquez-) La función que ejecuta esta búsqueda no es en firebase directamente porque firebase no permite realizar búsquedas de manera simple, por lo que la búsqueda se hace localmente, una vez que recuperamos el array de libros completos.
 - Se permite agregar productos al carrito directamente desde el catálogo, no hace falta ir al detalle del producto. El botón 'comprar' en el catálogo permite agregar un elemento por vez. (acá me faltó programar un modal o tooltip para que el usuario sepa que se agregó el producto. La única manera de verificar que el producto se agregó al carrito es yendo al carrito ubicado en la esquina superior derecha.) En el detalle del producto la compra funciona diferente ya que se puede agregar la cantidad que el cliente quiera, y aparece un popover que le confirma al usuario que se agregó el producto.
 
 Se puede ver el sitio funcionando en esta url 👉
@@ -18,9 +18,8 @@ Al final del readme también se puede ver un video de un posible recorrido del u
 _(\*\*) NOTAS SOBRE FUNCIONAMIENTO DE LAS APP ONLINE:_
 
 1. _El deployment al servidor funciona bien cuando entro a las páginas desde el homepage. Cuando copio y pego la ruta en el navegador, me da error. Por ejemplo si voy a mi página de inicio (amneweb.com.ar/mw-libros/) y desde ahí voy a la página para ver los libros del autor con id=10 (o sea en el menú superior voy a Por autor y elijo Florencia Bonelli) funciona. Pero si yo pego la dirección https://amneweb.com.ar/mw-libros/autor/10 directamente en un navegador, no funciona._
-1. ~~_Las imágenes del carousel y las 'tarjetas' de categorías en la página de inicio están guardadas en la carpeta public y a ellas se accede directamente desde el atributo img en el objeto correspondiente de javascript. Sin embargo, cuando genero el build se rompe la ruta. Esto ocurre sólo cuando voy a la página de inicio desde cualquier otro lugar de la app (por ejemplo si estoy en el catálogo y voy a Inicio) No ocurre cuando visito la app por primera vez desde alguno de los enlaces de acá arriba ☝️. El problema es que cuando se genera el build, en la ruta que va a la homepage y cuyo path es "/" no queda el slash al final del subdirectorio (queda como .com.ar/mw-libros en lugar de .com.ar/mw-libros/ ), y la ruta relativa a las imágenes se rompe._~~ 15/1 👏 SOLUCIONADO: saqué las imágenes de la carpeta public y las importé a cada componente
 
-**EL SITIO TODAVIA NO ES RESPONSIVE** 😔 Estoy trabajando en eso.
+**EL SITIO ES RESPONSIVE** 🥳🥳
 
 ## Librerías
 
@@ -59,13 +58,6 @@ A su vez, hay otros componentes no requeridos en la consigna:
 
 _NOTA: sólo se escribieron las biografías de 4 autores (Verne, Orwells, Rowling y Larssen), por lo que si en el menú superior "Por autor" se elige un autor distinto a los cuatro mencionados, al renderizarse el componente el sector lateral donde se debería mostrar la biografía aparecerá vacío._
 
-## Imágenes
-
-Están guardadas localmente y se accede a ellas de dos maneras:
-
-1. A las imágenes de autores y productos se accede a través de un archivo js que importa las imágenes y genera las variables de ruta (imagenes.js e imagenesAutores.js)
-1. A las imágenes del carousel se accede con la ruta directa y están ubicadas en una subcarpeta de public
-
 ## Funciones
 
 Todas las funciones de acceso a firebase y de ayuda al funcionamiento de la app se encuentran en la carpeta helpers
@@ -73,6 +65,7 @@ Todas las funciones de acceso a firebase y de ayuda al funcionamiento de la app 
 ## Custom Hooks
 
 Armé dos hooks para la traida de datos de firebase. Un hook trae la respectiva colección completa (x ejemplo todos los libros, o todos los autores) y el otro la colección filtrada según los datos que se le pasen a la función. Estos hooks son llamados desde la mayoría de los componentes, a excepción del itemlistcontainer (este componente tiene varios condicionales que dependen del parámetro url y no tuve tiempo de ir probando cada uno, pero también se podrían usar ambos hooks)
+Hay un tercer hook que evalúa el ancho de la pantalla, para definir cuántos items muestro en el carousel de novedades en la homepage.
 
 ## Páginas
 
@@ -104,7 +97,7 @@ En muchos casos me pasaba que cuando una página estaba desplazada hasta abajo d
 Me quedaron pendientes los extras sugeridos en la consigna del PF:
 
 1. El wishlist
-1. Un login para la persistencia de las órdenes
+1. Un login para la persistencia de las órdenes **NOTA al 12/2/24: YA ESTA ARMADO Y FUNCIONANDO**
 1. Productos con variantes (lo de las ediciones de bolsillo que aparece en el carousel de inicio tenía como objetivo hacer variantes pero no me iba a dar el tiempo si hacía toda la programación. Hay una propiedad variante en los objetos de los productos, pero no funciona como tal).
 1. Además, me hubiera gustado que al vaciarse el carrito al final de la compra, se pudiera navegar automáticamente a la página de inicio, pero no lo logré. :(
 
