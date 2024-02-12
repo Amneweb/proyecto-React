@@ -2,9 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import imagenes from "../../helpers/imagenesCategoryShow";
 import nodisponible from "../BookCard/assets/nodisponible.jpg";
+import { useWindowSize } from "../../hooks/useWindowSize";
 const CardsCategoriasEnIndex = ({ categorias }) => {
+  let columnas;
+  const width = useWindowSize();
+  if (width < 720) {
+    columnas = 2;
+  } else {
+    if (width >= 720 && width < 1200) {
+      columnas = 4;
+    } else {
+      columnas = 6;
+    }
+  }
   return (
-    <div className="row row-cols-6 g-4">
+    <div className={`row row-cols-${columnas} g-4`}>
       {categorias.map((categoria) => (
         <div className="col" key={categoria.id}>
           <div className="card shadow-sm">

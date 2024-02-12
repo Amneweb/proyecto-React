@@ -2,9 +2,23 @@ import React from "react";
 import ItemListChico from "../ItemListChico/ItemListChico";
 import { ArrowRight } from "../iconos/ArrowRight";
 import { Link } from "react-router-dom";
+import { useWindowSize } from "../../hooks/useWindowSize";
 const CarouselNovedades = ({ libros }) => {
-  const porVez = 5;
-  const maxIteraciones = 2;
+  let porVez;
+  let maxIteraciones;
+  const width = useWindowSize();
+  if (width < 920) {
+    porVez = 2;
+    maxIteraciones = 4;
+  } else {
+    if (width >= 920 && width < 1200) {
+      porVez = 3;
+      maxIteraciones = 5;
+    } else {
+      porVez = 4;
+      maxIteraciones = 3;
+    }
+  }
 
   const cantidadNovedades = libros.length;
 
@@ -31,7 +45,7 @@ const CarouselNovedades = ({ libros }) => {
                 key={`pantalla${key}`}
                 className={key === 0 ? `carousel-item active` : `carousel-item`}
               >
-                <div className="row row-cols-5">
+                <div className={`row row-cols-${porVez}`}>
                   <ItemListChico libros={libros} />
                 </div>
               </div>

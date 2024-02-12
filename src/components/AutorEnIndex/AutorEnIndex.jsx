@@ -29,7 +29,7 @@ const AutorEnIndex = () => {
             {datosAutor[0].nombre}
           </h3>
           <div className="row">
-            <div className="contenedor__autorSagas col-3 g-4 px-4">
+            <div className="contenedor__autorSagas col-md-3 g-4 px-4">
               <img
                 src={
                   imagenesAutores.find(
@@ -43,7 +43,7 @@ const AutorEnIndex = () => {
                 alt={`Foto de ${datosAutor[0].nombre}`}
               />
             </div>
-            <div className="col-9 g-4">
+            <div className="col-md-9 g-4">
               <p className="justificado">{datosAutor[0].biografia} </p>
             </div>
             <p>

@@ -9,7 +9,7 @@ const AsideAutor = ({ datosAutor }) => {
     : noDisponible;
   return (
     <>
-      <h2>Sobre el autor</h2>
+      <h2 className="card-title">Sobre el autor</h2>
       <div>
         <img src={rutaImagen} alt={datosAutor.nombre} />
 

@@ -30,14 +30,14 @@ const Carrito = () => {
           ) : (
             <Modal formulario="checkout" />
           )}
-          <div className="col-8">
+          <div className="col-12 col-lg-8">
             <ul className="list-group">
               {carrito.map((compra) => (
                 <ItemCarrito key={compra.id} compra={compra} />
               ))}
             </ul>
           </div>
-          <div className="col-4">
+          <div className="col-12 col-lg-4">
             <ul className="list-group">
               <li className="list-group-item">
                 <h3>Total: {precioFormateado.format(totalApagar())}</h3>

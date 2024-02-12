@@ -57,12 +57,12 @@ const ContenedorAutor = () => {
           Libros de{" "}
           <span className="termino-busqueda">{datosAutor.nombre}</span>{" "}
         </h2>
-        <div className="aside col-4 border rounded pe-4">
+        <div className="aside col-md-4 border rounded pe-4">
           <AsideAutor datosAutor={datosAutor} />
         </div>
 
-        <div className="main-listado col-8">
-          <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="main-listado col-md-8">
+          <div className="row row-cols-2 row-cols-lg-3 g-4">
             <ItemList libros={libros} />
           </div>
         </div>

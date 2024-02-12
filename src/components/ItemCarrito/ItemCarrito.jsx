@@ -35,32 +35,41 @@ const ItemCarrito = ({ compra }) => {
     }
   };
   return (
-    <li className="list-group-item renglon-compra" key={compra.id}>
-      <div className="carrito__imagen flex-item">
-        <img src={rutaImagen(compra.isbn)} alt={`imagen de ${compra.titulo}`} />
+    <li className="list-group-carrito mb-1" key={compra.id}>
+      <div className="row p-3">
+        <div className="col-3 col-md-2">
+          <img
+            src={rutaImagen(compra.isbn)}
+            alt={`imagen de ${compra.titulo}`}
+          />
+        </div>
+        <div className="col-9 col-md-4 carrito__titulo">
+          <p className="mb-1 fw-bold">
+            <Link to={`/libro/${compra.id}`}>{compra.titulo}</Link>
+          </p>
+          <p>{compra.autor.nombre} </p>
+          <p className="small">ISBN: {compra.isbn} </p>
+          <p className="small">
+            Precio unitario: {precioFormateado.format(compra.precio)}
+          </p>
+        </div>
+        <ContadoresEnCarrito
+          estadoContador={compra.contador}
+          handleSumarAgregar={handleSumarAgregar}
+          handleRestarRemover={handleRestarRemover}
+          item={compra}
+        />
+        <div className="col-5 col-md-2">
+          <p>
+            <span className="fw-bolder small">Total del renglón</span>
+            <br />
+            {precioFormateado.format(compra.precio * compra.contador)}
+          </p>
+        </div>
+        <div className="col-2 col-md-1">
+          <BotonRemoverElemento handleRemover={() => handleRemover(compra)} />
+        </div>
       </div>
-      <div className="flex-item carrito__titulo">
-        <p className="mb-1 fw-bold">
-          <Link to={`/libro/${compra.id}`}>{compra.titulo}</Link>
-        </p>
-        <p>{compra.autor.nombre} </p>
-        <p className="small">ISBN: {compra.isbn} </p>
-        <p className="small">
-          Precio unitario: {precioFormateado.format(compra.precio)}
-        </p>
-      </div>
-      <ContadoresEnCarrito
-        estadoContador={compra.contador}
-        handleSumarAgregar={handleSumarAgregar}
-        handleRestarRemover={handleRestarRemover}
-        item={compra}
-      />
-      <p className="flex-item carrito__totalrenglon">
-        <span className="fw-bolder small">Total del renglón</span>
-        <br />
-        {precioFormateado.format(compra.precio * compra.contador)}
-      </p>
-      <BotonRemoverElemento handleRemover={() => handleRemover(compra)} />
     </li>
   );
 };

@@ -13,7 +13,7 @@ const ContadoresEnCarrito = ({
     estadoContador === item.stock ? setTool(true) : setTool(false);
   }, [estadoContador]);
   return (
-    <div className="item-flex carrito__contador d-flex flex-column">
+    <div className="col-md-3 col-5 carrito__contador d-flex flex-column">
       <div className="btn-group">
         <button
           type="button"
