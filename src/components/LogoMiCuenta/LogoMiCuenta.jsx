@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/AuthContext";
 const LogoMiCuenta = () => {
   const { usuario, isLoggedIn } = useContext(AuthContext);
   return (
-    <div className="widget">
+    <div className="widget me-3">
       <Link to="/micuenta">
         <SvgMiCuenta ancho="1.8em" alto="1.8em" />
       </Link>
