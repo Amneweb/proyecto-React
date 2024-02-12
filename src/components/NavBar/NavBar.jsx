@@ -1,5 +1,4 @@
 import CartWidget from "../CartWidget/CartWidget";
-import WishList from "../WishList/WishList";
 import Logo from "../Logo/Logo";
 import { useCollections } from "../../hooks/useCollections";
 import { Link } from "react-router-dom";
@@ -17,137 +16,182 @@ const NavBar = ({ onQueryBusqueda }) => {
             <Logo />
             <span className="texto-logo">LIBROS</span>
           </Link>
-          <SearchBar onQueryBusqueda={onQueryBusqueda} />
-          <LogoMiCuenta />
-          <WishList />
-          <CartWidget />
-        </div>
+          <div className="navbar nav-flex-item navbar-expand-lg">
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarScroll"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div
+              className="collapse navbar-collapse menu"
+              id="navbarNavDropdown"
+            >
+              <ul className="navbar-nav mb-2 mb-lg-0 g-col-6">
+                <li className="nav-item">
+                  <Link className="nav-link" aria-current="page" to="/">
+                    <span
+                      data-bs-target="#navbarNavDropdown"
+                      data-bs-toggle="collapse"
+                    >
+                      Inicio
+                    </span>
+                  </Link>
+                </li>
+                <li className="nav-item dropdown">
+                  <button
+                    className="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Por género
+                  </button>
+                  <ul className="dropdown-menu">
+                    {categorias ? (
+                      categorias.map((categoria) => (
+                        <li key={`${categoria.id}`}>
+                          <Link
+                            to={`/libros/${categoria.id}`}
+                            className="dropdown-item"
+                          >
+                            <span
+                              data-bs-target="#navbarNavDropdown"
+                              data-bs-toggle="collapse"
+                            >
+                              {categoria.titulo}
+                            </span>
+                          </Link>
+                        </li>
+                      ))
+                    ) : (
+                      <p>Cargando datos...</p>
+                    )}
+                  </ul>
+                </li>
+                <li className="nav-item dropdown">
+                  <button
+                    className="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Por autor
+                  </button>
+                  <ul className="dropdown-menu">
+                    {autores ? (
+                      autores.map((autor) => (
+                        <li key={`${autor.id}`}>
+                          <Link
+                            to={`/autor/${autor.id}`}
+                            className="dropdown-item"
+                          >
+                            <span
+                              data-bs-target="#navbarNavDropdown"
+                              data-bs-toggle="collapse"
+                            >
+                              {autor.nombre}
+                            </span>
+                          </Link>
+                        </li>
+                      ))
+                    ) : (
+                      <p>Cargando datos...</p>
+                    )}
 
-        <div className="navbar nav-flex-item navbar-expand-lg">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarScroll"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse menu" id="navbarNavDropdown">
-            <ul className="navbar-nav mb-2 mb-lg-0 g-col-6">
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/">
-                  Inicio
-                </Link>
-              </li>
-              <li className="nav-item dropdown">
-                <button
-                  className="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Por género
-                </button>
-                <ul className="dropdown-menu">
-                  {categorias ? (
-                    categorias.map((categoria) => (
-                      <li key={`${categoria.id}`}>
-                        <Link
-                          to={`/libros/${categoria.id}`}
-                          className="dropdown-item"
+                    <li>
+                      <Link className="dropdown-item" to="/autor/todos">
+                        <span
+                          data-bs-target="#navbarNavDropdown"
+                          data-bs-toggle="collapse"
                         >
-                          {categoria.titulo}
-                        </Link>
-                      </li>
-                    ))
-                  ) : (
-                    <p>Cargando datos...</p>
-                  )}
-                </ul>
-              </li>
-              <li className="nav-item dropdown">
-                <button
-                  className="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Por autor
-                </button>
-                <ul className="dropdown-menu">
-                  {autores ? (
-                    autores.map((autor) => (
-                      <li key={`${autor.id}`}>
-                        <Link
-                          to={`/autor/${autor.id}`}
-                          className="dropdown-item"
+                          TODOS
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li className="nav-item dropdown">
+                  <button
+                    className="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Por idioma
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link className="dropdown-item" to="/idioma/EN">
+                        <span
+                          data-bs-target="#navbarNavDropdown"
+                          data-bs-toggle="collapse"
                         >
-                          {autor.nombre}
-                        </Link>
-                      </li>
-                    ))
-                  ) : (
-                    <p>Cargando datos...</p>
-                  )}
-
-                  <li>
-                    <Link className="dropdown-item" to="/autor/todos">
+                          Inglés
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/idioma/ES">
+                        <span
+                          data-bs-target="#navbarNavDropdown"
+                          data-bs-toggle="collapse"
+                        >
+                          Español
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li className="nav-item dropdown">
+                  <button
+                    className="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Sagas
+                  </button>
+                  <ul className="dropdown-menu">
+                    {sagas ? (
+                      sagas.map((saga) => (
+                        <li key={`${saga.id}`}>
+                          <Link
+                            to={`/saga/${saga.id}`}
+                            className="dropdown-item"
+                          >
+                            <span
+                              data-bs-target="#navbarNavDropdown"
+                              data-bs-toggle="collapse"
+                            >
+                              {saga.nombre}
+                            </span>
+                          </Link>
+                        </li>
+                      ))
+                    ) : (
+                      <p>Cargando datos...</p>
+                    )}
+                  </ul>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" aria-current="page" to="/libros">
+                    <span
+                      data-bs-target="#navbarNavDropdown"
+                      data-bs-toggle="collapse"
+                    >
                       TODOS
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item dropdown">
-                <button
-                  className="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Por idioma
-                </button>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" to="/idioma/EN">
-                      Inglés
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/idioma/ES">
-                      Español
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item dropdown">
-                <button
-                  className="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Sagas
-                </button>
-                <ul className="dropdown-menu">
-                  {sagas ? (
-                    sagas.map((saga) => (
-                      <li key={`${saga.id}`}>
-                        <Link to={`/saga/${saga.id}`} className="dropdown-item">
-                          {saga.nombre}
-                        </Link>
-                      </li>
-                    ))
-                  ) : (
-                    <p>Cargando datos...</p>
-                  )}
-                </ul>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/libros">
-                  TODOS
-                </Link>
-              </li>
-            </ul>
+                    </span>
+                  </Link>
+                </li>
+              </ul>
+              <SearchBar onQueryBusqueda={onQueryBusqueda} />
+            </div>
           </div>
+          <LogoMiCuenta />
+
+          <CartWidget />
         </div>
       </div>
     </nav>
