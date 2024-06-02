@@ -11,7 +11,7 @@ const ContadoresEnCarrito = ({
   const [tool, setTool] = useState(false); // eslint-disable-next-line
   useEffect(() => {
     estadoContador === item.stock ? setTool(true) : setTool(false);
-  }, [estadoContador]);
+  }, [item.stock, estadoContador]);
   return (
     <div className="col-md-3 col-5 carrito__contador d-flex flex-column">
       <div className="btn-group">
