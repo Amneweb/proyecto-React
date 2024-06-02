@@ -26,7 +26,7 @@ export function useCollections(nombreColeccion, ordenarPor) {
     return () => {
       ignore = true;
     };
-  }, []);
+  }, [nombreColeccion, ordenarPor]);
 
   return coleccion;
 }
