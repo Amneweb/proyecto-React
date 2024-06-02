@@ -28,7 +28,6 @@ yarn-error.log*
 
 /src/data
 
-/src/helpers/fetchDatosAutor.js
 /src/helpers/fetchDatosCarousel.js
 /src/helpers/fetchDatosCategorias.js
 /src/helpers/fetchDatosSagas.js
