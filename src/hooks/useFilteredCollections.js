@@ -30,7 +30,7 @@ export function useFilteredCollections(
     return () => {
       ignore = true;
     };
-  }, [comparador]);
+  }, [comparador, filtrarPor, operando, nombreColeccion]);
 
   return coleccion;
 }
