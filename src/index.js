@@ -5,7 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./fonts/fonts.css";
 import "./App.css";
 import App from "./App";
-import { appFire } from "./helpers/firebase";
+//import { appFire } from "./helpers/firebase";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

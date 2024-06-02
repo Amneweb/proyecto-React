@@ -8,7 +8,7 @@ const ContadoresEnCarrito = ({
   handleRestarRemover,
   item,
 }) => {
-  const [tool, setTool] = useState(false);
+  const [tool, setTool] = useState(false); // eslint-disable-next-line
   useEffect(() => {
     estadoContador === item.stock ? setTool(true) : setTool(false);
   }, [estadoContador]);

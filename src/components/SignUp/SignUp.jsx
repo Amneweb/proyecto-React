@@ -39,6 +39,7 @@ const SignUp = ({ onSignUp }) => {
           setErrorMsj(
             "Ya existe un usuario registrado con esa casilla de correo"
           );
+          break;
         case "auth/uid-already-exists":
           setErrorMsj("El usuario ya existe en nuestra base de datos");
           break;
